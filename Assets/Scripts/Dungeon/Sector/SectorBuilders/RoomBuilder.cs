@@ -2,8 +2,11 @@
 
 public class RoomBuilder : ISectorBuilder
 {
-	public RoomBuilder();
+	public RoomBuilder() {}
 
-	public void build(DungeonGenerator dungeonGenerator, Vector2 start, Vector2 size);
+	public void build(TileMap tilemap, Vector2 start, Vector2 size, out Vector2[] exits)
+	{
+		throw new System.NotImplementedException();
+	}
 }
 
