@@ -36,6 +36,7 @@ sysinfo.txt
 # IDEs
 .idea/**/workspace.xml
 .idea/**/tasks.xml
+*.userprefs
 
 # MAC shit
 *.DS_Store
