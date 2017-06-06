@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 703b857d0b66413ab2680e70f31a6ccd, type: 3}
+  m_Name: Assets
+  m_EditorClassIdentifier: 
+  Player: {fileID: 1491522852662198, guid: 7aa1c31a9615db740b0d6eb3f84e86b4, type: 2}
+  GroundTile: {fileID: 1406012203088138, guid: f5dce214091c145fea518bfbe39efef8, type: 2}
+  Wall: {fileID: 1990840664028678, guid: 8261556f7b7d9ff4cbd0f88477a892e4, type: 2}
