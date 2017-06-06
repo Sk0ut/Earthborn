@@ -8,15 +8,45 @@
 //------------------------------------------------------------------------------
 public static class GameComponentsLookup {
 
+    public const int Actor = 0;
+    public const int Asset = 1;
+    public const int Assets = 2;
+    public const int Easing = 3;
+    public const int Globals = 4;
+    public const int Player = 5;
+    public const int Position = 6;
+    public const int Tile = 7;
+    public const int TileMap = 8;
+    public const int Tweening = 9;
+    public const int View = 10;
 
-
-    public const int TotalComponents = 0;
+    public const int TotalComponents = 11;
 
     public static readonly string[] componentNames = {
-
+        "Actor",
+        "Asset",
+        "Assets",
+        "Easing",
+        "Globals",
+        "Player",
+        "Position",
+        "Tile",
+        "TileMap",
+        "Tweening",
+        "View"
     };
 
     public static readonly System.Type[] componentTypes = {
-
+        typeof(ActorComponent),
+        typeof(AssetComponent),
+        typeof(AssetsComponent),
+        typeof(EasingComponent),
+        typeof(GlobalsComponent),
+        typeof(PlayerComponent),
+        typeof(PositionComponent),
+        typeof(TileComponent),
+        typeof(TileMapComponent),
+        typeof(TweeningComponent),
+        typeof(ViewComponent)
     };
 }

@@ -1,22 +1,15 @@
-﻿<Properties StartupItem="Assembly-CSharp.csproj" RefactoringSettings.EnableRefactorings="True">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Dungeon\Sector\ISectorBuilder.cs">
+﻿<Properties RefactoringSettings.EnableRefactorings="True" StartupConfiguration="{50BCA5E1-7CD8-3D13-B10F-E5D0A55CFDE3}|Unit Tests">
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Sources/Logic/Game/GameSystems.cs">
     <Files>
-      <File FileName="Assets\Scripts\Camera\CameraController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GridMove.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Dungeon\DungeonGenerator.cs" Line="14" Column="23" />
-      <File FileName="Assets\Scripts\Dungeon\TileMap.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Dungeon\Tile.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\LevelManager.cs" Line="12" Column="31" />
-      <File FileName="Assets\Scripts\Dungeon\Level.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Dungeon\LevelGenerator.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Dungeon\Sector\ISectorBuilder.cs" Line="5" Column="78" />
-      <File FileName="Assets\Scripts\Dungeon\Sector\SectorBuilders\RoomBuilder.cs" Line="7" Column="37" />
-      <File FileName="Assets\Scripts\Dungeon\Dungeon.cs" Line="18" Column="43" />
+      <File FileName="Assets/Sources/Logic/Game/GameSystems.cs" Line="6" Column="2" />
+      <File FileName="Assets/Sources/Logic/Input/InputSystems.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
 </Properties>
