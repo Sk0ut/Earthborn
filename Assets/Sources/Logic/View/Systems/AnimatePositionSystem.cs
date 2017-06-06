@@ -31,7 +31,7 @@ public class AnimationSystem : ReactiveSystem<GameEntity>
             var pos = e.position;
             var transform = e.view.gameObject.transform;
             transform
-                .DOMove(new Vector3(pos.x, 0f, pos.y), e.easing.duration);
+                .DOMove(new Vector3(pos.x, transform.position.y, pos.y), e.easing.duration);
         }
     }
 }

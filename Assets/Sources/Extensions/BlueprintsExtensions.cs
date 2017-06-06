@@ -9,4 +9,14 @@ public static class BlueprintsExtensions
 
         return entity;
     }
+
+	public static GameEntity CreatePlayer(this GameContext context, Vector2 position) {
+		var entity = context.CreateEntity ();
+		entity.isPlayer = true;
+		entity.AddAsset(context.assets.value.Player);
+		entity.AddPosition((int)position.x, (int)position.y);
+		entity.AddEasing(0.5f);
+
+		return entity;
+	}
 }

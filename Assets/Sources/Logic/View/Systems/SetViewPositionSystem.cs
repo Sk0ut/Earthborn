@@ -23,7 +23,7 @@ class SetViewPositionSystem : ReactiveSystem<GameEntity>
         foreach (var e in entities)
         {
             var pos = e.position;
-            e.view.gameObject.transform.position = new Vector3(pos.x, 0f, pos.y);
+			e.view.gameObject.transform.position = new Vector3(pos.x, e.view.gameObject.transform.position.y, pos.y);
         }
     }
 }
