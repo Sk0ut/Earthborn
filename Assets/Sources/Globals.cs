@@ -5,4 +5,5 @@ using UnityEngine;
 public class Globals : ScriptableObject
 {
     public float TileSize;
+	public int PlayerHealth;
 }

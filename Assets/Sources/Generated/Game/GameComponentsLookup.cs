@@ -11,23 +11,27 @@ public static class GameComponentsLookup {
     public const int Actor = 0;
     public const int Asset = 1;
     public const int Assets = 2;
-    public const int Easing = 3;
-    public const int Globals = 4;
-    public const int Player = 5;
-    public const int Position = 6;
-    public const int Tile = 7;
-    public const int TileMap = 8;
-    public const int Tweening = 9;
-    public const int View = 10;
+    public const int Damage = 3;
+    public const int Easing = 4;
+    public const int Globals = 5;
+    public const int Health = 6;
+    public const int Player = 7;
+    public const int Position = 8;
+    public const int Tile = 9;
+    public const int TileMap = 10;
+    public const int Tweening = 11;
+    public const int View = 12;
 
-    public const int TotalComponents = 11;
+    public const int TotalComponents = 13;
 
     public static readonly string[] componentNames = {
         "Actor",
         "Asset",
         "Assets",
+        "Damage",
         "Easing",
         "Globals",
+        "Health",
         "Player",
         "Position",
         "Tile",
@@ -40,8 +44,10 @@ public static class GameComponentsLookup {
         typeof(ActorComponent),
         typeof(AssetComponent),
         typeof(AssetsComponent),
+        typeof(DamageComponent),
         typeof(EasingComponent),
         typeof(GlobalsComponent),
+        typeof(HealthComponent),
         typeof(PlayerComponent),
         typeof(PositionComponent),
         typeof(TileComponent),
