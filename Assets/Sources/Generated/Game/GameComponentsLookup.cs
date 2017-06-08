@@ -9,29 +9,49 @@
 public static class GameComponentsLookup {
 
     public const int Actor = 0;
-    public const int Asset = 1;
-    public const int Assets = 2;
-    public const int Damage = 3;
-    public const int Easing = 4;
-    public const int Globals = 5;
-    public const int Health = 6;
-    public const int Player = 7;
-    public const int Position = 8;
-    public const int Tile = 9;
-    public const int TileMap = 10;
-    public const int Tweening = 11;
-    public const int View = 12;
+    public const int ActorEnergy = 1;
+    public const int Actors = 2;
+    public const int ActorSpeed = 3;
+    public const int ActorState = 4;
+    public const int Animating = 5;
+    public const int Animation = 6;
+    public const int AnimationQueue = 7;
+    public const int Asset = 8;
+    public const int Assets = 9;
+    public const int Camera = 10;
+    public const int CurrentActor = 11;
+    public const int Damage = 12;
+    public const int Easing = 13;
+    public const int Globals = 14;
+    public const int Health = 15;
+    public const int MoveAction = 16;
+    public const int Player = 17;
+    public const int Position = 18;
+    public const int Tile = 19;
+    public const int TileMap = 20;
+    public const int Tweening = 21;
+    public const int View = 22;
 
-    public const int TotalComponents = 13;
+    public const int TotalComponents = 23;
 
     public static readonly string[] componentNames = {
         "Actor",
+        "ActorEnergy",
+        "Actors",
+        "ActorSpeed",
+        "ActorState",
+        "Animating",
+        "Animation",
+        "AnimationQueue",
         "Asset",
         "Assets",
+        "Camera",
+        "CurrentActor",
         "Damage",
         "Easing",
         "Globals",
         "Health",
+        "MoveAction",
         "Player",
         "Position",
         "Tile",
@@ -42,12 +62,22 @@ public static class GameComponentsLookup {
 
     public static readonly System.Type[] componentTypes = {
         typeof(ActorComponent),
+        typeof(ActorEnergyComponent),
+        typeof(ActorsComponent),
+        typeof(ActorSpeedComponent),
+        typeof(ActorStateComponent),
+        typeof(AnimatingComponent),
+        typeof(AnimationComponent),
+        typeof(AnimationQueueComponent),
         typeof(AssetComponent),
         typeof(AssetsComponent),
+        typeof(CameraComponent),
+        typeof(CurrentActorComponent),
         typeof(DamageComponent),
         typeof(EasingComponent),
         typeof(GlobalsComponent),
         typeof(HealthComponent),
+        typeof(MoveActionComponent),
         typeof(PlayerComponent),
         typeof(PositionComponent),
         typeof(TileComponent),

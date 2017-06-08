@@ -8,15 +8,33 @@
 //------------------------------------------------------------------------------
 public static class InputComponentsLookup {
 
+    public const int AxisInput = 0;
+    public const int Command = 1;
+    public const int GameContext = 2;
+    public const int Input = 3;
+    public const int KeyInput = 4;
+    public const int MouseInput = 5;
+    public const int Move = 6;
 
-
-    public const int TotalComponents = 0;
+    public const int TotalComponents = 7;
 
     public static readonly string[] componentNames = {
-
+        "AxisInput",
+        "Command",
+        "GameContext",
+        "Input",
+        "KeyInput",
+        "MouseInput",
+        "Move"
     };
 
     public static readonly System.Type[] componentTypes = {
-
+        typeof(AxisInputComponent),
+        typeof(CommandComponent),
+        typeof(GameContextComponent),
+        typeof(InputComponent),
+        typeof(KeyInputComponent),
+        typeof(MouseInputComponent),
+        typeof(MoveComponent)
     };
 }
