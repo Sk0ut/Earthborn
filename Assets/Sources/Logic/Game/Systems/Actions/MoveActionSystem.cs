@@ -5,9 +5,12 @@ using UnityEngine;
 public class MoveActionSystem : ReactiveSystem<GameEntity>
 {
     private readonly GameContext _context;
-    public MoveActionSystem(Contexts contexts) : base(contexts.game)
+	private readonly IGroup<GameEntity> blockingGroup;
+
+	public MoveActionSystem(Contexts contexts) : base(contexts.game)
     {
         _context = contexts.game;
+		blockingGroup = _context.GetGroup (GameMatcher.AllOf(GameMatcher.Blocking, GameMatcher.Position));
     }
 
     protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
@@ -32,29 +35,41 @@ public class MoveActionSystem : ReactiveSystem<GameEntity>
             var target = action.target.value;
             
             var pos = target.position;
+			var x = pos.x;
+			var y = pos.y;
 
             switch (action.moveAction.value)
             {
                 case MoveDirection.Up:
-                    target.ReplacePosition(pos.x, pos.y + 1);
+                    ++y;
                     break;
                 case MoveDirection.Down:
-                    target.ReplacePosition(pos.x, pos.y - 1);
+                    --y;
                     break;
                 case MoveDirection.Left:
-                    target.ReplacePosition(pos.x - 1, pos.y);
+                    --x;
                     break;
                 case MoveDirection.Right:
-                    target.ReplacePosition(pos.x + 1, pos.y);
+                    ++x;
                     break;
             }
 
-            target.ReplaceActorEnergy(target.actorEnergy.energy - 1f);
-            _context.ReplaceTurnState(TurnState.EndTurn);
-            var ev = _context.CreateEvent(Event.ActorWalked);
-            ev.AddTarget(target);
-            ev.AddMoveAction(action.moveAction.value);
-            
+			bool cancelAction = false;
+			foreach (var entity in blockingGroup.GetEntities()) {
+				if (entity.position.x == x && entity.position.y == y) {
+					cancelAction = true;
+					break;
+				}
+			}
+
+			if (!cancelAction) {
+				target.ReplacePosition (x, y);
+				target.ReplaceActorEnergy (target.actorEnergy.energy - 1f);
+				_context.ReplaceTurnState (TurnState.EndTurn);
+				var ev = _context.CreateEvent (Event.ActorWalked);
+				ev.AddTarget (target);
+				ev.AddMoveAction (action.moveAction.value);
+			}
             // Handled
             action.Destroy();
         }

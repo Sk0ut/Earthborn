@@ -18,26 +18,27 @@ public static class GameComponentsLookup {
     public const int AnimationQueue = 7;
     public const int Asset = 8;
     public const int Assets = 9;
-    public const int Camera = 10;
-    public const int CurrentActor = 11;
-    public const int Damage = 12;
-    public const int Easing = 13;
-    public const int EventType = 14;
-    public const int Globals = 15;
-    public const int Health = 16;
-    public const int Immediate = 17;
-    public const int MoveAction = 18;
-    public const int Player = 19;
-    public const int Position = 20;
-    public const int Target = 21;
-    public const int Tile = 22;
-    public const int TileMap = 23;
-    public const int TurnState = 24;
-    public const int Tweening = 25;
-    public const int View = 26;
-    public const int WaitAction = 27;
+    public const int Blocking = 10;
+    public const int Camera = 11;
+    public const int CurrentActor = 12;
+    public const int Damage = 13;
+    public const int Easing = 14;
+    public const int EventType = 15;
+    public const int Globals = 16;
+    public const int Health = 17;
+    public const int Immediate = 18;
+    public const int MoveAction = 19;
+    public const int Player = 20;
+    public const int Position = 21;
+    public const int Target = 22;
+    public const int Tile = 23;
+    public const int TileMap = 24;
+    public const int TurnState = 25;
+    public const int Tweening = 26;
+    public const int View = 27;
+    public const int WaitAction = 28;
 
-    public const int TotalComponents = 28;
+    public const int TotalComponents = 29;
 
     public static readonly string[] componentNames = {
         "Action",
@@ -50,6 +51,7 @@ public static class GameComponentsLookup {
         "AnimationQueue",
         "Asset",
         "Assets",
+        "Blocking",
         "Camera",
         "CurrentActor",
         "Damage",
@@ -81,6 +83,7 @@ public static class GameComponentsLookup {
         typeof(AnimationQueueComponent),
         typeof(AssetComponent),
         typeof(AssetsComponent),
+        typeof(BlockingComponent),
         typeof(CameraComponent),
         typeof(CurrentActorComponent),
         typeof(DamageComponent),

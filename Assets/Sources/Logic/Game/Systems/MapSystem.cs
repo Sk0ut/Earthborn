@@ -34,18 +34,23 @@ class MapSystem : IInitializeSystem, IExecuteSystem
         {
 			for (var x = 0; x < map.GetLength(1); ++x)
             {
-                var tile = _context.CreateEntity();
-				tile.AddPosition(x, map.GetLength(0) - y);
+				TileType type;
+				UnityEngine.GameObject asset;
+				bool blocking;
 				switch (map[y, x]) {
 				case 0:
-					tile.AddTile (TileType.GROUND);
-					tile.AddAsset (_context.assets.value.GroundTile);
+					type = TileType.GROUND;
+					asset = _context.assets.value.GroundTile;
+					blocking = false;
 					break;
 				case 1:
-					tile.AddTile (TileType.WALL);
-					tile.AddAsset (_context.assets.value.Wall);
+				default:
+					type = TileType.WALL;
+					asset = _context.assets.value.Wall;
+					blocking = true;
 					break;
 				}
+				_context.CreateTile (new UnityEngine.Vector2 (x, map.GetLength (0) - y), type, blocking, asset);
             }
         }
     }

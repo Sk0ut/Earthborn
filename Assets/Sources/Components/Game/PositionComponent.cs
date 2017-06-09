@@ -3,5 +3,6 @@ using Entitas;
 [Game]
 public class PositionComponent : IComponent
 {
-    public int x, y;
+	public int x; 
+	public int y;
 }
