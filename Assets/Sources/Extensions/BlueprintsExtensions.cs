@@ -39,6 +39,14 @@ public static class BlueprintsExtensions
 		return entity;
 	}
 	
+	public static GameEntity CreateAction(this GameContext context)
+	{
+		var action = context.CreateEntity();
+		action.isAction = true;
+		
+		return action;
+	}
+	
 	public static InputEntity CreateInput(this InputContext context)
 	{
 		var input = context.CreateEntity();

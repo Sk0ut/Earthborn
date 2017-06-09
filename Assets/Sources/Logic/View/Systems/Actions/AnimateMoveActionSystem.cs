@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
@@ -6,13 +7,17 @@ using UnityEngine;
 
 public class AnimateMoveActionSystem : ReactiveSystem<GameEntity>
 {
+    private readonly GameContext _game;
     public AnimateMoveActionSystem(Contexts contexts) : base(contexts.game)
     {
+        _game = contexts.game;
     }
 
     protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
     {
-        return context.CreateCollector(GameMatcher.Position.Added(), GameMatcher.MoveAction.Removed());
+        return context.CreateCollector(GameMatcher.AllOf(
+            GameMatcher.Position
+        ));
     }
 
     protected override bool Filter(GameEntity entity)
@@ -33,17 +38,28 @@ public class AnimateMoveActionSystem : ReactiveSystem<GameEntity>
                 e.easing.duration
             ).SetEase(Ease.Linear).Pause();
 
-            tween.Play();
-
-            //e.AddAnimation(CreateAnimation(tween));
+            var animation = _game.CreateEntity();
+            animation.AddAnimation(CreateAnimation(tween));
         }
     }
 
     IEnumerator CreateAnimation(Tweener tween)
     {
+        var done = false;
+        tween.OnStart(() =>
+        {
+            //Debug.Log("Move started " + DateTime.Now);
+        });
+        tween.OnComplete(() =>
+        {
+            //Debug.LogWarning("IM FUKIN DUNE " + DateTime.Now);
+            done = true;
+        });
+
         tween.Play();
-        Debug.Log("Animation started");
-        yield return tween.WaitForCompletion();
-        Debug.Log("Animation finished");
+        while (!done)
+        {
+            yield return null;
+        }
     }
 }

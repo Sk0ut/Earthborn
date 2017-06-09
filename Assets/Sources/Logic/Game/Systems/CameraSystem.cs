@@ -1,10 +1,11 @@
 using System.Collections.Generic;
+using DG.Tweening;
 using Entitas;
 using UnityEngine;
 
 public class CameraSystem : ReactiveSystem<GameEntity>
 {
-    private GameContext _game;
+    private readonly GameContext _game;
     
     public CameraSystem(Contexts contexts) : base(contexts.game)
     {
@@ -19,14 +20,19 @@ public class CameraSystem : ReactiveSystem<GameEntity>
     protected override bool Filter(GameEntity entity)
     {
         return _game.hasCurrentActor &&
-               _game.currentActorEntity.isPlayer;
+               _game.isCamera &&
+               _game.cameraEntity.hasView &&
+               _game.GetCurrentActor().isPlayer &&
+               _game.turnState.value == TurnState.AskAction;
     }
 
     protected override void Execute(List<GameEntity> entities)
     {
-        var player = _game.currentActorEntity;
+        var player = _game.GetCurrentActor();
 
-        Debug.Log("WATAFAK");
-        _game.cameraEntity.view.gameObject.transform.position = new Vector3(player.position.x, 3, player.position.y);
+        _game.cameraEntity.view.gameObject.transform.DOMove(
+            new Vector3(player.position.x, 3f, player.position.y - 3),
+            1f
+        );
     }
 }

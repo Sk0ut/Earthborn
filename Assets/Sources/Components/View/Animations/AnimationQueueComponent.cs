@@ -6,5 +6,5 @@ using Entitas.CodeGeneration.Attributes;
 [Game, Unique]
 public class AnimationQueueComponent : IComponent
 {
-    public Queue<IEnumerator> value;
+    public Queue<GameEntity> value;
 }

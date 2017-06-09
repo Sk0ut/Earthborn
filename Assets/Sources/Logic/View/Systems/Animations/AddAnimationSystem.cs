@@ -1,10 +1,11 @@
 using System.Collections.Generic;
+using System.ComponentModel;
 using Entitas;
 using UnityEngine;
 
 public class AddAnimationSystem : ReactiveSystem<GameEntity>
 {
-    private GameContext _game;
+    private readonly GameContext _game;
     public AddAnimationSystem(Contexts contexts) : base(contexts.game)
     {
         _game = contexts.game;
@@ -24,8 +25,12 @@ public class AddAnimationSystem : ReactiveSystem<GameEntity>
     {
         foreach (var animationEntity in entities)
         {
-            _game.animationQueue.value.Enqueue(animationEntity.animation.value);
-            animationEntity.RemoveAnimation();
+            if (!animationEntity.isImmediate)
+            {
+                _game.animationQueue.value.Enqueue(animationEntity);
+            }
+            
+            _game.isAnimating = true;
         }
     }
 }

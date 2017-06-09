@@ -12,8 +12,8 @@ public class KeyboardInputSystem : IExecuteSystem
     
     public void Execute()
     {
-        var key = Input.inputString;
-        var input = _input.CreateInput();
-        input.AddKeyInput(key, 1.0f);
+        //var key = Input.inputString;
+        //var input = _input.CreateInput();
+        //input.AddKeyInput(key, 1.0f);
     }
 }

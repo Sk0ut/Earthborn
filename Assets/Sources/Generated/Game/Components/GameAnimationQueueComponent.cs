@@ -12,7 +12,7 @@ public partial class GameContext {
     public AnimationQueueComponent animationQueue { get { return animationQueueEntity.animationQueue; } }
     public bool hasAnimationQueue { get { return animationQueueEntity != null; } }
 
-    public GameEntity SetAnimationQueue(System.Collections.Generic.Queue<System.Collections.IEnumerator> newValue) {
+    public GameEntity SetAnimationQueue(System.Collections.Generic.Queue<GameEntity> newValue) {
         if (hasAnimationQueue) {
             throw new Entitas.EntitasException("Could not set AnimationQueue!\n" + this + " already has an entity with AnimationQueueComponent!",
                 "You should check if the context already has a animationQueueEntity before setting it or use context.ReplaceAnimationQueue().");
@@ -22,7 +22,7 @@ public partial class GameContext {
         return entity;
     }
 
-    public void ReplaceAnimationQueue(System.Collections.Generic.Queue<System.Collections.IEnumerator> newValue) {
+    public void ReplaceAnimationQueue(System.Collections.Generic.Queue<GameEntity> newValue) {
         var entity = animationQueueEntity;
         if (entity == null) {
             entity = SetAnimationQueue(newValue);
@@ -49,14 +49,14 @@ public partial class GameEntity {
     public AnimationQueueComponent animationQueue { get { return (AnimationQueueComponent)GetComponent(GameComponentsLookup.AnimationQueue); } }
     public bool hasAnimationQueue { get { return HasComponent(GameComponentsLookup.AnimationQueue); } }
 
-    public void AddAnimationQueue(System.Collections.Generic.Queue<System.Collections.IEnumerator> newValue) {
+    public void AddAnimationQueue(System.Collections.Generic.Queue<GameEntity> newValue) {
         var index = GameComponentsLookup.AnimationQueue;
         var component = CreateComponent<AnimationQueueComponent>(index);
         component.value = newValue;
         AddComponent(index, component);
     }
 
-    public void ReplaceAnimationQueue(System.Collections.Generic.Queue<System.Collections.IEnumerator> newValue) {
+    public void ReplaceAnimationQueue(System.Collections.Generic.Queue<GameEntity> newValue) {
         var index = GameComponentsLookup.AnimationQueue;
         var component = CreateComponent<AnimationQueueComponent>(index);
         component.value = newValue;

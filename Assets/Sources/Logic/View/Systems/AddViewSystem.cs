@@ -38,8 +38,8 @@ public class AddViewSystem : ReactiveSystem<GameEntity>
             }
             catch (Exception ex)
             {
-                Debug.Log("Couldn't instantiate " + e.asset.prefab);
-                Debug.Log(ex);
+                Debug.LogError("Couldn't instantiate " + e.asset.prefab);
+                Debug.LogException(ex);
             }
         }
     }

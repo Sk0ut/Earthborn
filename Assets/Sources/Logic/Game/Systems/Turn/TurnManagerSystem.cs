@@ -31,6 +31,5 @@ public class TurnManagerSystem : ReactiveSystem<GameEntity>
 
         var currentActor = _context.GetCurrentActor();
         _context.ReplaceTurnState(TurnState.StartTurn);
-        Debug.Log("New turn: " + currentActor);
     }
 }

@@ -4,32 +4,38 @@ using UnityEngine;
 
 public class AnimationController : MonoBehaviour
 {
-    private bool _running;
-
-    public bool Running
-    {
-        get { return _running; }
-    }
+    public bool Running { get; private set; }
+    public bool Done { get; private set; }
 
     private void Start()
     {
-        _running = false;
+        Running = false;
+        Done = true;
     }
 
     public void RunAnimations(Queue<IEnumerator> animations)
     {
-        _running = true;
+        if (animations.Count < 1)
+        {
+            Running = false;
+            Done = true;
+            return;
+        }
+
+        Running = true;
+        Done = false;
         StartCoroutine(RunAnimationsCo(animations));
     }
 
     private IEnumerator RunAnimationsCo(Queue<IEnumerator> animations)
     {
-        foreach (var enumerator in animations)
+        var anim = animations.Dequeue();
+        while (anim != null)
         {
-            yield return StartCoroutine(enumerator);
+            yield return StartCoroutine(anim);
+            anim = animations.Count > 0 ? animations.Dequeue() : null;
         }
-        _running = false;
-        animations.Clear();
+        Running = false;
+        Done = true;
     }
-   
 }

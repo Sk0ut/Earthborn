@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Entitas;
+using UnityEngine;
 
 public class MoveActionSystem : ReactiveSystem<GameEntity>
 {
@@ -16,8 +17,7 @@ public class MoveActionSystem : ReactiveSystem<GameEntity>
 
     protected override bool Filter(GameEntity entity)
     {
-        return _context.turnState.value == TurnState.AskAction &&
-               entity.hasMoveAction &&
+        return entity.hasMoveAction &&
                entity.isActor &&
                entity.hasPosition;
     }
@@ -26,6 +26,13 @@ public class MoveActionSystem : ReactiveSystem<GameEntity>
     {
         foreach (var actorEntity in entities)
         {
+            if (!_context.GetCurrentActor().Equals(actorEntity) ||
+                _context.turnState.value != TurnState.AskAction)
+            {
+                actorEntity.RemoveMoveAction();
+                Debug.LogWarning("Cannot do action!");
+                return;
+            }
             var pos = actorEntity.position;
 
             switch (actorEntity.moveAction.value)

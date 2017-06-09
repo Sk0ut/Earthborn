@@ -8,33 +8,36 @@
 //------------------------------------------------------------------------------
 public static class GameComponentsLookup {
 
-    public const int Actor = 0;
-    public const int ActorEnergy = 1;
-    public const int Actors = 2;
-    public const int ActorSpeed = 3;
-    public const int Animating = 4;
-    public const int Animation = 5;
-    public const int AnimationQueue = 6;
-    public const int Asset = 7;
-    public const int Assets = 8;
-    public const int Camera = 9;
-    public const int CurrentActor = 10;
-    public const int Damage = 11;
-    public const int Easing = 12;
-    public const int Globals = 13;
-    public const int Health = 14;
-    public const int MoveAction = 15;
-    public const int Player = 16;
-    public const int Position = 17;
-    public const int Tile = 18;
-    public const int TileMap = 19;
-    public const int TurnState = 20;
-    public const int Tweening = 21;
-    public const int View = 22;
+    public const int Action = 0;
+    public const int Actor = 1;
+    public const int ActorEnergy = 2;
+    public const int Actors = 3;
+    public const int ActorSpeed = 4;
+    public const int Animating = 5;
+    public const int Animation = 6;
+    public const int AnimationQueue = 7;
+    public const int Asset = 8;
+    public const int Assets = 9;
+    public const int Camera = 10;
+    public const int CurrentActor = 11;
+    public const int Damage = 12;
+    public const int Easing = 13;
+    public const int Globals = 14;
+    public const int Health = 15;
+    public const int Immediate = 16;
+    public const int MoveAction = 17;
+    public const int Player = 18;
+    public const int Position = 19;
+    public const int Tile = 20;
+    public const int TileMap = 21;
+    public const int TurnState = 22;
+    public const int Tweening = 23;
+    public const int View = 24;
 
-    public const int TotalComponents = 23;
+    public const int TotalComponents = 25;
 
     public static readonly string[] componentNames = {
+        "Action",
         "Actor",
         "ActorEnergy",
         "Actors",
@@ -50,6 +53,7 @@ public static class GameComponentsLookup {
         "Easing",
         "Globals",
         "Health",
+        "Immediate",
         "MoveAction",
         "Player",
         "Position",
@@ -61,6 +65,7 @@ public static class GameComponentsLookup {
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(ActionComponent),
         typeof(ActorComponent),
         typeof(ActorEnergyComponent),
         typeof(ActorsComponent),
@@ -76,6 +81,7 @@ public static class GameComponentsLookup {
         typeof(EasingComponent),
         typeof(GlobalsComponent),
         typeof(HealthComponent),
+        typeof(Immediate),
         typeof(MoveActionComponent),
         typeof(PlayerComponent),
         typeof(PositionComponent),

@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using Entitas;
 using UnityEngine;
 
-public class AnimationSystem : IInitializeSystem, IExecuteSystem, ICleanupSystem, ITearDownSystem
+public class AnimationSystem : IInitializeSystem, IExecuteSystem, ICleanupSystem
 {
     private GameContext _game;
-    private Queue<IEnumerator> _animations;
-    private IEnumerator _current;
-    private GameObject _controllerObject;
-    private AnimationController _controller;
+    private Queue<GameEntity> _animations;
+    private GameEntity _current;
+    private IGroup<GameEntity> _immediate;
+    private IGroup<GameEntity> _all;
     
     public AnimationSystem(Contexts contexts)
     {
@@ -19,30 +19,54 @@ public class AnimationSystem : IInitializeSystem, IExecuteSystem, ICleanupSystem
     public void Initialize()
     {
         _game.isAnimating = false;
-        _game.SetAnimationQueue(new Queue<IEnumerator>());
+        _game.SetAnimationQueue(new Queue<GameEntity>());
         _animations = _game.animationQueue.value;
-        _controllerObject = new GameObject("Animation Controller", typeof(AnimationController));
-        _controller = _controllerObject.GetComponent<AnimationController>();
+        _immediate = _game.GetGroup(GameMatcher.AllOf(
+            GameMatcher.Animation,
+            GameMatcher.Immediate
+        ));
+        _all = _game.GetGroup(GameMatcher.Animation);
     }
 
     public void Execute()
     {
-        if (!_controller.Running && _animations.Count > 1)
+        if (_current != null)
         {
-            _controller.RunAnimations(_animations);
-            _game.isAnimating = true;
+            if (!PlayAnimation(_current))
+            {
+                _current = null;
+            }
         }
+        if (_current == null)
+        {
+            _current = _animations.Count > 0 ? _animations.Dequeue() : null;
+
+            if (_current != null)
+            {
+                //Debug.Log("Animation started");
+            }
+        }
+
+        foreach (var immediate in _immediate.GetEntities())
+        {
+            PlayAnimation(immediate);
+        }
+
+        _game.isAnimating = _all.count > 0;
     }
 
     public void Cleanup()
     {
-        if (!_controller.Running) _game.isAnimating = false;
     }
 
-    public void TearDown()
+    private bool PlayAnimation(GameEntity animationEntity)
     {
-        Object.Destroy(_controllerObject);
-        _controllerObject = null;
-        _controller = null;
+        if (!animationEntity.animation.value.MoveNext())
+        {
+            //Debug.Log("Animation finished");
+            animationEntity.Destroy();
+            return false;
+        }
+        return true;
     }
 }

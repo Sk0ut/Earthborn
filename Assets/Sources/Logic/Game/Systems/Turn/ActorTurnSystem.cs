@@ -33,7 +33,6 @@ public class ActorTurnSystem : ReactiveSystem<GameEntity>
             return;
         }
 
-        Debug.Log("Actor " + entity + " can now act");
         _context.ReplaceTurnState(TurnState.AskAction);
     }
 }

@@ -20,6 +20,5 @@ public class InitializeGameSystem : IInitializeSystem
 		var player = _context.CreatePlayer(new UnityEngine.Vector2 (3, 3));
         
 		var player2 = _context.CreatePlayer(new UnityEngine.Vector2 (5, 3));
-        player2.isPlayer = false;
     }
 }

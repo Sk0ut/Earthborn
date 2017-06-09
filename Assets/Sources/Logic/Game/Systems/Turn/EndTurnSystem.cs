@@ -1,31 +1,48 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using Entitas;
+using UniRx.Examples;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
 
-public class EndTurnSystem : ReactiveSystem<GameEntity>
+public class EndTurnSystem : ICleanupSystem
 {
     private readonly GameContext _context;
+    private Stopwatch _stopwatch;
 
-    public EndTurnSystem(Contexts contexts) : base(contexts.game)
+    public EndTurnSystem(Contexts contexts)
     {
         _context = contexts.game;
+        _stopwatch = new Stopwatch();
     }
 
-    protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
+    public void Cleanup()
     {
-        return context.CreateCollector(GameMatcher.TurnState);
-    }
+        if (_context.turnState.value != TurnState.EndTurn)
+            return;
 
-    protected override bool Filter(GameEntity entity)
-    {
-        return _context.turnState.value == TurnState.EndTurn;
-    }
-
-    protected override void Execute(List<GameEntity> entities)
-    {
+        if (_context.isAnimating) return;
         var current = _context.currentActor.value;
-        
         _context.ReplaceCurrentActor(current.Next ?? current.List.First);
-        Debug.Log("Actor " + current.Value + " has finished his turn");
+        _context.ReplaceTurnState(TurnState.StartTurn);
+
+        /*if (!_stopwatch.IsRunning)
+        {
+            _stopwatch.Reset();
+            _stopwatch.Start();
+            Debug.Log("End turn start");
+        }
+
+        Debug.Log(_stopwatch.ElapsedMilliseconds);
+        if (_stopwatch.ElapsedMilliseconds >= 1000)
+        {
+            _stopwatch.Stop();
+            Debug.LogError("END turn end");
+            var current = _context.currentActor.value;
+            _context.ReplaceCurrentActor(current.Next ?? current.List.First);
+            Debug.Log("Actor " + current.Value + " has finished his turn");
+            _context.ReplaceTurnState(TurnState.StartTurn);
+        }*/
     }
 }

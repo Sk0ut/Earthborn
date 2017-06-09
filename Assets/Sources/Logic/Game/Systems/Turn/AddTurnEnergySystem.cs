@@ -28,6 +28,5 @@ public class AddTurnEnergySystem : ReactiveSystem<GameEntity>
 
         var speed = entity.hasActorSpeed ? entity.actorSpeed.speed : 0.5f;
         entity.ReplaceActorEnergy(entity.actorEnergy.energy + speed);
-        Debug.Log("Actor " + entity + " has gained " + speed + " energy");
     }
 }
