@@ -11,6 +11,7 @@ public class InitializeGameSystem : IInitializeSystem
 
     public void Initialize()
     {
+        _context.SetTurnState(TurnState.Waiting);
         var camera = _context.CreateEntity();
         camera.isCamera = true;
         camera.AddAsset(_context.assets.value.Camera);

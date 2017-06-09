@@ -22,6 +22,6 @@
         // Actions
         Add(new MoveActionSystem(contexts));
 
-        Add(new EndTurnCleanupSystem(contexts));
+        Add(new EndTurnSystem(contexts));
     }
 }

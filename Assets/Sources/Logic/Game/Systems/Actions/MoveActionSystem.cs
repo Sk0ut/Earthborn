@@ -3,8 +3,10 @@ using Entitas;
 
 public class MoveActionSystem : ReactiveSystem<GameEntity>
 {
+    private readonly GameContext _context;
     public MoveActionSystem(Contexts contexts) : base(contexts.game)
     {
+        _context = contexts.game;
     }
 
     protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
@@ -14,10 +16,9 @@ public class MoveActionSystem : ReactiveSystem<GameEntity>
 
     protected override bool Filter(GameEntity entity)
     {
-        return entity.hasMoveAction &&
+        return _context.turnState.value == TurnState.AskAction &&
+               entity.hasMoveAction &&
                entity.isActor &&
-               entity.hasActorState &&
-               entity.actorState.value == ActorState.ACTING &&
                entity.hasPosition;
     }
 
@@ -42,9 +43,9 @@ public class MoveActionSystem : ReactiveSystem<GameEntity>
                     actorEntity.ReplacePosition(pos.x + 1, pos.y);
                     break;
             }
-            
+
             actorEntity.ReplaceActorEnergy(actorEntity.actorEnergy.energy - 1f);
-            actorEntity.ReplaceActorState(ActorState.ACTED);
+            _context.ReplaceTurnState(TurnState.EndTurn);
             actorEntity.RemoveMoveAction();
         }
     }

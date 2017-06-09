@@ -5,35 +5,35 @@ using UnityEngine;
 public class ActorTurnSystem : ReactiveSystem<GameEntity>
 {
     private readonly float _threshold;
-    
+    private readonly GameContext _context;
+
     public ActorTurnSystem(Contexts contexts) : base(contexts.game)
     {
+        _context = contexts.game;
         _threshold = contexts.game.globals.value.EnergyThreshold;
     }
 
     protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
     {
-        return context.CreateCollector(GameMatcher.ActorState);
+        return context.CreateCollector(GameMatcher.TurnState);
     }
 
     protected override bool Filter(GameEntity entity)
     {
-        return entity.isActor
-               && entity.actorState.value == ActorState.TURN;
+        return _context.turnState.value == TurnState.StartTurn;
     }
 
     protected override void Execute(List<GameEntity> entities)
     {
-        foreach (var entity in entities)
+        var entity = _context.GetCurrentActor();
+
+        if (entity.hasActorEnergy && entity.actorEnergy.energy < _threshold)
         {
-            if (entity.hasActorEnergy && entity.actorEnergy.energy < _threshold)
-            {
-                entity.ReplaceActorState(ActorState.ACTED);
-                continue;
-            }
-            
-            Debug.Log("Actor " + entity + " can now act");
-            entity.ReplaceActorState(ActorState.ACTING);
+            _context.ReplaceTurnState(TurnState.EndTurn);
+            return;
         }
+
+        Debug.Log("Actor " + entity + " can now act");
+        _context.ReplaceTurnState(TurnState.AskAction);
     }
 }

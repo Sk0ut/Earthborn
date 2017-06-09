@@ -12,23 +12,23 @@ public static class GameComponentsLookup {
     public const int ActorEnergy = 1;
     public const int Actors = 2;
     public const int ActorSpeed = 3;
-    public const int ActorState = 4;
-    public const int Animating = 5;
-    public const int Animation = 6;
-    public const int AnimationQueue = 7;
-    public const int Asset = 8;
-    public const int Assets = 9;
-    public const int Camera = 10;
-    public const int CurrentActor = 11;
-    public const int Damage = 12;
-    public const int Easing = 13;
-    public const int Globals = 14;
-    public const int Health = 15;
-    public const int MoveAction = 16;
-    public const int Player = 17;
-    public const int Position = 18;
-    public const int Tile = 19;
-    public const int TileMap = 20;
+    public const int Animating = 4;
+    public const int Animation = 5;
+    public const int AnimationQueue = 6;
+    public const int Asset = 7;
+    public const int Assets = 8;
+    public const int Camera = 9;
+    public const int CurrentActor = 10;
+    public const int Damage = 11;
+    public const int Easing = 12;
+    public const int Globals = 13;
+    public const int Health = 14;
+    public const int MoveAction = 15;
+    public const int Player = 16;
+    public const int Position = 17;
+    public const int Tile = 18;
+    public const int TileMap = 19;
+    public const int TurnState = 20;
     public const int Tweening = 21;
     public const int View = 22;
 
@@ -39,7 +39,6 @@ public static class GameComponentsLookup {
         "ActorEnergy",
         "Actors",
         "ActorSpeed",
-        "ActorState",
         "Animating",
         "Animation",
         "AnimationQueue",
@@ -56,6 +55,7 @@ public static class GameComponentsLookup {
         "Position",
         "Tile",
         "TileMap",
+        "TurnState",
         "Tweening",
         "View"
     };
@@ -65,7 +65,6 @@ public static class GameComponentsLookup {
         typeof(ActorEnergyComponent),
         typeof(ActorsComponent),
         typeof(ActorSpeedComponent),
-        typeof(ActorStateComponent),
         typeof(AnimatingComponent),
         typeof(AnimationComponent),
         typeof(AnimationQueueComponent),
@@ -82,6 +81,7 @@ public static class GameComponentsLookup {
         typeof(PositionComponent),
         typeof(TileComponent),
         typeof(TileMapComponent),
+        typeof(TurnStateComponent),
         typeof(TweeningComponent),
         typeof(ViewComponent)
     };

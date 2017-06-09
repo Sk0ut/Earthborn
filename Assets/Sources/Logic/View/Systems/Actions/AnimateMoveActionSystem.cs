@@ -12,16 +12,14 @@ public class AnimateMoveActionSystem : ReactiveSystem<GameEntity>
 
     protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
     {
-        return context.CreateCollector(GameMatcher.Position);
+        return context.CreateCollector(GameMatcher.Position.Added(), GameMatcher.MoveAction.Removed());
     }
 
     protected override bool Filter(GameEntity entity)
     {
         return entity.hasPosition &&
                entity.hasAsset &&
-               entity.hasEasing &&
-               entity.hasActorState &&
-               entity.actorState.value == ActorState.ACTED;
+               entity.hasEasing;
     }
 
     protected override void Execute(List<GameEntity> entities)
@@ -34,8 +32,10 @@ public class AnimateMoveActionSystem : ReactiveSystem<GameEntity>
                 new Vector3(pos.x, transform.position.y, pos.y),
                 e.easing.duration
             ).SetEase(Ease.Linear).Pause();
-            
-            e.AddAnimation(CreateAnimation(tween));
+
+            tween.Play();
+
+            //e.AddAnimation(CreateAnimation(tween));
         }
     }
 

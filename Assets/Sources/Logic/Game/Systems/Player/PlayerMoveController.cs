@@ -3,14 +3,15 @@ using Entitas;
 
 public class PlayerMoveController : ReactiveSystem<InputEntity>
 {
-    private IGroup<GameEntity> _players;
+    private readonly IGroup<GameEntity> _players;
+    private readonly GameContext _game;
 
     public PlayerMoveController(Contexts contexts) : base(contexts.input)
     {
+        _game = contexts.game;
         _players = contexts.game.GetGroup(GameMatcher.AllOf(
             GameMatcher.Player,
-            GameMatcher.Actor,
-            GameMatcher.ActorState
+            GameMatcher.Actor
         ));
     }
 
@@ -21,7 +22,8 @@ public class PlayerMoveController : ReactiveSystem<InputEntity>
 
     protected override bool Filter(InputEntity entity)
     {
-        return entity.hasMove;
+        return _game.turnState.value == TurnState.AskAction &&
+               entity.hasMove;
     }
 
     protected override void Execute(List<InputEntity> entities)
@@ -30,8 +32,8 @@ public class PlayerMoveController : ReactiveSystem<InputEntity>
         {
             foreach (var player in _players.GetEntities())
             {
-                if (player.hasMoveAction ||
-                    player.actorState.value != ActorState.ACTING) continue;
+                if (!player.Equals(_game.GetCurrentActor()) ||
+                    player.hasMoveAction) continue;
 
                 player.AddMoveAction(moveInput.move.value);
             }

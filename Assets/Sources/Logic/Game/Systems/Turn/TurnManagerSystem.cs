@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TurnManagerSystem : ReactiveSystem<GameEntity>
 {
-    private GameContext _context;
+    private readonly GameContext _context;
 
     public TurnManagerSystem(Contexts contexts) : base(contexts.game)
     {
@@ -13,7 +13,7 @@ public class TurnManagerSystem : ReactiveSystem<GameEntity>
 
     protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
     {
-        return context.CreateCollector(GameMatcher.CurrentActor);
+        return context.CreateCollector(GameMatcher.CurrentActor.AddedOrRemoved());
     }
 
     protected override bool Filter(GameEntity entity)
@@ -23,16 +23,14 @@ public class TurnManagerSystem : ReactiveSystem<GameEntity>
 
     protected override void Execute(List<GameEntity> entities)
     {
-        var current = _context.currentActor.value;
-        var currentActor = current.Value;
-        if (currentActor != null)
+        if (!_context.hasCurrentActor)
         {
-            currentActor.ReplaceActorState(ActorState.TURN);
-            Debug.Log("New turn: " + currentActor);
+            _context.ReplaceTurnState(TurnState.Waiting);
+            return;
         }
-        else
-        {
-            _context.ReplaceCurrentActor(current.Next ?? current.List.First);
-        }
+
+        var currentActor = _context.GetCurrentActor();
+        _context.ReplaceTurnState(TurnState.StartTurn);
+        Debug.Log("New turn: " + currentActor);
     }
 }
