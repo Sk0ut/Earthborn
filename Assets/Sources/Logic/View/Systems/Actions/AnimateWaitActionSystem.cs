@@ -41,7 +41,7 @@ public class AnimateWaitActionSystem : ReactiveSystem<GameEntity>
             var jumpSeq = DOTween.Sequence();
 
             var jumpUp = transform.DOMove(
-                new Vector3(pos.x, pos.y + 0.5f, pos.z),
+                new Vector3(pos.x, pos.y + 0.25f, pos.z),
                 0.5f
             ).SetEase(Ease.OutCubic);
 

@@ -3,6 +3,7 @@ using Entitas;
 public enum Event
 {
     ActorWaited,
+    ActorWalked,
 }
 
 [Game]
