@@ -27,19 +27,20 @@ public static class GameComponentsLookup {
     public const int Globals = 16;
     public const int Health = 17;
     public const int Immediate = 18;
-    public const int MaxHealth = 19;
-    public const int MoveAction = 20;
-    public const int Player = 21;
-    public const int Position = 22;
-    public const int Target = 23;
-    public const int Tile = 24;
-    public const int TileMap = 25;
-    public const int TurnState = 26;
-    public const int Tweening = 27;
-    public const int View = 28;
-    public const int WaitAction = 29;
+    public const int LightSource = 19;
+    public const int MaxHealth = 20;
+    public const int MoveAction = 21;
+    public const int Player = 22;
+    public const int Position = 23;
+    public const int Target = 24;
+    public const int Tile = 25;
+    public const int TileMap = 26;
+    public const int TurnState = 27;
+    public const int Tweening = 28;
+    public const int View = 29;
+    public const int WaitAction = 30;
 
-    public const int TotalComponents = 30;
+    public const int TotalComponents = 31;
 
     public static readonly string[] componentNames = {
         "Action",
@@ -61,6 +62,7 @@ public static class GameComponentsLookup {
         "Globals",
         "Health",
         "Immediate",
+        "LightSource",
         "MaxHealth",
         "MoveAction",
         "Player",
@@ -94,6 +96,7 @@ public static class GameComponentsLookup {
         typeof(GlobalsComponent),
         typeof(HealthComponent),
         typeof(Immediate),
+        typeof(LightSourceComponent),
         typeof(MaxHealthComponent),
         typeof(MoveActionComponent),
         typeof(PlayerComponent),
