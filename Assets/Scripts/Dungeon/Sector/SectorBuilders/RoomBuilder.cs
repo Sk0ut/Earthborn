@@ -6,7 +6,7 @@ public class RoomBuilder : ISectorBuilder
 
 	public void build(TileMap tilemap, Vector2 start, Vector2 size, out Vector2[] exits)
 	{
-		throw new System.NotImplementedException();
+		throw new System.NotImplementedException ();
 	}
 }
 
