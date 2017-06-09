@@ -51,6 +51,10 @@ public class MoveActionSystem : ReactiveSystem<GameEntity>
 
             target.ReplaceActorEnergy(target.actorEnergy.energy - 1f);
             _context.ReplaceTurnState(TurnState.EndTurn);
+            var ev = _context.CreateEvent(Event.ActorWalked);
+            ev.AddTarget(target);
+            ev.AddMoveAction(action.moveAction.value);
+            
             // Handled
             action.Destroy();
         }

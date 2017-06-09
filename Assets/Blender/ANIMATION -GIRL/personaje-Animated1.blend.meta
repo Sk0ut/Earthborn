@@ -3,7 +3,7 @@ guid: 33c39632c8177034891cd77b0bc59bc1
 timeCreated: 1496757437
 licenseType: Free
 ModelImporter:
-  serializedVersion: 19
+  serializedVersion: 21
   fileIDToRecycleName:
     100000: Armature
     100002: Arms_001
@@ -109,142 +109,30 @@ ModelImporter:
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
-    rigImportErrors: 
+    rigImportErrors: "Invalid Avatar Rig Configuration. Missing or invalid transform:\n\tRequired
+      human bone 'RightUpperLeg' not found\n"
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
+    extraUserProperties: []
     clipAnimations:
-    - serializedVersion: 16
-      name: Default Take
-      takeName: Default Take
-      firstFrame: 0
-      lastFrame: 23
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask:
-      - path: 
-        weight: 1
-      - path: Armature
-        weight: 1
-      - path: Armature/Bone
-        weight: 1
-      - path: Armature/Bone/center
-        weight: 1
-      - path: Armature/Bone/center/chest
-        weight: 1
-      - path: Armature/Bone/center/chest/neck
-        weight: 1
-      - path: Armature/Bone/center/chest/neck/head
-        weight: 1
-      - path: Armature/Bone/center/showlderL
-        weight: 1
-      - path: Armature/Bone/center/showlderL/Upper_arm_L
-        weight: 1
-      - path: Armature/Bone/center/showlderL/Upper_arm_L/Lower_arm_L
-        weight: 1
-      - path: Armature/Bone/center/showlderL/Upper_arm_L/Lower_arm_L/up_anular_L
-        weight: 1
-      - path: Armature/Bone/center/showlderL/Upper_arm_L/Lower_arm_L/up_anular_L/low_anular_L
-        weight: 1
-      - path: Armature/Bone/center/showlderL/Upper_arm_L/Lower_arm_L/up_corazon_L
-        weight: 1
-      - path: Armature/Bone/center/showlderL/Upper_arm_L/Lower_arm_L/up_corazon_L/low_corazon_L
-        weight: 1
-      - path: Armature/Bone/center/showlderL/Upper_arm_L/Lower_arm_L/up_indice_L
-        weight: 1
-      - path: Armature/Bone/center/showlderL/Upper_arm_L/Lower_arm_L/up_indice_L/low_indice_L
-        weight: 1
-      - path: Armature/Bone/center/showlderL/Upper_arm_L/Lower_arm_L/up_me_iqueL
-        weight: 1
-      - path: Armature/Bone/center/showlderL/Upper_arm_L/Lower_arm_L/up_me_iqueL/low_me_ique_L
-        weight: 1
-      - path: Armature/Bone/center/showlderL/Upper_arm_L/Lower_arm_L/up_pulgar_L
-        weight: 1
-      - path: Armature/Bone/center/showlderL/Upper_arm_L/Lower_arm_L/up_pulgar_L/low_pulgar_L
-        weight: 1
-      - path: Armature/Bone/center/showlderL_002
-        weight: 1
-      - path: Armature/Bone/center/showlderL_002/Upper_arm_R
-        weight: 1
-      - path: Armature/Bone/center/showlderL_002/Upper_arm_R/Lower_arm_R
-        weight: 1
-      - path: Armature/Bone/center/showlderL_002/Upper_arm_R/Lower_arm_R/up_anular_R
-        weight: 1
-      - path: Armature/Bone/center/showlderL_002/Upper_arm_R/Lower_arm_R/up_anular_R/low_anular_R
-        weight: 1
-      - path: Armature/Bone/center/showlderL_002/Upper_arm_R/Lower_arm_R/up_corazon_R
-        weight: 1
-      - path: Armature/Bone/center/showlderL_002/Upper_arm_R/Lower_arm_R/up_corazon_R/low_corazon_R
-        weight: 1
-      - path: Armature/Bone/center/showlderL_002/Upper_arm_R/Lower_arm_R/up_indice_R
-        weight: 1
-      - path: Armature/Bone/center/showlderL_002/Upper_arm_R/Lower_arm_R/up_indice_R/low_indice_R
-        weight: 1
-      - path: Armature/Bone/center/showlderL_002/Upper_arm_R/Lower_arm_R/up_me_iqueL_002
-        weight: 1
-      - path: Armature/Bone/center/showlderL_002/Upper_arm_R/Lower_arm_R/up_me_iqueL_002/low_me_ique_R
-        weight: 1
-      - path: Armature/Bone/center/showlderL_002/Upper_arm_R/Lower_arm_R/up_pulgar_R
-        weight: 1
-      - path: Armature/Bone/center/showlderL_002/Upper_arm_R/Lower_arm_R/up_pulgar_R/low_pulgar_R
-        weight: 1
-      - path: Armature/Bone/center/upper_leg_L
-        weight: 1
-      - path: Armature/Bone/center/upper_leg_L/low_leg_L
-        weight: 1
-      - path: Armature/Bone/center/upper_leg_R
-        weight: 1
-      - path: Armature/Bone/center/upper_leg_R/low_leg_R
-        weight: 1
-      - path: Armature/Bone/foot_MG_L
-        weight: 1
-      - path: Armature/Bone/foot_MG_L/foot_L
-        weight: 1
-      - path: Armature/Bone/foot_MG_R
-        weight: 1
-      - path: Armature/Bone/foot_MG_R/foot_R
-        weight: 1
-      - path: Arms_001
-        weight: 1
-      - path: Sphere
-        weight: 1
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: ArmatureAction
       takeName: ArmatureAction
       firstFrame: -1
-      lastFrame: 32
+      lastFrame: 116
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
-      cycleOffset: 0
+      cycleOffset: 20
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 0
@@ -356,7 +244,10 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    importVisibility: 0
     importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -372,6 +263,7 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
+    normalCalculationMode: 0
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
@@ -388,7 +280,7 @@ ModelImporter:
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2

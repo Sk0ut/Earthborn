@@ -8,6 +8,7 @@ using UnityEngine;
 public class AnimateMoveActionSystem : ReactiveSystem<GameEntity>
 {
     private readonly GameContext _game;
+
     public AnimateMoveActionSystem(Contexts contexts) : base(contexts.game)
     {
         _game = contexts.game;
@@ -15,31 +16,35 @@ public class AnimateMoveActionSystem : ReactiveSystem<GameEntity>
 
     protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
     {
-        return context.CreateCollector(GameMatcher.AllOf(
-            GameMatcher.Position
-        ));
+        return context.CreateCollector(GameMatcher.EventType);
     }
 
     protected override bool Filter(GameEntity entity)
     {
-        return entity.hasPosition &&
-               entity.hasAsset &&
-               entity.hasEasing;
+        return entity.hasEventType &&
+               entity.eventType.value == Event.ActorWalked &&
+               entity.hasTarget &&
+               entity.target.value.hasView;
     }
 
     protected override void Execute(List<GameEntity> entities)
     {
-        foreach (var e in entities)
+        foreach (var ev in entities)
         {
-            var pos = e.position;
-            var transform = e.view.gameObject.transform;
+            var target = ev.target.value;
+
+            var pos = target.position;
+            var transform = target.view.gameObject.transform;
             var tween = transform.DOMove(
                 new Vector3(pos.x, transform.position.y, pos.y),
-                e.easing.duration
+                target.easing.duration
             ).SetEase(Ease.Linear).Pause();
 
             var animation = _game.CreateEntity();
             animation.AddAnimation(CreateAnimation(tween));
+
+            // Handled
+            ev.Destroy();
         }
     }
 
