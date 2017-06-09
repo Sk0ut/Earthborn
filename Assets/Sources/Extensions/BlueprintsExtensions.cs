@@ -22,6 +22,7 @@ public static class BlueprintsExtensions
 		var entity = context.CreateActor (0.5f, 0f);
 		entity.isPlayer = true;
 		entity.AddHealth(context.globals.value.PlayerHealth);
+		entity.AddMaxHealth (context.globals.value.PlayerHealth);
 		entity.AddAsset(context.assets.value.Player);
 		entity.AddPosition((int)position.x, (int)position.y);
 		entity.AddEasing(0.5f);

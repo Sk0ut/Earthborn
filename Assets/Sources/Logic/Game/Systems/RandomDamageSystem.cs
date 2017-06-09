@@ -2,7 +2,7 @@
 using UnityEngine;
 using Entitas;
 
-public class RandomDamageSystem	:  IExecuteSystem{
+public class RandomDamageSystem	:  IExecuteSystem {
 
 	private readonly GameContext _context;
 	private IGroup<GameEntity> group;
@@ -20,7 +20,7 @@ public class RandomDamageSystem	:  IExecuteSystem{
 
 		if (rnd.NextDouble () > 0.90f) {
 			foreach (var e in group.GetEntities()) {
-				e.ReplaceHealth(e.health.value-1);
+				e.health.value = e.health.value - 1;
 			}
 			Debug.Log ("Health decremented");
 		}
