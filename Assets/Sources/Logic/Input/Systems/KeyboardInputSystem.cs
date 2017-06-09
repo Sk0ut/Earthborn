@@ -1,3 +1,4 @@
+using System;
 using Entitas;
 using UnityEngine;
 
@@ -12,8 +13,14 @@ public class KeyboardInputSystem : IExecuteSystem
     
     public void Execute()
     {
-        //var key = Input.inputString;
-        //var input = _input.CreateInput();
-        //input.AddKeyInput(key, 1.0f);
+        foreach(KeyCode kcode in Enum.GetValues(typeof(KeyCode)))
+        {
+            if (Input.GetKeyDown(kcode))
+            {
+                //Debug.Log("KeyCode down: " + kcode);
+                var input = _input.CreateInput();
+                input.AddKeyInput(kcode, 1.0f);
+            }
+        }
     }
 }

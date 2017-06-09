@@ -15,8 +15,9 @@ public static class InputComponentsLookup {
     public const int KeyInput = 4;
     public const int MouseInput = 5;
     public const int Move = 6;
+    public const int WaitCommand = 7;
 
-    public const int TotalComponents = 7;
+    public const int TotalComponents = 8;
 
     public static readonly string[] componentNames = {
         "AxisInput",
@@ -25,7 +26,8 @@ public static class InputComponentsLookup {
         "Input",
         "KeyInput",
         "MouseInput",
-        "Move"
+        "Move",
+        "WaitCommand"
     };
 
     public static readonly System.Type[] componentTypes = {
@@ -35,6 +37,7 @@ public static class InputComponentsLookup {
         typeof(InputComponent),
         typeof(KeyInputComponent),
         typeof(MouseInputComponent),
-        typeof(MoveComponent)
+        typeof(MoveComponent),
+        typeof(WaitCommandComponent)
     };
 }

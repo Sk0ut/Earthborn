@@ -39,14 +39,23 @@ public static class BlueprintsExtensions
 		return entity;
 	}
 	
-	public static GameEntity CreateAction(this GameContext context)
+	public static GameEntity CreateAction(this GameContext context, GameEntity target)
 	{
 		var action = context.CreateEntity();
 		action.isAction = true;
-		
+		action.AddTarget(target);
 		return action;
 	}
 	
+	public static GameEntity CreateEvent(this GameContext context, Event eventType)
+	{
+		var ev = context.CreateEntity();
+		ev.AddEventType(eventType);
+		return ev;
+	}
+	
+	
+	// Input
 	public static InputEntity CreateInput(this InputContext context)
 	{
 		var input = context.CreateEntity();

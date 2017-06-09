@@ -9,6 +9,7 @@
         Add(new SetViewPositionSystem(contexts));
         
         Add(new AnimateMoveActionSystem(contexts));
+        Add(new AnimateWaitActionSystem(contexts));
         
         Add(new AddAnimationSystem(contexts));
         Add(new AnimationSystem(contexts));

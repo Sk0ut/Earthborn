@@ -11,7 +11,7 @@ public partial class InputEntity {
     public KeyInputComponent keyInput { get { return (KeyInputComponent)GetComponent(InputComponentsLookup.KeyInput); } }
     public bool hasKeyInput { get { return HasComponent(InputComponentsLookup.KeyInput); } }
 
-    public void AddKeyInput(string newKey, float newValue) {
+    public void AddKeyInput(UnityEngine.KeyCode newKey, float newValue) {
         var index = InputComponentsLookup.KeyInput;
         var component = CreateComponent<KeyInputComponent>(index);
         component.key = newKey;
@@ -19,7 +19,7 @@ public partial class InputEntity {
         AddComponent(index, component);
     }
 
-    public void ReplaceKeyInput(string newKey, float newValue) {
+    public void ReplaceKeyInput(UnityEngine.KeyCode newKey, float newValue) {
         var index = InputComponentsLookup.KeyInput;
         var component = CreateComponent<KeyInputComponent>(index);
         component.key = newKey;

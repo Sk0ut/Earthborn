@@ -10,6 +10,7 @@
         
         Add(new AddTurnEnergySystem(contexts));
         Add(new ActorTurnSystem(contexts));
+        Add(new EndTurnSystem(contexts));
         
         Add(new CameraSystem(contexts));
         
@@ -18,10 +19,16 @@
 
         // Player controllers
         Add(new PlayerMoveController(contexts));
+        Add(new PlayerWaitController(contexts));
         
         // Actions
+        Add(new ActionManagerSystem(contexts));
+        Add(new ActionCleanupSystem(contexts));
+        
         Add(new MoveActionSystem(contexts));
-
-        Add(new EndTurnSystem(contexts));
+        Add(new WaitActionSystem(contexts));
+        
+        // Events
+        Add(new EventCleanupSystem(contexts));
     }
 }

@@ -22,19 +22,22 @@ public static class GameComponentsLookup {
     public const int CurrentActor = 11;
     public const int Damage = 12;
     public const int Easing = 13;
-    public const int Globals = 14;
-    public const int Health = 15;
-    public const int Immediate = 16;
-    public const int MoveAction = 17;
-    public const int Player = 18;
-    public const int Position = 19;
-    public const int Tile = 20;
-    public const int TileMap = 21;
-    public const int TurnState = 22;
-    public const int Tweening = 23;
-    public const int View = 24;
+    public const int EventType = 14;
+    public const int Globals = 15;
+    public const int Health = 16;
+    public const int Immediate = 17;
+    public const int MoveAction = 18;
+    public const int Player = 19;
+    public const int Position = 20;
+    public const int Target = 21;
+    public const int Tile = 22;
+    public const int TileMap = 23;
+    public const int TurnState = 24;
+    public const int Tweening = 25;
+    public const int View = 26;
+    public const int WaitAction = 27;
 
-    public const int TotalComponents = 25;
+    public const int TotalComponents = 28;
 
     public static readonly string[] componentNames = {
         "Action",
@@ -51,17 +54,20 @@ public static class GameComponentsLookup {
         "CurrentActor",
         "Damage",
         "Easing",
+        "EventType",
         "Globals",
         "Health",
         "Immediate",
         "MoveAction",
         "Player",
         "Position",
+        "Target",
         "Tile",
         "TileMap",
         "TurnState",
         "Tweening",
-        "View"
+        "View",
+        "WaitAction"
     };
 
     public static readonly System.Type[] componentTypes = {
@@ -79,16 +85,19 @@ public static class GameComponentsLookup {
         typeof(CurrentActorComponent),
         typeof(DamageComponent),
         typeof(EasingComponent),
+        typeof(EventTypeComponent),
         typeof(GlobalsComponent),
         typeof(HealthComponent),
         typeof(Immediate),
         typeof(MoveActionComponent),
         typeof(PlayerComponent),
         typeof(PositionComponent),
+        typeof(TargetComponent),
         typeof(TileComponent),
         typeof(TileMapComponent),
         typeof(TurnStateComponent),
         typeof(TweeningComponent),
-        typeof(ViewComponent)
+        typeof(ViewComponent),
+        typeof(WaitActionComponent)
     };
 }

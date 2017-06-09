@@ -2,12 +2,12 @@ using System.Collections.Generic;
 using Entitas;
 using UnityEngine;
 
-public class PlayerMoveController : ReactiveSystem<InputEntity>
+public class PlayerWaitController : ReactiveSystem<InputEntity>
 {
     private readonly IGroup<GameEntity> _players;
     private readonly GameContext _game;
 
-    public PlayerMoveController(Contexts contexts) : base(contexts.input)
+    public PlayerWaitController(Contexts contexts) : base(contexts.input)
     {
         _game = contexts.game;
         _players = contexts.game.GetGroup(GameMatcher.AllOf(
@@ -18,12 +18,12 @@ public class PlayerMoveController : ReactiveSystem<InputEntity>
 
     protected override ICollector<InputEntity> GetTrigger(IContext<InputEntity> context)
     {
-        return context.CreateCollector(InputMatcher.Move);
+        return context.CreateCollector(InputMatcher.WaitCommand);
     }
 
     protected override bool Filter(InputEntity entity)
     {
-        return entity.hasMove;
+        return entity.isWaitCommand;
     }
 
     protected override void Execute(List<InputEntity> entities)
@@ -32,7 +32,7 @@ public class PlayerMoveController : ReactiveSystem<InputEntity>
         foreach (var player in _players.GetEntities())
         {
             var action = _game.CreateAction(player);
-            action.AddMoveAction(moveInput.move.value);
+            action.isWaitAction = true;
         }
     }
 }
