@@ -16,7 +16,7 @@ public class AddViewSystem : ReactiveSystem<GameEntity>
 
     protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
     {
-        return context.CreateCollector(GameMatcher.Asset.Added());
+        return context.CreateCollector(GameMatcher.Asset);
     }
 
     protected override bool Filter(GameEntity entity)
@@ -38,8 +38,8 @@ public class AddViewSystem : ReactiveSystem<GameEntity>
             }
             catch (Exception ex)
             {
-                Debug.Log("Couldn't instantiate " + e.asset.prefab);
-                Debug.Log(ex);
+                Debug.LogError("Couldn't instantiate " + e.asset.prefab);
+                Debug.LogException(ex);
             }
         }
     }
