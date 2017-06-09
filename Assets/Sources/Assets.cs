@@ -7,4 +7,5 @@ public class Assets : ScriptableObject
     public GameObject Player;
     public GameObject GroundTile;
     public GameObject Wall;
+    public GameObject Camera;
 }

@@ -11,6 +11,15 @@ public class InitializeGameSystem : IInitializeSystem
 
     public void Initialize()
     {
-		var player = _context.CreatePlayer (new UnityEngine.Vector2 (3, 3));
+        _context.SetTurnState(TurnState.Waiting);
+        var camera = _context.CreateEntity();
+        camera.isCamera = true;
+        camera.AddAsset(_context.assets.value.Camera);
+        camera.AddPosition(2, 0);
+        
+		var player = _context.CreatePlayer(new UnityEngine.Vector2 (3, 3));
+        
+		var player2 = _context.CreatePlayer(new UnityEngine.Vector2 (5, 3));
+        player2.ReplaceActorSpeed(0.25f);
     }
 }
