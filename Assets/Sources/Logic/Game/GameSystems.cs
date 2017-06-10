@@ -14,6 +14,7 @@
         
         Add(new MapSystem(contexts));
 
+
         // Player controllers
         Add(new PlayerMoveController(contexts));
         Add(new PlayerWaitController(contexts));
@@ -24,7 +25,8 @@
         
         Add(new MoveActionSystem(contexts));
         Add(new WaitActionSystem(contexts));
-        
+		Add(new ToggleLightSystem (contexts));
+
         // Events
         Add(new EventCleanupSystem(contexts));
     }

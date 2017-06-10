@@ -27,6 +27,7 @@ public class GameContextSystem : ReactiveSystem<InputEntity>
 
     protected override void Execute(List<InputEntity> entities)
     {
+
         foreach (var input in entities)
         {
             if (input.hasAxisInput)
@@ -61,12 +62,15 @@ public class GameContextSystem : ReactiveSystem<InputEntity>
             {
                 switch (input.keyInput.key)
                 {
-                    case KeyCode.R:
-                        _input.CreateCommand().isWaitCommand = true;
-                        input.Destroy();
-                        break;
+                case KeyCode.R:
+                    _input.CreateCommand().isWaitCommand = true;
+                    input.Destroy();
+                    break;
+				case KeyCode.L:	
+					_input.CreateCommand ().isToggleLightCommand = true;
+					input.Destroy ();
+						break;
                 }
-                
             }
         }
     }

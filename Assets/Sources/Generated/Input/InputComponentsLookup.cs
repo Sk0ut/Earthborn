@@ -15,9 +15,10 @@ public static class InputComponentsLookup {
     public const int KeyInput = 4;
     public const int MouseInput = 5;
     public const int Move = 6;
-    public const int WaitCommand = 7;
+    public const int ToggleLightCommand = 7;
+    public const int WaitCommand = 8;
 
-    public const int TotalComponents = 8;
+    public const int TotalComponents = 9;
 
     public static readonly string[] componentNames = {
         "AxisInput",
@@ -27,6 +28,7 @@ public static class InputComponentsLookup {
         "KeyInput",
         "MouseInput",
         "Move",
+        "ToggleLightCommand",
         "WaitCommand"
     };
 
@@ -38,6 +40,7 @@ public static class InputComponentsLookup {
         typeof(KeyInputComponent),
         typeof(MouseInputComponent),
         typeof(MoveComponent),
+        typeof(ToggleLightCommandComponent),
         typeof(WaitCommandComponent)
     };
 }
