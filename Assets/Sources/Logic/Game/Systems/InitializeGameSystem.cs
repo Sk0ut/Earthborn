@@ -18,8 +18,10 @@ public class InitializeGameSystem : IInitializeSystem
         camera.AddPosition(2, 0);
         
 		var player = _context.CreatePlayer(new UnityEngine.Vector2 (3, 3));
+		_context.CreateLight (true, _context.globals.value.PlayerLightingRadius, player);
         
 		var player2 = _context.CreatePlayer(new UnityEngine.Vector2 (5, 3));
         player2.ReplaceActorSpeed(0.25f);
+		_context.CreateLight (true, _context.globals.value.PlayerLightingRadius, player2);
     }
 }

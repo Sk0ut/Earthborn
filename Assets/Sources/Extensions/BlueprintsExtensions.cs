@@ -14,6 +14,7 @@ public static class BlueprintsExtensions
         entity.AddTile(type);
 		entity.isBlocking = blocking;
 		entity.AddAsset (asset);
+		entity.isCollider = blocking;
 
         return entity;
     }
@@ -25,7 +26,7 @@ public static class BlueprintsExtensions
 		entity.AddMaxHealth (context.globals.value.PlayerHealth);
 		entity.AddAsset(context.assets.value.Player);
 		entity.AddPosition((int)position.x, (int)position.y);
-		entity.AddEasing(0.5f);
+		entity.AddEasing (0.5f);
 
 		return entity;
 	}
@@ -35,7 +36,16 @@ public static class BlueprintsExtensions
 		entity.isActor = true;
 		if (energy >= 0) entity.AddActorEnergy(energy);
 		if (speed > 0) entity.AddActorSpeed(speed);
-		entity.isBlocking = true;
+		entity.isCollider = true;
+
+		return entity;
+	}
+
+	public static GameEntity CreateLight(this GameContext context, bool active, int radius, GameEntity attached) {
+		var entity = context.CreateEntity ();
+		entity.AddLightSource (active, radius);
+		entity.AddAttachedTo (attached);
+		entity.AddAsset (context.assets.value.LightSource);
 
 		return entity;
 	}

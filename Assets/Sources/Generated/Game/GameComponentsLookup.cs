@@ -18,29 +18,31 @@ public static class GameComponentsLookup {
     public const int AnimationQueue = 7;
     public const int Asset = 8;
     public const int Assets = 9;
-    public const int Blocking = 10;
-    public const int Camera = 11;
-    public const int CurrentActor = 12;
-    public const int Damage = 13;
-    public const int Easing = 14;
-    public const int EventType = 15;
-    public const int Globals = 16;
-    public const int Health = 17;
-    public const int Immediate = 18;
-    public const int LightSource = 19;
-    public const int MaxHealth = 20;
-    public const int MoveAction = 21;
-    public const int Player = 22;
-    public const int Position = 23;
-    public const int Target = 24;
-    public const int Tile = 25;
-    public const int TileMap = 26;
-    public const int TurnState = 27;
-    public const int Tweening = 28;
-    public const int View = 29;
-    public const int WaitAction = 30;
+    public const int AttachedTo = 10;
+    public const int Blocking = 11;
+    public const int Camera = 12;
+    public const int Collider = 13;
+    public const int CurrentActor = 14;
+    public const int Damage = 15;
+    public const int Easing = 16;
+    public const int EventType = 17;
+    public const int Globals = 18;
+    public const int Health = 19;
+    public const int Immediate = 20;
+    public const int LightSource = 21;
+    public const int MaxHealth = 22;
+    public const int MoveAction = 23;
+    public const int Player = 24;
+    public const int Position = 25;
+    public const int Target = 26;
+    public const int Tile = 27;
+    public const int TileMap = 28;
+    public const int TurnState = 29;
+    public const int Tweening = 30;
+    public const int View = 31;
+    public const int WaitAction = 32;
 
-    public const int TotalComponents = 31;
+    public const int TotalComponents = 33;
 
     public static readonly string[] componentNames = {
         "Action",
@@ -53,8 +55,10 @@ public static class GameComponentsLookup {
         "AnimationQueue",
         "Asset",
         "Assets",
+        "AttachedTo",
         "Blocking",
         "Camera",
+        "Collider",
         "CurrentActor",
         "Damage",
         "Easing",
@@ -87,8 +91,10 @@ public static class GameComponentsLookup {
         typeof(AnimationQueueComponent),
         typeof(AssetComponent),
         typeof(AssetsComponent),
+        typeof(AttachedToComponent),
         typeof(BlockingComponent),
         typeof(CameraComponent),
+        typeof(ColliderComponent),
         typeof(CurrentActorComponent),
         typeof(DamageComponent),
         typeof(EasingComponent),

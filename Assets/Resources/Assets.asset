@@ -15,3 +15,5 @@ MonoBehaviour:
   GroundTile: {fileID: 1406012203088138, guid: f5dce214091c145fea518bfbe39efef8, type: 2}
   Wall: {fileID: 1990840664028678, guid: 8261556f7b7d9ff4cbd0f88477a892e4, type: 2}
   Camera: {fileID: 1309213206600538, guid: ecf91cb8dda8f46a781838b088f3d863, type: 2}
+  LightSource: {fileID: 1969580392624494, guid: 212ba5bd2f486a44c8865a58651324f7,
+    type: 2}

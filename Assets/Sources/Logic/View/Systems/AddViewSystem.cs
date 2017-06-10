@@ -34,7 +34,6 @@ public class AddViewSystem : ReactiveSystem<GameEntity>
                 var gameObject = UnityEngine.Object.Instantiate(asset, _container, false);
                 e.AddView(gameObject);
                 gameObject.Link(e, _context);
-                
             }
             catch (Exception ex)
             {

@@ -6,6 +6,7 @@
         
         Add(new RemoveViewSystem(contexts));
         Add(new AddViewSystem(contexts));
+		Add (new AttachedViewSystem (contexts));
         Add(new SetViewPositionSystem(contexts));
 
         // Animations
