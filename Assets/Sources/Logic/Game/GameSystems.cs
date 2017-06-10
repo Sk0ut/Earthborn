@@ -12,8 +12,6 @@
         Add(new ActorTurnSystem(contexts));
         Add(new EndTurnSystem(contexts));
         
-        Add(new CameraSystem(contexts));
-        
         Add(new MapSystem(contexts));
 
         // Player controllers

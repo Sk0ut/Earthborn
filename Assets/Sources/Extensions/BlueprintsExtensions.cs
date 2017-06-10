@@ -12,6 +12,14 @@ public static class BlueprintsExtensions
         var entity = context.CreateEntity();
         entity.AddPosition((int)position.x, (int)position.y);
         entity.AddTile(type);
+		if (type == TileType.WALL)
+		{
+			entity.isObstructable = true;
+			
+			var ground = context.CreateEntity();
+			ground.AddPosition((int)position.x, (int)position.y);
+			ground.AddAsset(context.assets.value.GroundTile);
+		}
 		entity.isBlocking = blocking;
 		entity.AddAsset (asset);
 		entity.isCollider = blocking;
@@ -26,7 +34,9 @@ public static class BlueprintsExtensions
 		entity.AddMaxHealth (context.globals.value.PlayerHealth);
 		entity.AddAsset(context.assets.value.Player);
 		entity.AddPosition((int)position.x, (int)position.y);
-		entity.AddEasing (0.5f);
+
+		entity.AddEasing(0.5f);
+		entity.isAlwaysVisible = true;
 
 		return entity;
 	}

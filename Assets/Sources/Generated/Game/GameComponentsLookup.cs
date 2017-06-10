@@ -13,36 +13,39 @@ public static class GameComponentsLookup {
     public const int ActorEnergy = 2;
     public const int Actors = 3;
     public const int ActorSpeed = 4;
-    public const int Animating = 5;
-    public const int Animation = 6;
-    public const int AnimationQueue = 7;
-    public const int Asset = 8;
-    public const int Assets = 9;
-    public const int AttachedTo = 10;
-    public const int Blocking = 11;
-    public const int Camera = 12;
-    public const int Collider = 13;
-    public const int CurrentActor = 14;
-    public const int Damage = 15;
-    public const int Easing = 16;
-    public const int EventType = 17;
-    public const int Globals = 18;
-    public const int Health = 19;
-    public const int Immediate = 20;
-    public const int LightSource = 21;
-    public const int MaxHealth = 22;
-    public const int MoveAction = 23;
-    public const int Player = 24;
-    public const int Position = 25;
-    public const int Target = 26;
-    public const int Tile = 27;
-    public const int TileMap = 28;
-    public const int TurnState = 29;
-    public const int Tweening = 30;
-    public const int View = 31;
-    public const int WaitAction = 32;
+    public const int AlwaysVisible = 5;
+    public const int Animating = 6;
+    public const int Animation = 7;
+    public const int AnimationQueue = 8;
+    public const int Asset = 9;
+    public const int Assets = 10;
+    public const int AttachedTo = 11;
+    public const int Blocking = 12;
+    public const int Camera = 13;
+    public const int Collider = 14;
+    public const int CurrentActor = 15;
+    public const int Damage = 16;
+    public const int Easing = 17;
+    public const int EventType = 18;
+    public const int Fade = 19;
+    public const int Globals = 20;
+    public const int Health = 21;
+    public const int Immediate = 22;
+    public const int LightSource = 23;
+    public const int MaxHealth = 24;
+    public const int MoveAction = 25;
+    public const int Obstructable = 26;
+    public const int Player = 27;
+    public const int Position = 28;
+    public const int Target = 29;
+    public const int Tile = 30;
+    public const int TileMap = 31;
+    public const int TurnState = 32;
+    public const int Tweening = 33;
+    public const int View = 34;
+    public const int WaitAction = 35;
 
-    public const int TotalComponents = 33;
+    public const int TotalComponents = 36;
 
     public static readonly string[] componentNames = {
         "Action",
@@ -50,6 +53,7 @@ public static class GameComponentsLookup {
         "ActorEnergy",
         "Actors",
         "ActorSpeed",
+        "AlwaysVisible",
         "Animating",
         "Animation",
         "AnimationQueue",
@@ -63,12 +67,14 @@ public static class GameComponentsLookup {
         "Damage",
         "Easing",
         "EventType",
+        "Fade",
         "Globals",
         "Health",
         "Immediate",
         "LightSource",
         "MaxHealth",
         "MoveAction",
+        "Obstructable",
         "Player",
         "Position",
         "Target",
@@ -86,6 +92,7 @@ public static class GameComponentsLookup {
         typeof(ActorEnergyComponent),
         typeof(ActorsComponent),
         typeof(ActorSpeedComponent),
+        typeof(AlwaysVisibleComponent),
         typeof(AnimatingComponent),
         typeof(AnimationComponent),
         typeof(AnimationQueueComponent),
@@ -99,12 +106,14 @@ public static class GameComponentsLookup {
         typeof(DamageComponent),
         typeof(EasingComponent),
         typeof(EventTypeComponent),
+        typeof(FadeComponent),
         typeof(GlobalsComponent),
         typeof(HealthComponent),
         typeof(Immediate),
         typeof(LightSourceComponent),
         typeof(MaxHealthComponent),
         typeof(MoveActionComponent),
+        typeof(ObstructableComponent),
         typeof(PlayerComponent),
         typeof(PositionComponent),
         typeof(TargetComponent),

@@ -53,7 +53,6 @@ public class AnimatePlayerMoveSystem : ReactiveSystem<GameEntity>
                     break;
             }
 
-            Debug.Log(rot);
             var rotate = transform.DORotate(
                 new Vector3(rot.x, directionAngle, rot.z),
                 0.3f);
