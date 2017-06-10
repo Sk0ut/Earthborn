@@ -12,10 +12,8 @@
         Add(new ActorTurnSystem(contexts));
         Add(new EndTurnSystem(contexts));
         
-        Add(new CameraSystem(contexts));
-        
         Add(new MapSystem(contexts));
-        Add(new RandomDamageSystem(contexts));
+        //Add(new RandomDamageSystem(contexts));
 
         // Player controllers
         Add(new PlayerMoveController(contexts));

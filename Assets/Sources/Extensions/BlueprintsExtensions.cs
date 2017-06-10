@@ -12,8 +12,16 @@ public static class BlueprintsExtensions
         var entity = context.CreateEntity();
         entity.AddPosition((int)position.x, (int)position.y);
         entity.AddTile(type);
+		if (type == TileType.WALL)
+		{
+			entity.isObstructable = true;
+			
+			var ground = context.CreateEntity();
+			ground.AddPosition((int)position.x, (int)position.y);
+			ground.AddAsset(context.assets.value.GroundTile);
+		}
 		entity.isBlocking = blocking;
-		entity.AddAsset (asset);
+		entity.AddAsset(asset);
 
         return entity;
     }
@@ -26,6 +34,7 @@ public static class BlueprintsExtensions
 		entity.AddAsset(context.assets.value.Player);
 		entity.AddPosition((int)position.x, (int)position.y);
 		entity.AddEasing(0.5f);
+		entity.isAlwaysVisible = true;
 
 		return entity;
 	}
