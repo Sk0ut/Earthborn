@@ -34,7 +34,6 @@ public static class BlueprintsExtensions
 		entity.AddMaxHealth (context.globals.value.PlayerHealth);
 		entity.AddAsset(context.assets.value.Player);
 		entity.AddPosition((int)position.x, (int)position.y);
-		entity.isControllable = true;
 
 		entity.AddEasing(0.5f);
 		entity.isAlwaysVisible = true;

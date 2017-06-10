@@ -5,12 +5,10 @@ using UnityEngine;
 public class GameContextSystem : ReactiveSystem<InputEntity>
 {
     private readonly InputContext _input;
-	private readonly GameContext _game;
 
     public GameContextSystem(Contexts contexts) : base(contexts.input)
     {
         _input = contexts.input;
-		_game = contexts.game;
     }
 
     protected override ICollector<InputEntity> GetTrigger(IContext<InputEntity> context)
@@ -23,7 +21,7 @@ public class GameContextSystem : ReactiveSystem<InputEntity>
 
     protected override bool Filter(InputEntity entity)
     {
-		return _input.hasGameContext && _game.hasCurrentActor && _game.GetCurrentActor().isControllable && _input.gameContext.enabled &&
+        return _input.hasGameContext && _input.gameContext.enabled &&
                (entity.hasAxisInput || entity.hasKeyInput);
     }
 
