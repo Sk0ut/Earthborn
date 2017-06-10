@@ -13,6 +13,8 @@
         Add(new EndTurnSystem(contexts));
         
         Add(new MapSystem(contexts));
+        
+        // AI controllers
 		Add(new AIControlSystem (contexts));
 
         // Player controllers
@@ -27,6 +29,10 @@
         Add(new MoveActionSystem(contexts));
         Add(new WaitActionSystem(contexts));
 		Add(new ToggleLightActionSystem (contexts));
+        
+        // Items
+        Add(new CheckStorageCapacitySystem(contexts));
+        Add(new ItemCleanupSystem(contexts));
 
         // Events
         Add(new EventCleanupSystem(contexts));

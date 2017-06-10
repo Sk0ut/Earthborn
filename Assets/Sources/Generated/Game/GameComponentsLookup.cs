@@ -26,28 +26,37 @@ public static class GameComponentsLookup {
     public const int Collider = 15;
     public const int CurrentActor = 16;
     public const int Damage = 17;
-    public const int Easing = 18;
-    public const int EventType = 19;
-    public const int Fade = 20;
-    public const int Globals = 21;
-    public const int Health = 22;
-    public const int Immediate = 23;
-    public const int LightSource = 24;
-    public const int MaxHealth = 25;
-    public const int MoveAction = 26;
-    public const int Obstructable = 27;
-    public const int Player = 28;
-    public const int Position = 29;
-    public const int Target = 30;
-    public const int Tile = 31;
-    public const int TileMap = 32;
-    public const int ToggleLightAction = 33;
-    public const int TurnState = 34;
-    public const int Tweening = 35;
-    public const int View = 36;
-    public const int WaitAction = 37;
+    public const int DamageStat = 18;
+    public const int Easing = 19;
+    public const int EquipableItem = 20;
+    public const int EventType = 21;
+    public const int Fade = 22;
+    public const int Globals = 23;
+    public const int Gun = 24;
+    public const int Health = 25;
+    public const int Immediate = 26;
+    public const int Inventory = 27;
+    public const int Item = 28;
+    public const int ItemStats = 29;
+    public const int LightSource = 30;
+    public const int MaxHealth = 31;
+    public const int MoveAction = 32;
+    public const int Obstructable = 33;
+    public const int Player = 34;
+    public const int Position = 35;
+    public const int StorageCapacity = 36;
+    public const int Storage = 37;
+    public const int StorageSource = 38;
+    public const int Target = 39;
+    public const int Tile = 40;
+    public const int TileMap = 41;
+    public const int ToggleLightAction = 42;
+    public const int TurnState = 43;
+    public const int Tweening = 44;
+    public const int View = 45;
+    public const int WaitAction = 46;
 
-    public const int TotalComponents = 38;
+    public const int TotalComponents = 47;
 
     public static readonly string[] componentNames = {
         "Action",
@@ -68,18 +77,27 @@ public static class GameComponentsLookup {
         "Collider",
         "CurrentActor",
         "Damage",
+        "DamageStat",
         "Easing",
+        "EquipableItem",
         "EventType",
         "Fade",
         "Globals",
+        "Gun",
         "Health",
         "Immediate",
+        "Inventory",
+        "Item",
+        "ItemStats",
         "LightSource",
         "MaxHealth",
         "MoveAction",
         "Obstructable",
         "Player",
         "Position",
+        "StorageCapacity",
+        "Storage",
+        "StorageSource",
         "Target",
         "Tile",
         "TileMap",
@@ -109,18 +127,27 @@ public static class GameComponentsLookup {
         typeof(ColliderComponent),
         typeof(CurrentActorComponent),
         typeof(DamageComponent),
+        typeof(DamageStatComponent),
         typeof(EasingComponent),
+        typeof(EquipableItemComponent),
         typeof(EventTypeComponent),
         typeof(FadeComponent),
         typeof(GlobalsComponent),
+        typeof(GunComponent),
         typeof(HealthComponent),
         typeof(Immediate),
+        typeof(InventoryComponent),
+        typeof(ItemComponent),
+        typeof(ItemStatsComponent),
         typeof(LightSourceComponent),
         typeof(MaxHealthComponent),
         typeof(MoveActionComponent),
         typeof(ObstructableComponent),
         typeof(PlayerComponent),
         typeof(PositionComponent),
+        typeof(StorageCapacityComponent),
+        typeof(StorageComponent),
+        typeof(StorageSourceComponent),
         typeof(TargetComponent),
         typeof(TileComponent),
         typeof(TileMapComponent),
