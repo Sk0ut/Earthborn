@@ -24,29 +24,30 @@ public static class GameComponentsLookup {
     public const int Blocking = 13;
     public const int Camera = 14;
     public const int Collider = 15;
-    public const int CurrentActor = 16;
-    public const int Damage = 17;
-    public const int Easing = 18;
-    public const int EventType = 19;
-    public const int Fade = 20;
-    public const int Globals = 21;
-    public const int Health = 22;
-    public const int Immediate = 23;
-    public const int LightSource = 24;
-    public const int MaxHealth = 25;
-    public const int MoveAction = 26;
-    public const int Obstructable = 27;
-    public const int Player = 28;
-    public const int Position = 29;
-    public const int Target = 30;
-    public const int Tile = 31;
-    public const int TileMap = 32;
-    public const int TurnState = 33;
-    public const int Tweening = 34;
-    public const int View = 35;
-    public const int WaitAction = 36;
+    public const int Controllable = 16;
+    public const int CurrentActor = 17;
+    public const int Damage = 18;
+    public const int Easing = 19;
+    public const int EventType = 20;
+    public const int Fade = 21;
+    public const int Globals = 22;
+    public const int Health = 23;
+    public const int Immediate = 24;
+    public const int LightSource = 25;
+    public const int MaxHealth = 26;
+    public const int MoveAction = 27;
+    public const int Obstructable = 28;
+    public const int Player = 29;
+    public const int Position = 30;
+    public const int Target = 31;
+    public const int Tile = 32;
+    public const int TileMap = 33;
+    public const int TurnState = 34;
+    public const int Tweening = 35;
+    public const int View = 36;
+    public const int WaitAction = 37;
 
-    public const int TotalComponents = 37;
+    public const int TotalComponents = 38;
 
     public static readonly string[] componentNames = {
         "Action",
@@ -65,6 +66,7 @@ public static class GameComponentsLookup {
         "Blocking",
         "Camera",
         "Collider",
+        "Controllable",
         "CurrentActor",
         "Damage",
         "Easing",
@@ -105,6 +107,7 @@ public static class GameComponentsLookup {
         typeof(BlockingComponent),
         typeof(CameraComponent),
         typeof(ColliderComponent),
+        typeof(ControllableComponent),
         typeof(CurrentActorComponent),
         typeof(DamageComponent),
         typeof(EasingComponent),
