@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Entitas;
 using UnityEngine;
 
@@ -54,19 +55,22 @@ public class MoveActionSystem : ReactiveSystem<GameEntity>
                     break;
             }
 
+	        var cancel = blockingGroup.GetEntities().Any(e => e.position.x == x && e.position.y == y);
+	        
+			/*
 			bool cancelAction = false;
 			foreach (var entity in blockingGroup.GetEntities()) {
 				if (entity.position.x == x && entity.position.y == y) {
 					cancelAction = true;
 					break;
 				}
-			}
+			}*/
 
-			if (!cancelAction) {
+			if (!cancel) {
 				target.ReplacePosition (x, y);
-				target.ReplaceActorEnergy (target.actorEnergy.energy - 1f);
-				_context.ReplaceTurnState (TurnState.EndTurn);
-				var ev = _context.CreateEvent (Event.ActorWalked);
+				target.ReplaceActorEnergy(target.actorEnergy.energy - 1f);
+				_context.ReplaceTurnState(TurnState.EndTurn);
+				var ev = _context.CreateEvent(Event.ActorWalked);
 				ev.AddTarget (target);
 				ev.AddMoveAction (action.moveAction.value);
 			}

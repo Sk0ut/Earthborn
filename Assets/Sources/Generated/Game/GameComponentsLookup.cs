@@ -41,12 +41,13 @@ public static class GameComponentsLookup {
     public const int Target = 30;
     public const int Tile = 31;
     public const int TileMap = 32;
-    public const int TurnState = 33;
-    public const int Tweening = 34;
-    public const int View = 35;
-    public const int WaitAction = 36;
+    public const int ToggleLightAction = 33;
+    public const int TurnState = 34;
+    public const int Tweening = 35;
+    public const int View = 36;
+    public const int WaitAction = 37;
 
-    public const int TotalComponents = 37;
+    public const int TotalComponents = 38;
 
     public static readonly string[] componentNames = {
         "Action",
@@ -82,6 +83,7 @@ public static class GameComponentsLookup {
         "Target",
         "Tile",
         "TileMap",
+        "ToggleLightAction",
         "TurnState",
         "Tweening",
         "View",
@@ -122,6 +124,7 @@ public static class GameComponentsLookup {
         typeof(TargetComponent),
         typeof(TileComponent),
         typeof(TileMapComponent),
+        typeof(ToggleLightActionComponent),
         typeof(TurnStateComponent),
         typeof(TweeningComponent),
         typeof(ViewComponent),

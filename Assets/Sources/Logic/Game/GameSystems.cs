@@ -18,6 +18,7 @@
         // Player controllers
         Add(new PlayerMoveController(contexts));
         Add(new PlayerWaitController(contexts));
+        Add(new PlayerToggleLightController(contexts));
         
         // Actions
         Add(new ActionManagerSystem(contexts));
@@ -25,7 +26,7 @@
         
         Add(new MoveActionSystem(contexts));
         Add(new WaitActionSystem(contexts));
-		Add(new ToggleLightSystem (contexts));
+		Add(new ToggleLightActionSystem (contexts));
 
         // Events
         Add(new EventCleanupSystem(contexts));
