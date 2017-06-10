@@ -13,7 +13,7 @@
         Add(new EndTurnSystem(contexts));
         
         Add(new MapSystem(contexts));
-
+		Add(new AIControlSystem (contexts));
 
         // Player controllers
         Add(new PlayerMoveController(contexts));

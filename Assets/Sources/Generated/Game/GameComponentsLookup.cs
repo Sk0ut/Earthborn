@@ -13,39 +13,40 @@ public static class GameComponentsLookup {
     public const int ActorEnergy = 2;
     public const int Actors = 3;
     public const int ActorSpeed = 4;
-    public const int AlwaysVisible = 5;
-    public const int Animating = 6;
-    public const int Animation = 7;
-    public const int AnimationQueue = 8;
-    public const int Asset = 9;
-    public const int Assets = 10;
-    public const int AttachedTo = 11;
-    public const int Blocking = 12;
-    public const int Camera = 13;
-    public const int Collider = 14;
-    public const int CurrentActor = 15;
-    public const int Damage = 16;
-    public const int Easing = 17;
-    public const int EventType = 18;
-    public const int Fade = 19;
-    public const int Globals = 20;
-    public const int Health = 21;
-    public const int Immediate = 22;
-    public const int LightSource = 23;
-    public const int MaxHealth = 24;
-    public const int MoveAction = 25;
-    public const int Obstructable = 26;
-    public const int Player = 27;
-    public const int Position = 28;
-    public const int Target = 29;
-    public const int Tile = 30;
-    public const int TileMap = 31;
-    public const int TurnState = 32;
-    public const int Tweening = 33;
-    public const int View = 34;
-    public const int WaitAction = 35;
+    public const int AIControl = 5;
+    public const int AlwaysVisible = 6;
+    public const int Animating = 7;
+    public const int Animation = 8;
+    public const int AnimationQueue = 9;
+    public const int Asset = 10;
+    public const int Assets = 11;
+    public const int AttachedTo = 12;
+    public const int Blocking = 13;
+    public const int Camera = 14;
+    public const int Collider = 15;
+    public const int CurrentActor = 16;
+    public const int Damage = 17;
+    public const int Easing = 18;
+    public const int EventType = 19;
+    public const int Fade = 20;
+    public const int Globals = 21;
+    public const int Health = 22;
+    public const int Immediate = 23;
+    public const int LightSource = 24;
+    public const int MaxHealth = 25;
+    public const int MoveAction = 26;
+    public const int Obstructable = 27;
+    public const int Player = 28;
+    public const int Position = 29;
+    public const int Target = 30;
+    public const int Tile = 31;
+    public const int TileMap = 32;
+    public const int TurnState = 33;
+    public const int Tweening = 34;
+    public const int View = 35;
+    public const int WaitAction = 36;
 
-    public const int TotalComponents = 36;
+    public const int TotalComponents = 37;
 
     public static readonly string[] componentNames = {
         "Action",
@@ -53,6 +54,7 @@ public static class GameComponentsLookup {
         "ActorEnergy",
         "Actors",
         "ActorSpeed",
+        "AIControl",
         "AlwaysVisible",
         "Animating",
         "Animation",
@@ -92,6 +94,7 @@ public static class GameComponentsLookup {
         typeof(ActorEnergyComponent),
         typeof(ActorsComponent),
         typeof(ActorSpeedComponent),
+        typeof(AIControlComponent),
         typeof(AlwaysVisibleComponent),
         typeof(AnimatingComponent),
         typeof(AnimationComponent),
