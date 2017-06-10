@@ -8,6 +8,8 @@
         Add(new AddViewSystem(contexts));
 		Add (new AttachedViewSystem (contexts));
         Add(new SetViewPositionSystem(contexts));
+
+		Add (new LightControllerViewSystem (contexts));
         
         // Camera
         Add(new CameraSystem(contexts));
