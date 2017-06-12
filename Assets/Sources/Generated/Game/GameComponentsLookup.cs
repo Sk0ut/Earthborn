@@ -24,45 +24,47 @@ public static class GameComponentsLookup {
     public const int Camera = 13;
     public const int Collider = 14;
     public const int CurrentActor = 15;
-    public const int Damage = 16;
-    public const int DamageStat = 17;
-    public const int Destroyed = 18;
-    public const int Easing = 19;
-    public const int EquipableItem = 20;
-    public const int EventType = 21;
-    public const int Fade = 22;
-    public const int Globals = 23;
-    public const int Gun = 24;
-    public const int Health = 25;
-    public const int Immediate = 26;
-    public const int Inventory = 27;
-    public const int InventoryOwner = 28;
-    public const int Item = 29;
-    public const int ItemId = 30;
-    public const int ItemStats = 31;
-    public const int ItemTarget = 32;
-    public const int LightSource = 33;
-    public const int MaxHealth = 34;
-    public const int MoveAction = 35;
-    public const int Obstructable = 36;
-    public const int PickupItemAction = 37;
-    public const int Player = 38;
-    public const int Position = 39;
-    public const int Seethrough = 40;
-    public const int StorageCapacity = 41;
-    public const int Storage = 42;
-    public const int StorageSource = 43;
-    public const int Target = 44;
-    public const int Tile = 45;
-    public const int TileMap = 46;
-    public const int ToggleLightAction = 47;
-    public const int TurnState = 48;
-    public const int Tweening = 49;
-    public const int View = 50;
-    public const int Visible = 51;
-    public const int WaitAction = 52;
+    public const int CurrentFloor = 16;
+    public const int Damage = 17;
+    public const int DamageStat = 18;
+    public const int Destroyed = 19;
+    public const int Easing = 20;
+    public const int EquipableItem = 21;
+    public const int EventType = 22;
+    public const int Fade = 23;
+    public const int FloorTransition = 24;
+    public const int Globals = 25;
+    public const int Gun = 26;
+    public const int Health = 27;
+    public const int Immediate = 28;
+    public const int Inventory = 29;
+    public const int InventoryOwner = 30;
+    public const int Item = 31;
+    public const int ItemId = 32;
+    public const int ItemStats = 33;
+    public const int ItemTarget = 34;
+    public const int LightSource = 35;
+    public const int MaxHealth = 36;
+    public const int MoveAction = 37;
+    public const int Obstructable = 38;
+    public const int PickupItemAction = 39;
+    public const int Player = 40;
+    public const int Position = 41;
+    public const int Seethrough = 42;
+    public const int StorageCapacity = 43;
+    public const int Storage = 44;
+    public const int StorageSource = 45;
+    public const int Target = 46;
+    public const int Tile = 47;
+    public const int TileMap = 48;
+    public const int ToggleLightAction = 49;
+    public const int TurnState = 50;
+    public const int Tweening = 51;
+    public const int View = 52;
+    public const int Visible = 53;
+    public const int WaitAction = 54;
 
-    public const int TotalComponents = 53;
+    public const int TotalComponents = 55;
 
     public static readonly string[] componentNames = {
         "Action",
@@ -81,6 +83,7 @@ public static class GameComponentsLookup {
         "Camera",
         "Collider",
         "CurrentActor",
+        "CurrentFloor",
         "Damage",
         "DamageStat",
         "Destroyed",
@@ -88,6 +91,7 @@ public static class GameComponentsLookup {
         "EquipableItem",
         "EventType",
         "Fade",
+        "FloorTransition",
         "Globals",
         "Gun",
         "Health",
@@ -137,6 +141,7 @@ public static class GameComponentsLookup {
         typeof(CameraComponent),
         typeof(ColliderComponent),
         typeof(CurrentActorComponent),
+        typeof(CurrentFloorComponent),
         typeof(DamageComponent),
         typeof(DamageStatComponent),
         typeof(DestroyedComponent),
@@ -144,6 +149,7 @@ public static class GameComponentsLookup {
         typeof(EquipableItemComponent),
         typeof(EventTypeComponent),
         typeof(FadeComponent),
+        typeof(FloorTransitionComponent),
         typeof(GlobalsComponent),
         typeof(GunComponent),
         typeof(HealthComponent),

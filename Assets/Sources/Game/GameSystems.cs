@@ -3,7 +3,8 @@
     public GameSystems(Contexts contexts) : base("Game Systems")
     {
         Add(new InitializeGameSystem(contexts));
-        
+		Add(new MapSystem(contexts));
+
         // Turn based logic
         Add(new ActorManagerSystem(contexts));
         Add(new TurnManagerSystem(contexts));
@@ -11,8 +12,6 @@
         Add(new AddTurnEnergySystem(contexts));
         Add(new ActorTurnSystem(contexts));
         Add(new EndTurnSystem(contexts));
-        
-        Add(new MapSystem(contexts));
         
         // AI controllers
 		Add(new AIControlSystem (contexts));
@@ -31,6 +30,8 @@
         Add(new WaitActionSystem(contexts));
 		Add(new ToggleLightActionSystem (contexts));
         Add(new PickupItemActionSystem(contexts));
+
+		Add (new FloorTransitionSystem (contexts));
         
         // Items
         Add(new CheckStorageCapacitySystem(contexts));
