@@ -22,47 +22,48 @@ public static class GameComponentsLookup {
     public const int AttachedTo = 11;
     public const int Blocking = 12;
     public const int Camera = 13;
-    public const int Collider = 14;
-    public const int CurrentActor = 15;
-    public const int Damage = 16;
-    public const int DamageStat = 17;
-    public const int Destroyed = 18;
-    public const int Easing = 19;
-    public const int EquipableItem = 20;
-    public const int EventType = 21;
-    public const int Fade = 22;
-    public const int Globals = 23;
-    public const int Gun = 24;
-    public const int Health = 25;
-    public const int Immediate = 26;
-    public const int Inventory = 27;
-    public const int InventoryOwner = 28;
-    public const int Item = 29;
-    public const int ItemId = 30;
-    public const int ItemStats = 31;
-    public const int ItemTarget = 32;
-    public const int LightSource = 33;
-    public const int MaxHealth = 34;
-    public const int MoveAction = 35;
-    public const int Obstructable = 36;
-    public const int PickupItemAction = 37;
-    public const int Player = 38;
-    public const int Position = 39;
-    public const int Seethrough = 40;
-    public const int StorageCapacity = 41;
-    public const int Storage = 42;
-    public const int StorageSource = 43;
-    public const int Target = 44;
-    public const int Tile = 45;
-    public const int TileMap = 46;
-    public const int ToggleLightAction = 47;
-    public const int TurnState = 48;
-    public const int Tweening = 49;
-    public const int View = 50;
-    public const int Visible = 51;
-    public const int WaitAction = 52;
+    public const int CameraFollow = 14;
+    public const int Collider = 15;
+    public const int CurrentActor = 16;
+    public const int Damage = 17;
+    public const int DamageStat = 18;
+    public const int Destroyed = 19;
+    public const int Easing = 20;
+    public const int EquipableItem = 21;
+    public const int EventType = 22;
+    public const int Fade = 23;
+    public const int Globals = 24;
+    public const int Gun = 25;
+    public const int Health = 26;
+    public const int Immediate = 27;
+    public const int Inventory = 28;
+    public const int InventoryOwner = 29;
+    public const int Item = 30;
+    public const int ItemId = 31;
+    public const int ItemStats = 32;
+    public const int ItemTarget = 33;
+    public const int LightSource = 34;
+    public const int MaxHealth = 35;
+    public const int MoveAction = 36;
+    public const int Obstructable = 37;
+    public const int PickupItemAction = 38;
+    public const int Player = 39;
+    public const int Position = 40;
+    public const int Seethrough = 41;
+    public const int StorageCapacity = 42;
+    public const int Storage = 43;
+    public const int StorageSource = 44;
+    public const int Target = 45;
+    public const int Tile = 46;
+    public const int TileMap = 47;
+    public const int ToggleLightAction = 48;
+    public const int TurnState = 49;
+    public const int Tweening = 50;
+    public const int View = 51;
+    public const int Visible = 52;
+    public const int WaitAction = 53;
 
-    public const int TotalComponents = 53;
+    public const int TotalComponents = 54;
 
     public static readonly string[] componentNames = {
         "Action",
@@ -79,6 +80,7 @@ public static class GameComponentsLookup {
         "AttachedTo",
         "Blocking",
         "Camera",
+        "CameraFollow",
         "Collider",
         "CurrentActor",
         "Damage",
@@ -135,6 +137,7 @@ public static class GameComponentsLookup {
         typeof(AttachedToComponent),
         typeof(BlockingComponent),
         typeof(CameraComponent),
+        typeof(CameraFollowComponent),
         typeof(ColliderComponent),
         typeof(CurrentActorComponent),
         typeof(DamageComponent),

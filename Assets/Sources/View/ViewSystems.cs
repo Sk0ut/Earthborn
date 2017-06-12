@@ -12,7 +12,8 @@
 		Add (new LightControllerViewSystem (contexts));
         
         // Camera
-        Add(new CameraSystem(contexts));
+        Add(new SwitchCameraSystem(contexts));
+        Add(new CameraFollowSystem(contexts));
         Add(new FadeObstructingObjectsSystem(contexts));
         
         // Items
