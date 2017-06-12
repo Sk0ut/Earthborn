@@ -46,30 +46,29 @@ public static class GameComponentsLookup {
     public const int ItemStats = 35;
     public const int ItemTarget = 36;
     public const int LightSource = 37;
-    public const int MaxHealth = 38;
-    public const int MoveAction = 39;
-    public const int Obstructable = 40;
-    public const int PickupItemAction = 41;
-    public const int PickupItemEvent = 42;
-    public const int Player = 43;
-    public const int Pointing = 44;
-    public const int Position = 45;
-    public const int Seethrough = 46;
-    public const int SoundSource = 47;
-    public const int StorageCapacity = 48;
-    public const int Storage = 49;
-    public const int StorageSource = 50;
-    public const int Target = 51;
-    public const int Tile = 52;
-    public const int TileMap = 53;
-    public const int ToggleLightAction = 54;
-    public const int TurnState = 55;
-    public const int Tweening = 56;
-    public const int View = 57;
-    public const int Visible = 58;
-    public const int WaitAction = 59;
+    public const int MoveAction = 38;
+    public const int Obstructable = 39;
+    public const int PickupItemAction = 40;
+    public const int PickupItemEvent = 41;
+    public const int Player = 42;
+    public const int Pointing = 43;
+    public const int Position = 44;
+    public const int Seethrough = 45;
+    public const int SoundSource = 46;
+    public const int StorageCapacity = 47;
+    public const int Storage = 48;
+    public const int StorageSource = 49;
+    public const int Target = 50;
+    public const int Tile = 51;
+    public const int TileMap = 52;
+    public const int ToggleLightAction = 53;
+    public const int TurnState = 54;
+    public const int Tweening = 55;
+    public const int View = 56;
+    public const int Visible = 57;
+    public const int WaitAction = 58;
 
-    public const int TotalComponents = 60;
+    public const int TotalComponents = 59;
 
     public static readonly string[] componentNames = {
         "Action",
@@ -110,7 +109,6 @@ public static class GameComponentsLookup {
         "ItemStats",
         "ItemTarget",
         "LightSource",
-        "MaxHealth",
         "MoveAction",
         "Obstructable",
         "PickupItemAction",
@@ -173,7 +171,6 @@ public static class GameComponentsLookup {
         typeof(ItemStatsComponent),
         typeof(ItemTargetComponent),
         typeof(LightSourceComponent),
-        typeof(MaxHealthComponent),
         typeof(MoveActionComponent),
         typeof(ObstructableComponent),
         typeof(PickupItemActionComponent),

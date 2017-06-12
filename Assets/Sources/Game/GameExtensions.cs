@@ -32,8 +32,7 @@ public static class GameExtensions
 	public static GameEntity CreatePlayer(this GameContext context, Vector2 position) {
 		var player = context.CreateActor (0.5f, 0f);
 		player.isPlayer = true;
-		player.AddHealth(context.globals.value.PlayerHealth);
-		player.AddMaxHealth (context.globals.value.PlayerHealth);
+		player.AddHealth(context.globals.value.PlayerHealth, context.globals.value.PlayerHealth);
 		player.AddAsset(context.assets.value.Player);
 		player.isVisible = true;
 		player.AddPosition((int)position.x, (int)position.y);

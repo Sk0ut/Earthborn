@@ -10,6 +10,7 @@
         Add(new TurnManagerSystem(contexts));
         
         Add(new AddTurnEnergySystem(contexts));
+		Add (new LightEffectSystem (contexts));
         Add(new ActorTurnSystem(contexts));
         Add(new EndTurnSystem(contexts));
         
