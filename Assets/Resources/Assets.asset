@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: Assets
   m_EditorClassIdentifier: 
   Player: {fileID: 1710821223336542, guid: 0cdf5437ae17d7541ac17a416cf8fc05, type: 2}
+  Pistol: {fileID: 1547033112365544, guid: d14d33a3b45d14b4fbb681ab5f9390b9, type: 2}
   GroundTile: {fileID: 1406012203088138, guid: f5dce214091c145fea518bfbe39efef8, type: 2}
   Wall: {fileID: 1990840664028678, guid: 8261556f7b7d9ff4cbd0f88477a892e4, type: 2}
   Camera: {fileID: 1309213206600538, guid: ecf91cb8dda8f46a781838b088f3d863, type: 2}

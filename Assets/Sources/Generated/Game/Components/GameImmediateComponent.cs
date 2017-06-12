@@ -8,7 +8,7 @@
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Immediate immediateComponent = new Immediate();
+    static readonly ImmediateComponent immediateComponent = new ImmediateComponent();
 
     public bool isImmediate {
         get { return HasComponent(GameComponentsLookup.Immediate); }

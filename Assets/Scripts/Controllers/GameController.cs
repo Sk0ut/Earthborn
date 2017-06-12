@@ -5,7 +5,7 @@ public class GameController : MonoBehaviour
 {
     public Globals Globals;
     public Assets Assets;
-    
+
     private Systems _systems;
 
     private void Start()
@@ -35,6 +35,7 @@ public class GameController : MonoBehaviour
         return new Feature("Systems")
             .Add(new InputSystems(contexts))
             .Add(new GameSystems(contexts))
-            .Add(new ViewSystems(contexts));
+            .Add(new ViewSystems(contexts))
+            .Add(new UISystems(contexts));
     }
 }
