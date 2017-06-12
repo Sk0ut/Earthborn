@@ -77,6 +77,10 @@ public class GameContextSystem : ReactiveSystem<InputEntity>
 					_input.CreateCommand ().isFloorTransictionCommand = true;
 					input.Destroy ();
 					break;
+                    case KeyCode.Space:
+                        _input.CreateCommand().isAttackCommand = true;
+                        input.Destroy();
+                        break;
                 }
             }
         }

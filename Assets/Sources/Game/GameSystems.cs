@@ -23,6 +23,7 @@
         Add(new PlayerToggleLightController(contexts));
         Add(new PlayerPickupItemControllerSystem(contexts));
 		Add (new PlayerFloorTransitionController (contexts));
+        Add(new PlayerAttackController(contexts));
         
         // Actions
         Add(new ActionManagerSystem(contexts));
@@ -32,9 +33,8 @@
         Add(new WaitActionSystem(contexts));
 		Add(new ToggleLightActionSystem (contexts));
         Add(new PickupItemActionSystem(contexts));
+        Add(new AttackActionSystem(contexts));
 		Add (new FloorTransitionActionSystem (contexts));
-
-		//Add (new FloorTransitionSystem (contexts));
         
         // Items
         Add(new CheckStorageCapacitySystem(contexts));

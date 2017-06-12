@@ -25,6 +25,8 @@
         Add(new AnimateFadingSystem(contexts));
         
         Add(new AnimatePlayerMoveSystem(contexts));
+        Add(new AnimatePlayerAttackSystem(contexts));
+        
         Add(new AnimateMoveActionSystem(contexts));
         Add(new AnimateWaitActionSystem(contexts));
 
