@@ -3,11 +3,11 @@ using DG.Tweening;
 using Entitas;
 using UnityEngine;
 
-public class CameraSystem : ReactiveSystem<GameEntity>
+public class SwitchCameraSystem : ReactiveSystem<GameEntity>
 {
     private readonly GameContext _game;
-    
-    public CameraSystem(Contexts contexts) : base(contexts.game)
+
+    public SwitchCameraSystem(Contexts contexts) : base(contexts.game)
     {
         _game = contexts.game;
     }
@@ -21,7 +21,6 @@ public class CameraSystem : ReactiveSystem<GameEntity>
     {
         return _game.hasCurrentActor &&
                _game.isCamera &&
-               _game.cameraEntity.hasView &&
                _game.GetCurrentActor().isPlayer &&
                _game.turnState.value == TurnState.AskAction;
     }
@@ -29,10 +28,10 @@ public class CameraSystem : ReactiveSystem<GameEntity>
     protected override void Execute(List<GameEntity> entities)
     {
         var player = _game.GetCurrentActor();
-
-        _game.cameraEntity.view.gameObject.transform.DOMove(
-            new Vector3(player.position.x, 3f, player.position.y - 3),
-            1f
-        );
+        
+        if (_game.cameraEntity.hasCameraFollow)
+            _game.cameraEntity.RemoveCameraFollow();
+        
+        _game.cameraEntity.AddCameraFollow(player);
     }
 }

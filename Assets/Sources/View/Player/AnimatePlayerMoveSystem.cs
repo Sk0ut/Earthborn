@@ -55,11 +55,11 @@ public class AnimatePlayerMoveSystem : ReactiveSystem<GameEntity>
 
             var rotate = transform.DORotate(
                 new Vector3(rot.x, directionAngle, rot.z),
-                0.3f);
+                0.2f);
 
             var move = transform.DOMove(
                 new Vector3(pos.x, transform.position.y, pos.y),
-                1f
+                0.6f
             ).SetEase(Ease.InOutSine).Pause();
 
             move.OnStart(() => animator.SetBool("Walking", true));
