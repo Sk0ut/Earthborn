@@ -14,19 +14,19 @@ public static class GameComponentsLookup {
     public const int Actors = 3;
     public const int ActorSpeed = 4;
     public const int AIControl = 5;
-    public const int AlwaysVisible = 6;
-    public const int Animating = 7;
-    public const int Animation = 8;
-    public const int AnimationQueue = 9;
-    public const int Asset = 10;
-    public const int Assets = 11;
-    public const int AttachedTo = 12;
-    public const int Blocking = 13;
-    public const int Camera = 14;
-    public const int Collider = 15;
-    public const int CurrentActor = 16;
-    public const int Damage = 17;
-    public const int DamageStat = 18;
+    public const int Animating = 6;
+    public const int Animation = 7;
+    public const int AnimationQueue = 8;
+    public const int Asset = 9;
+    public const int Assets = 10;
+    public const int AttachedTo = 11;
+    public const int Blocking = 12;
+    public const int Camera = 13;
+    public const int Collider = 14;
+    public const int CurrentActor = 15;
+    public const int Damage = 16;
+    public const int DamageStat = 17;
+    public const int Destroyed = 18;
     public const int Easing = 19;
     public const int EquipableItem = 20;
     public const int EventType = 21;
@@ -36,27 +36,33 @@ public static class GameComponentsLookup {
     public const int Health = 25;
     public const int Immediate = 26;
     public const int Inventory = 27;
-    public const int Item = 28;
-    public const int ItemStats = 29;
-    public const int LightSource = 30;
-    public const int MaxHealth = 31;
-    public const int MoveAction = 32;
-    public const int Obstructable = 33;
-    public const int Player = 34;
-    public const int Position = 35;
-    public const int StorageCapacity = 36;
-    public const int Storage = 37;
-    public const int StorageSource = 38;
-    public const int Target = 39;
-    public const int Tile = 40;
-    public const int TileMap = 41;
-    public const int ToggleLightAction = 42;
-    public const int TurnState = 43;
-    public const int Tweening = 44;
-    public const int View = 45;
-    public const int WaitAction = 46;
+    public const int InventoryOwner = 28;
+    public const int Item = 29;
+    public const int ItemId = 30;
+    public const int ItemStats = 31;
+    public const int ItemTarget = 32;
+    public const int LightSource = 33;
+    public const int MaxHealth = 34;
+    public const int MoveAction = 35;
+    public const int Obstructable = 36;
+    public const int PickupItemAction = 37;
+    public const int Player = 38;
+    public const int Position = 39;
+    public const int Seethrough = 40;
+    public const int StorageCapacity = 41;
+    public const int Storage = 42;
+    public const int StorageSource = 43;
+    public const int Target = 44;
+    public const int Tile = 45;
+    public const int TileMap = 46;
+    public const int ToggleLightAction = 47;
+    public const int TurnState = 48;
+    public const int Tweening = 49;
+    public const int View = 50;
+    public const int Visible = 51;
+    public const int WaitAction = 52;
 
-    public const int TotalComponents = 47;
+    public const int TotalComponents = 53;
 
     public static readonly string[] componentNames = {
         "Action",
@@ -65,7 +71,6 @@ public static class GameComponentsLookup {
         "Actors",
         "ActorSpeed",
         "AIControl",
-        "AlwaysVisible",
         "Animating",
         "Animation",
         "AnimationQueue",
@@ -78,6 +83,7 @@ public static class GameComponentsLookup {
         "CurrentActor",
         "Damage",
         "DamageStat",
+        "Destroyed",
         "Easing",
         "EquipableItem",
         "EventType",
@@ -87,14 +93,19 @@ public static class GameComponentsLookup {
         "Health",
         "Immediate",
         "Inventory",
+        "InventoryOwner",
         "Item",
+        "ItemId",
         "ItemStats",
+        "ItemTarget",
         "LightSource",
         "MaxHealth",
         "MoveAction",
         "Obstructable",
+        "PickupItemAction",
         "Player",
         "Position",
+        "Seethrough",
         "StorageCapacity",
         "Storage",
         "StorageSource",
@@ -105,6 +116,7 @@ public static class GameComponentsLookup {
         "TurnState",
         "Tweening",
         "View",
+        "Visible",
         "WaitAction"
     };
 
@@ -115,7 +127,6 @@ public static class GameComponentsLookup {
         typeof(ActorsComponent),
         typeof(ActorSpeedComponent),
         typeof(AIControlComponent),
-        typeof(AlwaysVisibleComponent),
         typeof(AnimatingComponent),
         typeof(AnimationComponent),
         typeof(AnimationQueueComponent),
@@ -128,6 +139,7 @@ public static class GameComponentsLookup {
         typeof(CurrentActorComponent),
         typeof(DamageComponent),
         typeof(DamageStatComponent),
+        typeof(DestroyedComponent),
         typeof(EasingComponent),
         typeof(EquipableItemComponent),
         typeof(EventTypeComponent),
@@ -135,16 +147,21 @@ public static class GameComponentsLookup {
         typeof(GlobalsComponent),
         typeof(GunComponent),
         typeof(HealthComponent),
-        typeof(Immediate),
+        typeof(ImmediateComponent),
         typeof(InventoryComponent),
+        typeof(InventoryOwnerComponent),
         typeof(ItemComponent),
+        typeof(ItemIdComponent),
         typeof(ItemStatsComponent),
+        typeof(ItemTargetComponent),
         typeof(LightSourceComponent),
         typeof(MaxHealthComponent),
         typeof(MoveActionComponent),
         typeof(ObstructableComponent),
+        typeof(PickupItemActionComponent),
         typeof(PlayerComponent),
         typeof(PositionComponent),
+        typeof(SeethroughComponent),
         typeof(StorageCapacityComponent),
         typeof(StorageComponent),
         typeof(StorageSourceComponent),
@@ -155,6 +172,7 @@ public static class GameComponentsLookup {
         typeof(TurnStateComponent),
         typeof(TweeningComponent),
         typeof(ViewComponent),
+        typeof(VisibleComponent),
         typeof(WaitActionComponent)
     };
 }

@@ -23,12 +23,14 @@ public partial class Contexts : Entitas.IContexts {
 
     public GameContext game { get; set; }
     public InputContext input { get; set; }
+    public UiContext ui { get; set; }
 
-    public Entitas.IContext[] allContexts { get { return new Entitas.IContext [] { game, input }; } }
+    public Entitas.IContext[] allContexts { get { return new Entitas.IContext [] { game, input, ui }; } }
 
     public Contexts() {
         game = new GameContext();
         input = new InputContext();
+        ui = new UiContext();
 
         var postConstructors = System.Linq.Enumerable.Where(
             GetType().GetMethods(),
@@ -58,10 +60,22 @@ public partial class Contexts : Entitas.IContexts {
 //------------------------------------------------------------------------------
 public partial class Contexts {
 
+    public const string InventoryOwner = "InventoryOwner";
+    public const string ItemId = "ItemId";
     public const string StorageSource = "StorageSource";
 
     [Entitas.CodeGeneration.Attributes.PostConstructor]
     public void InitializeEntityIndices() {
+        game.AddEntityIndex(new Entitas.EntityIndex<GameEntity, GameEntity>(
+            InventoryOwner,
+            game.GetGroup(GameMatcher.InventoryOwner),
+            (e, c) => ((InventoryOwnerComponent)c).value));
+
+        game.AddEntityIndex(new Entitas.EntityIndex<GameEntity, ItemId>(
+            ItemId,
+            game.GetGroup(GameMatcher.ItemId),
+            (e, c) => ((ItemIdComponent)c).value));
+
         game.AddEntityIndex(new Entitas.EntityIndex<GameEntity, GameEntity>(
             StorageSource,
             game.GetGroup(GameMatcher.StorageSource),
@@ -70,6 +84,14 @@ public partial class Contexts {
 }
 
 public static class ContextsExtensions {
+
+    public static System.Collections.Generic.HashSet<GameEntity> GetEntitiesWithInventoryOwner(this GameContext context, GameEntity value) {
+        return ((Entitas.EntityIndex<GameEntity, GameEntity>)context.GetEntityIndex(Contexts.InventoryOwner)).GetEntities(value);
+    }
+
+    public static System.Collections.Generic.HashSet<GameEntity> GetEntitiesWithItemId(this GameContext context, ItemId value) {
+        return ((Entitas.EntityIndex<GameEntity, ItemId>)context.GetEntityIndex(Contexts.ItemId)).GetEntities(value);
+    }
 
     public static System.Collections.Generic.HashSet<GameEntity> GetEntitiesWithStorageSource(this GameContext context, GameEntity value) {
         return ((Entitas.EntityIndex<GameEntity, GameEntity>)context.GetEntityIndex(Contexts.StorageSource)).GetEntities(value);
@@ -92,6 +114,7 @@ public partial class Contexts {
         try {
             CreateContextObserver(game);
             CreateContextObserver(input);
+            CreateContextObserver(ui);
         } catch(System.Exception) {
         }
     }

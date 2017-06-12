@@ -10,24 +10,28 @@ public static class InputComponentsLookup {
 
     public const int AxisInput = 0;
     public const int Command = 1;
-    public const int GameContext = 2;
-    public const int Input = 3;
-    public const int KeyInput = 4;
-    public const int MouseInput = 5;
-    public const int Move = 6;
-    public const int ToggleLightCommand = 7;
-    public const int WaitCommand = 8;
+    public const int Destroyed = 2;
+    public const int GameContext = 3;
+    public const int Input = 4;
+    public const int KeyInput = 5;
+    public const int MouseInput = 6;
+    public const int Move = 7;
+    public const int PickupItemCommand = 8;
+    public const int ToggleLightCommand = 9;
+    public const int WaitCommand = 10;
 
-    public const int TotalComponents = 9;
+    public const int TotalComponents = 11;
 
     public static readonly string[] componentNames = {
         "AxisInput",
         "Command",
+        "Destroyed",
         "GameContext",
         "Input",
         "KeyInput",
         "MouseInput",
         "Move",
+        "PickupItemCommand",
         "ToggleLightCommand",
         "WaitCommand"
     };
@@ -35,11 +39,13 @@ public static class InputComponentsLookup {
     public static readonly System.Type[] componentTypes = {
         typeof(AxisInputComponent),
         typeof(CommandComponent),
+        typeof(DestroyedComponent),
         typeof(GameContextComponent),
         typeof(InputComponent),
         typeof(KeyInputComponent),
         typeof(MouseInputComponent),
         typeof(MoveComponent),
+        typeof(PickupItemCommandComponent),
         typeof(ToggleLightCommandComponent),
         typeof(WaitCommandComponent)
     };
