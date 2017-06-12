@@ -22,8 +22,8 @@ public class AIControlSystem : IExecuteSystem
 		}
 		var command = _gameContext.CreateAction(currentActor);
 	
-		var moveDirectionValues = Enum.GetValues (typeof(MoveDirection));
-		command.AddMoveAction((MoveDirection) moveDirectionValues.GetValue(_rnd.Next(moveDirectionValues.Length)));
+		var moveDirectionValues = Enum.GetValues (typeof(Direction));
+		command.AddMoveAction((Direction) moveDirectionValues.GetValue(_rnd.Next(moveDirectionValues.Length)));
 	}
 }
 

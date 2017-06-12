@@ -5,6 +5,7 @@ using UnityEngine;
 public class ActionManagerSystem : ReactiveSystem<GameEntity>
 {
     private readonly GameContext _context;
+
     public ActionManagerSystem(Contexts contexts) : base(contexts.game)
     {
         _context = contexts.game;
@@ -30,9 +31,12 @@ public class ActionManagerSystem : ReactiveSystem<GameEntity>
         {
             // Only allow actions target at the current actor and
             // in AskAction state
-            if (!actions.target.value.Equals(_context.GetCurrentActor()) ||
-                _context.turnState.value != TurnState.AskAction)
+            if (_context.isAnimating ||
+                _context.turnState.value != TurnState.AskAction ||
+                !actions.target.value.Equals(_context.GetCurrentActor()))
+            {
                 actions.Destroy();
+            }
         }
     }
 }

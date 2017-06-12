@@ -12,7 +12,8 @@ public class PlayerMoveController : ReactiveSystem<InputEntity>
         _game = contexts.game;
         _players = contexts.game.GetGroup(GameMatcher.AllOf(
             GameMatcher.Player,
-            GameMatcher.Actor
+            GameMatcher.Actor,
+            GameMatcher.Pointing
         ));
     }
 
@@ -32,7 +33,14 @@ public class PlayerMoveController : ReactiveSystem<InputEntity>
         foreach (var player in _players.GetEntities())
         {
             var action = _game.CreateAction(player);
-            action.AddMoveAction(moveInput.move.value);
+            if (moveInput.move.value == player.pointing.direction)
+            {
+                action.AddMoveAction(moveInput.move.value);
+            }
+            else
+            {
+                player.ReplacePointing(moveInput.move.value);
+            }
         }
     }
 }

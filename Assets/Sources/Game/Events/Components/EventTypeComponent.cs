@@ -4,6 +4,8 @@ public enum Event
 {
     ActorWaited,
     ActorWalked,
+    ActorPickedItem,
+    Footstep
 }
 
 [Game]

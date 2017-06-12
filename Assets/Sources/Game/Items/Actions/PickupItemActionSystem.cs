@@ -61,7 +61,12 @@ public class PickupItemActionSystem : ReactiveSystem<GameEntity>
                 
                 item.AddStorageSource(inventory);
                 item.RemovePosition();
+                
+                var ev = _contexts.game.CreateEvent(Event.ActorPickedItem);
+                ev.AddPickupItemEvent(target, item);
+                
                 Debug.Log(target.creationIndex + " has picked up item " + item.creationIndex);
+                Debug.Log(ev);
                 
                 target.ReplaceActorEnergy(target.actorEnergy.energy - 1f);
                 _contexts.game.ReplaceTurnState(TurnState.EndTurn);

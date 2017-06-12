@@ -2,5 +2,5 @@
 
 public class MoveActionComponent : IComponent
 {
-    public MoveDirection value;
+    public Direction value;
 }

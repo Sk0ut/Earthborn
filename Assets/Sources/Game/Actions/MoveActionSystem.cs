@@ -41,16 +41,16 @@ public class MoveActionSystem : ReactiveSystem<GameEntity>
 
             switch (action.moveAction.value)
             {
-                case MoveDirection.Up:
+                case Direction.Up:
                     ++y;
                     break;
-                case MoveDirection.Down:
+                case Direction.Down:
                     --y;
                     break;
-                case MoveDirection.Left:
+                case Direction.Left:
                     --x;
                     break;
-                case MoveDirection.Right:
+                case Direction.Right:
                     ++x;
                     break;
             }

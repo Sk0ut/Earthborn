@@ -11,14 +11,14 @@ public partial class InputEntity {
     public MoveComponent move { get { return (MoveComponent)GetComponent(InputComponentsLookup.Move); } }
     public bool hasMove { get { return HasComponent(InputComponentsLookup.Move); } }
 
-    public void AddMove(MoveDirection newValue) {
+    public void AddMove(Direction newValue) {
         var index = InputComponentsLookup.Move;
         var component = CreateComponent<MoveComponent>(index);
         component.value = newValue;
         AddComponent(index, component);
     }
 
-    public void ReplaceMove(MoveDirection newValue) {
+    public void ReplaceMove(Direction newValue) {
         var index = InputComponentsLookup.Move;
         var component = CreateComponent<MoveComponent>(index);
         component.value = newValue;
