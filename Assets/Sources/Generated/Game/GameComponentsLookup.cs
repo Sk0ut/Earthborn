@@ -47,23 +47,25 @@ public static class GameComponentsLookup {
     public const int MoveAction = 36;
     public const int Obstructable = 37;
     public const int PickupItemAction = 38;
-    public const int Player = 39;
-    public const int Position = 40;
-    public const int Seethrough = 41;
-    public const int StorageCapacity = 42;
-    public const int Storage = 43;
-    public const int StorageSource = 44;
-    public const int Target = 45;
-    public const int Tile = 46;
-    public const int TileMap = 47;
-    public const int ToggleLightAction = 48;
-    public const int TurnState = 49;
-    public const int Tweening = 50;
-    public const int View = 51;
-    public const int Visible = 52;
-    public const int WaitAction = 53;
+    public const int PickupItemEvent = 39;
+    public const int Player = 40;
+    public const int Position = 41;
+    public const int Seethrough = 42;
+    public const int SoundSource = 43;
+    public const int StorageCapacity = 44;
+    public const int Storage = 45;
+    public const int StorageSource = 46;
+    public const int Target = 47;
+    public const int Tile = 48;
+    public const int TileMap = 49;
+    public const int ToggleLightAction = 50;
+    public const int TurnState = 51;
+    public const int Tweening = 52;
+    public const int View = 53;
+    public const int Visible = 54;
+    public const int WaitAction = 55;
 
-    public const int TotalComponents = 54;
+    public const int TotalComponents = 56;
 
     public static readonly string[] componentNames = {
         "Action",
@@ -105,9 +107,11 @@ public static class GameComponentsLookup {
         "MoveAction",
         "Obstructable",
         "PickupItemAction",
+        "PickupItemEvent",
         "Player",
         "Position",
         "Seethrough",
+        "SoundSource",
         "StorageCapacity",
         "Storage",
         "StorageSource",
@@ -162,9 +166,11 @@ public static class GameComponentsLookup {
         typeof(MoveActionComponent),
         typeof(ObstructableComponent),
         typeof(PickupItemActionComponent),
+        typeof(PickupItemEventComponent),
         typeof(PlayerComponent),
         typeof(PositionComponent),
         typeof(SeethroughComponent),
+        typeof(SoundSourceComponent),
         typeof(StorageCapacityComponent),
         typeof(StorageComponent),
         typeof(StorageSourceComponent),

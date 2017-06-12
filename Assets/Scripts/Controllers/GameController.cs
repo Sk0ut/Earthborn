@@ -36,6 +36,7 @@ public class GameController : MonoBehaviour
             .Add(new InputSystems(contexts))
             .Add(new GameSystems(contexts))
             .Add(new ViewSystems(contexts))
-            .Add(new UISystems(contexts));
+            .Add(new UISystems(contexts))
+            .Add(new SoundSystems(contexts));
     }
 }
