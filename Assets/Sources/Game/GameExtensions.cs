@@ -37,6 +37,7 @@ public static class GameExtensions
 		player.AddAsset(context.assets.value.Player);
 		player.isVisible = true;
 		player.AddPosition((int)position.x, (int)position.y);
+		player.AddPointing(Direction.Up);
 
 		player.AddEasing(0.5f);
 		player.isSeethrough = true;
@@ -83,5 +84,24 @@ public static class GameExtensions
 		var ev = context.CreateEntity();
 		ev.AddEventType(eventType);
 		return ev;
+	}
+
+	public static int GetDirectionAngle(Direction direction)
+	{
+		var directionAngle = 0;
+		switch (direction)
+		{
+			case Direction.Left:
+				directionAngle = -90;
+				break;
+			case Direction.Down:
+				directionAngle = 180;
+				break;
+			case Direction.Right:
+				directionAngle = 90;
+				break;
+		}
+
+		return directionAngle;
 	}
 }

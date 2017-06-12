@@ -8,25 +8,25 @@
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public MoveActionComponent moveAction { get { return (MoveActionComponent)GetComponent(GameComponentsLookup.MoveAction); } }
-    public bool hasMoveAction { get { return HasComponent(GameComponentsLookup.MoveAction); } }
+    public PointingComponent pointing { get { return (PointingComponent)GetComponent(GameComponentsLookup.Pointing); } }
+    public bool hasPointing { get { return HasComponent(GameComponentsLookup.Pointing); } }
 
-    public void AddMoveAction(Direction newValue) {
-        var index = GameComponentsLookup.MoveAction;
-        var component = CreateComponent<MoveActionComponent>(index);
-        component.value = newValue;
+    public void AddPointing(Direction newDirection) {
+        var index = GameComponentsLookup.Pointing;
+        var component = CreateComponent<PointingComponent>(index);
+        component.direction = newDirection;
         AddComponent(index, component);
     }
 
-    public void ReplaceMoveAction(Direction newValue) {
-        var index = GameComponentsLookup.MoveAction;
-        var component = CreateComponent<MoveActionComponent>(index);
-        component.value = newValue;
+    public void ReplacePointing(Direction newDirection) {
+        var index = GameComponentsLookup.Pointing;
+        var component = CreateComponent<PointingComponent>(index);
+        component.direction = newDirection;
         ReplaceComponent(index, component);
     }
 
-    public void RemoveMoveAction() {
-        RemoveComponent(GameComponentsLookup.MoveAction);
+    public void RemovePointing() {
+        RemoveComponent(GameComponentsLookup.Pointing);
     }
 }
 
@@ -40,17 +40,17 @@ public partial class GameEntity {
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherMoveAction;
+    static Entitas.IMatcher<GameEntity> _matcherPointing;
 
-    public static Entitas.IMatcher<GameEntity> MoveAction {
+    public static Entitas.IMatcher<GameEntity> Pointing {
         get {
-            if (_matcherMoveAction == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.MoveAction);
+            if (_matcherPointing == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Pointing);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherMoveAction = matcher;
+                _matcherPointing = matcher;
             }
 
-            return _matcherMoveAction;
+            return _matcherPointing;
         }
     }
 }

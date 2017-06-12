@@ -49,23 +49,24 @@ public static class GameComponentsLookup {
     public const int PickupItemAction = 38;
     public const int PickupItemEvent = 39;
     public const int Player = 40;
-    public const int Position = 41;
-    public const int Seethrough = 42;
-    public const int SoundSource = 43;
-    public const int StorageCapacity = 44;
-    public const int Storage = 45;
-    public const int StorageSource = 46;
-    public const int Target = 47;
-    public const int Tile = 48;
-    public const int TileMap = 49;
-    public const int ToggleLightAction = 50;
-    public const int TurnState = 51;
-    public const int Tweening = 52;
-    public const int View = 53;
-    public const int Visible = 54;
-    public const int WaitAction = 55;
+    public const int Pointing = 41;
+    public const int Position = 42;
+    public const int Seethrough = 43;
+    public const int SoundSource = 44;
+    public const int StorageCapacity = 45;
+    public const int Storage = 46;
+    public const int StorageSource = 47;
+    public const int Target = 48;
+    public const int Tile = 49;
+    public const int TileMap = 50;
+    public const int ToggleLightAction = 51;
+    public const int TurnState = 52;
+    public const int Tweening = 53;
+    public const int View = 54;
+    public const int Visible = 55;
+    public const int WaitAction = 56;
 
-    public const int TotalComponents = 56;
+    public const int TotalComponents = 57;
 
     public static readonly string[] componentNames = {
         "Action",
@@ -109,6 +110,7 @@ public static class GameComponentsLookup {
         "PickupItemAction",
         "PickupItemEvent",
         "Player",
+        "Pointing",
         "Position",
         "Seethrough",
         "SoundSource",
@@ -168,6 +170,7 @@ public static class GameComponentsLookup {
         typeof(PickupItemActionComponent),
         typeof(PickupItemEventComponent),
         typeof(PlayerComponent),
+        typeof(PointingComponent),
         typeof(PositionComponent),
         typeof(SeethroughComponent),
         typeof(SoundSourceComponent),

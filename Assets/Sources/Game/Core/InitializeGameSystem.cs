@@ -22,6 +22,7 @@ public class InitializeGameSystem : IInitializeSystem
 		_context.CreateLight (true, _context.globals.value.PlayerLightingRadius, player);
         
 		var player2 = _context.CreatePlayer(new UnityEngine.Vector2 (5, 3));
+	    player2.isPlayer = false;
         player2.ReplaceActorSpeed(0.25f);
 		player2.AddAIControl (AIControlType.RANDOM);
 		_context.CreateLight (true, _context.globals.value.PlayerLightingRadius, player2);

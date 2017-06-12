@@ -27,6 +27,8 @@
         Add(new AnimatePlayerMoveSystem(contexts));
         Add(new AnimateMoveActionSystem(contexts));
         Add(new AnimateWaitActionSystem(contexts));
+
+        Add(new AnimateRotationSystem(contexts));
         
         Add(new AddAnimationSystem(contexts));
         Add(new AnimationSystem(contexts));

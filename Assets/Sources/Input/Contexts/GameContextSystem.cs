@@ -35,22 +35,22 @@ public class GameContextSystem : ReactiveSystem<InputEntity>
                 if (raw.y >= 1)
                 {
                     var command = _input.CreateCommand();
-                    command.AddMove(MoveDirection.Up);
+                    command.AddMove(Direction.Up);
                 }
                 else if (raw.y <= -1)
                 {
                     var command = _input.CreateCommand();
-                    command.AddMove(MoveDirection.Down);
+                    command.AddMove(Direction.Down);
                 }
                 else if (raw.x >= 1)
                 {
                     var command = _input.CreateCommand();
-                    command.AddMove(MoveDirection.Right);
+                    command.AddMove(Direction.Right);
                 }
                 else if (raw.x <= -1)
                 {
                     var command = _input.CreateCommand();
-                    command.AddMove(MoveDirection.Left);
+                    command.AddMove(Direction.Left);
                 }
 
                 // Input handled

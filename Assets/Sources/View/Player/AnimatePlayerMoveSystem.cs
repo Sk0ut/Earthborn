@@ -25,6 +25,7 @@ public class AnimatePlayerMoveSystem : ReactiveSystem<GameEntity>
                entity.hasTarget &&
                entity.hasMoveAction &&
                entity.target.value.hasView &&
+               entity.target.value.hasPointing &&
                entity.target.value.view.gameObject.GetComponentInChildren<Animator>() != null;
     }
 
@@ -39,24 +40,6 @@ public class AnimatePlayerMoveSystem : ReactiveSystem<GameEntity>
             var transform = target.view.gameObject.transform;
             var rot = transform.rotation.eulerAngles;
 
-            var directionAngle = 0;
-            switch (ev.moveAction.value)
-            {
-                case MoveDirection.Left:
-                    directionAngle = -90;
-                    break;
-                case MoveDirection.Down:
-                    directionAngle = 180;
-                    break;
-                case MoveDirection.Right:
-                    directionAngle = 90;
-                    break;
-            }
-
-            var rotate = transform.DORotate(
-                new Vector3(rot.x, directionAngle, rot.z),
-                0.2f);
-
             var move = transform.DOMove(
                 new Vector3(pos.x, transform.position.y, pos.y),
                 0.6f
@@ -66,8 +49,13 @@ public class AnimatePlayerMoveSystem : ReactiveSystem<GameEntity>
             move.OnComplete(() => animator.SetBool("Walking", false));
 
             var seq = DOTween.Sequence();
-            seq.Append(rotate)
-                .Append(move);
+            
+            seq.Append(move);
+
+            if (target.pointing.direction != ev.moveAction.value)
+            {
+                target.ReplacePointing(ev.moveAction.value);
+            }
 
             var animation = _game.CreateEntity();
             animation.AddAnimation(CreateAnimation(seq));
