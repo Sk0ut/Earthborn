@@ -11,21 +11,23 @@ public static class InputComponentsLookup {
     public const int AxisInput = 0;
     public const int Command = 1;
     public const int Destroyed = 2;
-    public const int GameContext = 3;
-    public const int Input = 4;
-    public const int KeyInput = 5;
-    public const int MouseInput = 6;
-    public const int Move = 7;
-    public const int PickupItemCommand = 8;
-    public const int ToggleLightCommand = 9;
-    public const int WaitCommand = 10;
+    public const int FloorTransictionCommand = 3;
+    public const int GameContext = 4;
+    public const int Input = 5;
+    public const int KeyInput = 6;
+    public const int MouseInput = 7;
+    public const int Move = 8;
+    public const int PickupItemCommand = 9;
+    public const int ToggleLightCommand = 10;
+    public const int WaitCommand = 11;
 
-    public const int TotalComponents = 11;
+    public const int TotalComponents = 12;
 
     public static readonly string[] componentNames = {
         "AxisInput",
         "Command",
         "Destroyed",
+        "FloorTransictionCommand",
         "GameContext",
         "Input",
         "KeyInput",
@@ -40,6 +42,7 @@ public static class InputComponentsLookup {
         typeof(AxisInputComponent),
         typeof(CommandComponent),
         typeof(DestroyedComponent),
+        typeof(FloorTransictionCommandComponent),
         typeof(GameContextComponent),
         typeof(InputComponent),
         typeof(KeyInputComponent),

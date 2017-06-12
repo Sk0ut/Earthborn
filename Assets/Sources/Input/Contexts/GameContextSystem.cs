@@ -73,6 +73,10 @@ public class GameContextSystem : ReactiveSystem<InputEntity>
                         _input.CreateCommand().isToggleLightCommand = true;
                         input.Destroy();
                         break;
+				case KeyCode.K:
+					_input.CreateCommand ().isFloorTransictionCommand = true;
+					input.Destroy ();
+					break;
                 }
             }
         }

@@ -8,6 +8,7 @@ class MapSystem : ReactiveSystem<GameEntity>, IInitializeSystem
 	private readonly GameContext _gameContext;
 	private readonly IGroup<GameEntity> _removableEntitiesGroup;
 	private readonly IGroup<GameEntity> _playerGroup;
+	private int lastFloor;
 
 	public MapSystem(Contexts contexts) : base(contexts.game)
     {
@@ -19,6 +20,7 @@ class MapSystem : ReactiveSystem<GameEntity>, IInitializeSystem
 
     public void Initialize()
     {
+		lastFloor = -1;
 		_gameContext.SetCurrentFloor (0);
 		createFloor (_gameContext.currentFloor.value);
     }
@@ -32,7 +34,7 @@ class MapSystem : ReactiveSystem<GameEntity>, IInitializeSystem
 
 	protected override bool Filter (GameEntity entity)
 	{
-		return entity.hasCurrentFloor;
+		return entity.hasCurrentFloor && entity.currentFloor.value != lastFloor;
 	}
 
 	protected override void Execute (System.Collections.Generic.List<GameEntity> entities)
@@ -72,10 +74,16 @@ class MapSystem : ReactiveSystem<GameEntity>, IInitializeSystem
 			}
 		}
 		var player = _playerGroup.GetSingleEntity ();
-		player.ReplacePosition ((int) floor.start.x, (int)floor.start.y);
+		if (lastFloor < currentFloor) {
+			player.ReplacePosition ((int)floor.start.x, (int)floor.start.y);
+		} else {
+			player.ReplacePosition ((int)floor.end.x, (int)floor.end.y);
+		}
+
 		if (player.hasView) {
 			player.ReplaceComponent (GameComponentsLookup.View, player.view);
 		}
+
 		if (currentFloor > 0) {
 			var entity = _gameContext.CreateEntity ();
 			entity.AddPosition ((int)floor.start.x, (int)floor.start.y);
@@ -87,6 +95,8 @@ class MapSystem : ReactiveSystem<GameEntity>, IInitializeSystem
 			entity.AddFloorTransition (currentFloor + 1);
 		}
 			
+
+		lastFloor = currentFloor;
 	}
 
 	private void destroyFloor() {

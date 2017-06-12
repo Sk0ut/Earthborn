@@ -21,6 +21,7 @@
         Add(new PlayerWaitController(contexts));
         Add(new PlayerToggleLightController(contexts));
         Add(new PlayerPickupItemControllerSystem(contexts));
+		Add (new PlayerFloorTransitionController (contexts));
         
         // Actions
         Add(new ActionManagerSystem(contexts));
@@ -30,8 +31,9 @@
         Add(new WaitActionSystem(contexts));
 		Add(new ToggleLightActionSystem (contexts));
         Add(new PickupItemActionSystem(contexts));
+		Add (new FloorTransitionActionSystem (contexts));
 
-		Add (new FloorTransitionSystem (contexts));
+		//Add (new FloorTransitionSystem (contexts));
         
         // Items
         Add(new CheckStorageCapacitySystem(contexts));
