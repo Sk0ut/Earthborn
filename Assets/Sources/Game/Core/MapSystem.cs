@@ -2,19 +2,26 @@ using System;
 using Entitas;
 using Entitas.Unity;
 using UnityEngine;
+using System.Linq;
 
 class MapSystem : ReactiveSystem<GameEntity>, IInitializeSystem
 {
 	private readonly GameContext _gameContext;
 	private readonly IGroup<GameEntity> _removableEntitiesGroup;
 	private readonly IGroup<GameEntity> _playerGroup;
+	private readonly IGroup<GameEntity> _groundTiles;
+	private readonly IGroup<GameEntity> _blockingEntities;
 	private int lastFloor;
+	private System.Random rnd;
 
 	public MapSystem(Contexts contexts) : base(contexts.game)
     {
+		rnd = new System.Random ();
         _gameContext = contexts.game;
 		_removableEntitiesGroup = _gameContext.GetGroup (GameMatcher.AllOf(GameMatcher.Position).NoneOf(GameMatcher.Player));
 		_playerGroup = _gameContext.GetGroup (GameMatcher.Player);
+		_groundTiles = _gameContext.GetGroup (GameMatcher.AllOf (GameMatcher.Position, GameMatcher.Tile).NoneOf (GameMatcher.Blocking));
+		_blockingEntities = _gameContext.GetGroup (GameMatcher.AllOf (GameMatcher.Position, GameMatcher.Blocking).NoneOf (GameMatcher.Tile));
     }
 
 
@@ -94,7 +101,20 @@ class MapSystem : ReactiveSystem<GameEntity>, IInitializeSystem
 			entity.AddPosition ((int)floor.end.x, (int)floor.end.y);
 			entity.AddFloorTransition (currentFloor + 1);
 		}
-			
+
+		if (currentFloor == Maps.floors.Length - 1) {
+			_gameContext.CreateBoss (new UnityEngine.Vector2 ((int)floor.end.x, (int)floor.end.y - 1));
+		} else {
+			int numMonsters = currentFloor * 3 + 2;
+			for (int i = 0; i < numMonsters; ++i) {
+				GameEntity freeTile;
+				do {
+					freeTile = _groundTiles.GetEntities()[rnd.Next(_groundTiles.GetEntities().Length)];
+				} while (_blockingEntities.GetEntities().Any((e) => e.position.x == freeTile.position.x && e.position.y == freeTile.position.y));
+
+				_gameContext.CreateEnemy(new Vector2(freeTile.position.x, freeTile.position.y));
+			}
+		}
 
 		lastFloor = currentFloor;
 	}

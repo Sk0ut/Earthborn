@@ -37,5 +37,7 @@ public class InitializeGameSystem : IInitializeSystem
 	    pistol.AddAsset(_context.assets.value.Pistol);
 	    pistol.AddPosition(3, 4);
 	    */
+
+		_context.CreateBoss (new UnityEngine.Vector2 (6, 6));
     }
 }

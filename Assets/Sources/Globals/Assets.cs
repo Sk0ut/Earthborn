@@ -10,4 +10,6 @@ public class Assets : ScriptableObject
     public GameObject Wall;
     public GameObject Camera;
 	public GameObject LightSource;
+	public GameObject Enemy;
+	public GameObject Boss;
 }

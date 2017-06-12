@@ -49,13 +49,36 @@ public static class GameExtensions
 
 		return player;
 	}
-	
+
+	public static GameEntity CreateEnemy(this GameContext context, Vector2 position) {
+		var enemy = context.CreateActor ();
+		enemy.AddAIControl (AIControlType.RANDOM);
+		enemy.AddAsset (context.assets.value.Enemy);
+		enemy.AddPosition ((int)position.x, (int)position.y);
+		enemy.AddPointing (Direction.Up);
+		enemy.AddEasing (0.5f);
+
+		return enemy;
+	}
+
+	public static GameEntity CreateBoss(this GameContext context, Vector2 position) {
+		var enemy = context.CreateActor ();
+		enemy.AddAIControl (AIControlType.RANDOM);
+		enemy.AddAsset (context.assets.value.Boss);
+		enemy.AddPosition ((int)position.x, (int)position.y);
+		enemy.AddPointing (Direction.Up);
+		enemy.AddEasing (0.5f);
+
+		return enemy;
+	}
+
 	public static GameEntity CreateActor(this GameContext context, float speed = 0.5f, float energy = 0f) {
 		var entity = context.CreateEntity();
 		entity.isActor = true;
 		if (energy >= 0) entity.AddActorEnergy(energy);
 		if (speed > 0) entity.AddActorSpeed(speed);
 		entity.isCollider = true;
+		entity.isBlocking = true;
 
 		return entity;
 	}
