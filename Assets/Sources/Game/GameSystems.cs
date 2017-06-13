@@ -35,6 +35,8 @@
         Add(new PickupItemActionSystem(contexts));
         Add(new AttackActionSystem(contexts));
 		Add (new FloorTransitionActionSystem (contexts));
+
+		Add (new ActorDeathSystem (contexts));
         
         // Items
         Add(new CheckStorageCapacitySystem(contexts));

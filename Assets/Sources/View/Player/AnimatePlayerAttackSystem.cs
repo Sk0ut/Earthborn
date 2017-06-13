@@ -39,7 +39,7 @@ public class AnimatePlayerAttackSystem : ReactiveSystem<GameEntity>
 
             if (target.pointing.direction != ev.pointing.direction)
             {
-                target.ReplacePointing(ev.moveAction.value);
+				target.ReplacePointing(ev.pointing.direction);
             }
 
             var animation = _game.CreateEntity();

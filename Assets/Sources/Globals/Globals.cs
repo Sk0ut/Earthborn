@@ -14,4 +14,5 @@ public class Globals : ScriptableObject
 	public int EnemyDamage = 10;
 	public int EnemyHealth = 60;
 	public int BossMultiplier = 2;
+	public float EnemyAttackProbability = 0.75f;
 }

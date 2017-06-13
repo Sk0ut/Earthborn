@@ -27,7 +27,6 @@ public class PlayerFloorTransitionController : ReactiveSystem<InputEntity>
 
 	protected override void Execute (System.Collections.Generic.List<InputEntity> entities)
 	{
-		UnityEngine.Debug.Log ("Here");
 		var player = _playerGroup.GetSingleEntity ();
 		foreach (var e in _floorTransitionGroup.GetEntities()) {
 			if (player.position.x == e.position.x && player.position.y == e.position.y) {
