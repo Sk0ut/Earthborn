@@ -17,59 +17,60 @@ public static class GameComponentsLookup {
     public const int Animating = 6;
     public const int Animation = 7;
     public const int AnimationQueue = 8;
-    public const int Asset = 9;
-    public const int Assets = 10;
-    public const int AttachedTo = 11;
-    public const int AttackAction = 12;
-    public const int Blocking = 13;
-    public const int Camera = 14;
-    public const int CameraFollow = 15;
-    public const int Collider = 16;
-    public const int CurrentActor = 17;
-    public const int CurrentFloor = 18;
-    public const int Damage = 19;
-    public const int DamageStat = 20;
-    public const int Destroyed = 21;
-    public const int Easing = 22;
-    public const int EquipableItem = 23;
-    public const int EventType = 24;
-    public const int Fade = 25;
-    public const int FloorTransitionAction = 26;
-    public const int FloorTransition = 27;
-    public const int Globals = 28;
-    public const int Gun = 29;
-    public const int Health = 30;
-    public const int Immediate = 31;
-    public const int Inventory = 32;
-    public const int InventoryOwner = 33;
-    public const int Item = 34;
-    public const int ItemId = 35;
-    public const int ItemStats = 36;
-    public const int ItemTarget = 37;
-    public const int LightSource = 38;
-    public const int MoveAction = 39;
-    public const int Obstructable = 40;
-    public const int PickupItemAction = 41;
-    public const int PickupItemEvent = 42;
-    public const int Player = 43;
-    public const int Pointing = 44;
-    public const int Position = 45;
-    public const int Seethrough = 46;
-    public const int SoundSource = 47;
-    public const int StorageCapacity = 48;
-    public const int Storage = 49;
-    public const int StorageSource = 50;
-    public const int Target = 51;
-    public const int Tile = 52;
-    public const int TileMap = 53;
-    public const int ToggleLightAction = 54;
-    public const int TurnState = 55;
-    public const int Tweening = 56;
-    public const int View = 57;
-    public const int Visible = 58;
-    public const int WaitAction = 59;
+    public const int AnimationTarget = 9;
+    public const int Asset = 10;
+    public const int Assets = 11;
+    public const int AttachedTo = 12;
+    public const int AttackAction = 13;
+    public const int Blocking = 14;
+    public const int Camera = 15;
+    public const int CameraFollow = 16;
+    public const int Collider = 17;
+    public const int CurrentActor = 18;
+    public const int CurrentFloor = 19;
+    public const int Damage = 20;
+    public const int DamageStat = 21;
+    public const int Destroyed = 22;
+    public const int Easing = 23;
+    public const int EquipableItem = 24;
+    public const int EventType = 25;
+    public const int Fade = 26;
+    public const int FloorTransitionAction = 27;
+    public const int FloorTransition = 28;
+    public const int Globals = 29;
+    public const int Gun = 30;
+    public const int Health = 31;
+    public const int Immediate = 32;
+    public const int Inventory = 33;
+    public const int InventoryOwner = 34;
+    public const int Item = 35;
+    public const int ItemId = 36;
+    public const int ItemStats = 37;
+    public const int ItemTarget = 38;
+    public const int LightSource = 39;
+    public const int MoveAction = 40;
+    public const int Obstructable = 41;
+    public const int PickupItemAction = 42;
+    public const int PickupItemEvent = 43;
+    public const int Player = 44;
+    public const int Pointing = 45;
+    public const int Position = 46;
+    public const int Seethrough = 47;
+    public const int SoundSource = 48;
+    public const int StorageCapacity = 49;
+    public const int Storage = 50;
+    public const int StorageSource = 51;
+    public const int Target = 52;
+    public const int Tile = 53;
+    public const int TileMap = 54;
+    public const int ToggleLightAction = 55;
+    public const int TurnState = 56;
+    public const int Tweening = 57;
+    public const int View = 58;
+    public const int Visible = 59;
+    public const int WaitAction = 60;
 
-    public const int TotalComponents = 60;
+    public const int TotalComponents = 61;
 
     public static readonly string[] componentNames = {
         "Action",
@@ -81,6 +82,7 @@ public static class GameComponentsLookup {
         "Animating",
         "Animation",
         "AnimationQueue",
+        "AnimationTarget",
         "Asset",
         "Assets",
         "AttachedTo",
@@ -144,6 +146,7 @@ public static class GameComponentsLookup {
         typeof(AnimatingComponent),
         typeof(AnimationComponent),
         typeof(AnimationQueueComponent),
+        typeof(AnimationTargetComponent),
         typeof(AssetComponent),
         typeof(AssetsComponent),
         typeof(AttachedToComponent),

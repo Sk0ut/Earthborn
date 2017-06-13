@@ -44,6 +44,7 @@ public class AnimatePlayerAttackSystem : ReactiveSystem<GameEntity>
 
             var animation = _game.CreateEntity();
             animation.AddAnimation(CreateAnimation(animator));
+            animation.AddAnimationTarget(target);
             
             // Handled
             ev.Destroy();

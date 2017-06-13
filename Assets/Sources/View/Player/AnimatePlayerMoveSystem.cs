@@ -58,6 +58,7 @@ public class AnimatePlayerMoveSystem : ReactiveSystem<GameEntity>
 
             var animation = _game.CreateEntity();
             animation.AddAnimation(CreateAnimation(seq));
+            animation.AddAnimationTarget(target);
             
             // Handled
             ev.Destroy();

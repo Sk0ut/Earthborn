@@ -26,6 +26,9 @@ public class PlayerSoundEvents : MonoBehaviour
 	public void EndAttack()
 	{
 		if (OnAttackEnd != null) OnAttackEnd();
-		Debug.Log("Allo");
+		
+		var entity = (GameEntity) gameObject.GetComponentInParent<EntityLink>().entity;
+		var evt = _game.CreateEvent(Event.MeleeAttack);
+		evt.AddTarget(entity);
 	}
 }

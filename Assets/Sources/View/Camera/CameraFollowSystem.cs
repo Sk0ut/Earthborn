@@ -24,6 +24,11 @@ public class CameraFollowSystem : IExecuteSystem
         var targetPos = target.view.gameObject.transform.position + new Vector3(0f, 3f, -3f);
 
         var distance = targetPos - cameraPos;
+        if (distance.magnitude >= 3)
+        {
+            camera.transform.position = targetPos;
+            return;
+        } 
 
         camera.transform.position = cameraPos + distance / 100;
     }

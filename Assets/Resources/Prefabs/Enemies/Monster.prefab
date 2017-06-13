@@ -245,6 +245,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4243155267959404}
   - component: {fileID: 95026123447981024}
+  - component: {fileID: 114927456886723802}
   m_Layer: 0
   m_Name: MonsterModel
   m_TagString: Untagged
@@ -2341,7 +2342,7 @@ Animator:
   m_GameObject: {fileID: 1174920214531054}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 3bbe657a4f0f75149a249946e6da61a6, type: 3}
-  m_Controller: {fileID: 9100000, guid: dd9e3b22f96b254488c1df8be8042545, type: 2}
+  m_Controller: {fileID: 9100000, guid: d07453514578cab4a803a0190d93ea3a, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2349,6 +2350,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114927456886723802
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1174920214531054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a22b9b398048481397bc8ad4ed33dff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!137 &137605736789885912
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

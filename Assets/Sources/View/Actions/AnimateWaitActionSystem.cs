@@ -57,6 +57,7 @@ public class AnimateWaitActionSystem : ReactiveSystem<GameEntity>
 
             var animation = _game.CreateEntity();
             animation.AddAnimation(CreateAnimation(jumpSeq));
+            animation.AddAnimationTarget(target);
         }
     }
 
@@ -69,7 +70,6 @@ public class AnimateWaitActionSystem : ReactiveSystem<GameEntity>
         });
         tween.OnComplete(() =>
         {
-            //Debug.LogWarning("IM FUKIN DUNE " + DateTime.Now);
             done = true;
         });
 

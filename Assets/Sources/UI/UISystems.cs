@@ -4,6 +4,7 @@ public class UISystems : Feature
     {
         Add(new InitializeCanvasSystem(contexts));
 
+        Add(new HealthUiSystem(contexts));
         Add(new ItemPickupTooltipSystem(contexts));
         Add(new ItemPickupNotificationSystem(contexts));
 

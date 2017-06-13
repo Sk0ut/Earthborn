@@ -38,6 +38,7 @@ public class AnimateRotationSystem : ReactiveSystem<GameEntity>
             
             var animation = _contexts.game.CreateEntity();
             animation.AddAnimation(CreateAnimation(rotate));
+            animation.AddAnimationTarget(ety);
             animation.isImmediate = true;
         }
     }

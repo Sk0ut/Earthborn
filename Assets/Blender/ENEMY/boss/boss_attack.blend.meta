@@ -166,6 +166,7 @@ ModelImporter:
     4300000: corpo
     7400000: Default Take
     7400002: ArmatureAction
+    7400004: ArmatureAction (1)
     9500000: //RootNode
     13700000: corpo
   materials:
@@ -190,7 +191,386 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: ArmatureAction (1)
+      takeName: ArmatureAction
+      firstFrame: 0
+      lastFrame: 110
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0.99469495
+        functionName: EndAttack
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Bone
+        weight: 1
+      - path: Armature/Bone/Bone_001
+        weight: 1
+      - path: Armature/Bone/Bone_001/Bone_002
+        weight: 1
+      - path: Armature/Bone/Bone_001/Bone_002/Bone_003
+        weight: 1
+      - path: Armature/Bone/Bone_001/Bone_002/Bone_003/Bone_004
+        weight: 1
+      - path: Armature/Bone/Bone_001/Bone_002/Bone_003/Bone_004/Bone_005
+        weight: 1
+      - path: Armature/Bone_006
+        weight: 1
+      - path: Armature/Bone_006/Bone_007
+        weight: 1
+      - path: Armature/Bone_006/Bone_007/Bone_008
+        weight: 1
+      - path: Armature/Bone_006/Bone_007/Bone_008/Bone_009
+        weight: 1
+      - path: Armature/hand_control_L
+        weight: 1
+      - path: Armature/hand_control_L/hand_L
+        weight: 1
+      - path: Armature/hand_control_L/hand_L/1finger1_L
+        weight: 1
+      - path: Armature/hand_control_L/hand_L/1finger1_L/1finger2_L
+        weight: 1
+      - path: Armature/hand_control_L/hand_L/1finger1_L/1finger2_L/1finger3_L
+        weight: 1
+      - path: Armature/hand_control_L/hand_L/1finger1_L/1finger2_L/1finger3_L/1finger4_L
+        weight: 1
+      - path: Armature/hand_control_L/hand_L/1finger1_L/1finger2_L/1finger3_L/1finger4_L/1finger5_L
+        weight: 1
+      - path: Armature/hand_control_L/hand_L/1finger1_L/1finger2_L/1finger3_L/1finger4_L/1finger5_L/1finger6_L
+        weight: 1
+      - path: Armature/hand_control_L/hand_L/1finger1_L/1finger2_L/1finger3_L/1finger4_L/1finger5_L/1finger6_L/1finger7_L
+        weight: 1
+      - path: Armature/hand_control_L/hand_L/2finger1_L
+        weight: 1
+      - path: Armature/hand_control_L/hand_L/2finger1_L/2finger2_L
+        weight: 1
+      - path: Armature/hand_control_L/hand_L/2finger1_L/2finger2_L/2finger3_L
+        weight: 1
+      - path: Armature/hand_control_L/hand_L/2finger1_L/2finger2_L/2finger3_L/2finger4_L
+        weight: 1
+      - path: Armature/hand_control_L/hand_L/2finger1_L/2finger2_L/2finger3_L/2finger4_L/2finger5_L
+        weight: 1
+      - path: Armature/hand_control_L/hand_L/2finger1_L/2finger2_L/2finger3_L/2finger4_L/2finger5_L/2finger6_L
+        weight: 1
+      - path: Armature/hand_control_L/hand_L/2finger1_L/2finger2_L/2finger3_L/2finger4_L/2finger5_L/2finger6_L/2finger7_L
+        weight: 1
+      - path: Armature/hand_control_L/hand_L/3finger1_L
+        weight: 1
+      - path: Armature/hand_control_L/hand_L/3finger1_L/3finger2_L
+        weight: 1
+      - path: Armature/hand_control_L/hand_L/3finger1_L/3finger2_L/3finger3_L
+        weight: 1
+      - path: Armature/hand_control_L/hand_L/3finger1_L/3finger2_L/3finger3_L/3finger4_L
+        weight: 1
+      - path: Armature/hand_control_L/hand_L/3finger1_L/3finger2_L/3finger3_L/3finger4_L/3finger5_L
+        weight: 1
+      - path: Armature/hand_control_L/hand_L/3finger1_L/3finger2_L/3finger3_L/3finger4_L/3finger5_L/3finger6_L
+        weight: 1
+      - path: Armature/hand_control_L/hand_L/3finger1_L/3finger2_L/3finger3_L/3finger4_L/3finger5_L/3finger6_L/3finger7_L
+        weight: 1
+      - path: Armature/hand_control_R
+        weight: 1
+      - path: Armature/hand_control_R/hand_R
+        weight: 1
+      - path: Armature/hand_control_R/hand_R/1finger1_R
+        weight: 1
+      - path: Armature/hand_control_R/hand_R/1finger1_R/1finger2_R
+        weight: 1
+      - path: Armature/hand_control_R/hand_R/1finger1_R/1finger2_R/1finger3_R
+        weight: 1
+      - path: Armature/hand_control_R/hand_R/1finger1_R/1finger2_R/1finger3_R/1finger4_R
+        weight: 1
+      - path: Armature/hand_control_R/hand_R/1finger1_R/1finger2_R/1finger3_R/1finger4_R/1finger5_R
+        weight: 1
+      - path: Armature/hand_control_R/hand_R/1finger1_R/1finger2_R/1finger3_R/1finger4_R/1finger5_R/1finger6_R
+        weight: 1
+      - path: Armature/hand_control_R/hand_R/1finger1_R/1finger2_R/1finger3_R/1finger4_R/1finger5_R/1finger6_R/1finger7_R
+        weight: 1
+      - path: Armature/hand_control_R/hand_R/2finger1_R
+        weight: 1
+      - path: Armature/hand_control_R/hand_R/2finger1_R/2finger2_R
+        weight: 1
+      - path: Armature/hand_control_R/hand_R/2finger1_R/2finger2_R/2finger3_R
+        weight: 1
+      - path: Armature/hand_control_R/hand_R/2finger1_R/2finger2_R/2finger3_R/2finger4_R
+        weight: 1
+      - path: Armature/hand_control_R/hand_R/2finger1_R/2finger2_R/2finger3_R/2finger4_R/2finger5_R
+        weight: 1
+      - path: Armature/hand_control_R/hand_R/2finger1_R/2finger2_R/2finger3_R/2finger4_R/2finger5_R/2finger6_R
+        weight: 1
+      - path: Armature/hand_control_R/hand_R/2finger1_R/2finger2_R/2finger3_R/2finger4_R/2finger5_R/2finger6_R/2finger7_R
+        weight: 1
+      - path: Armature/hand_control_R/hand_R/3finger1_R
+        weight: 1
+      - path: Armature/hand_control_R/hand_R/3finger1_R/3finger2_R
+        weight: 1
+      - path: Armature/hand_control_R/hand_R/3finger1_R/3finger2_R/3finger3_R
+        weight: 1
+      - path: Armature/hand_control_R/hand_R/3finger1_R/3finger2_R/3finger3_R/3finger4_R
+        weight: 1
+      - path: Armature/hand_control_R/hand_R/3finger1_R/3finger2_R/3finger3_R/3finger4_R/3finger5_R
+        weight: 1
+      - path: Armature/hand_control_R/hand_R/3finger1_R/3finger2_R/3finger3_R/3finger4_R/3finger5_R/3finger6_R
+        weight: 1
+      - path: Armature/hand_control_R/hand_R/3finger1_R/3finger2_R/3finger3_R/3finger4_R/3finger5_R/3finger6_R/3finger7_R
+        weight: 1
+      - path: Armature/leg_control_bone_L
+        weight: 1
+      - path: Armature/leg_control_bone_L/foot_L
+        weight: 1
+      - path: Armature/leg_control_bone_L/foot_L/toes_L
+        weight: 1
+      - path: Armature/leg_control_bone_R
+        weight: 1
+      - path: Armature/leg_control_bone_R/foot_R
+        weight: 1
+      - path: Armature/leg_control_bone_R/foot_R/toes_R
+        weight: 1
+      - path: Armature/torso
+        weight: 1
+      - path: Armature/torso/chest
+        weight: 1
+      - path: Armature/torso/chest/chest_001
+        weight: 1
+      - path: Armature/torso/chest/head
+        weight: 1
+      - path: Armature/torso/chest/head/Bone_010
+        weight: 1
+      - path: Armature/torso/chest/head/Bone_012
+        weight: 1
+      - path: Armature/torso/chest/head/Bone_012/upper_arm_R
+        weight: 1
+      - path: Armature/torso/chest/head/Bone_012/upper_arm_R/lower_lower_arm_R
+        weight: 1
+      - path: Armature/torso/upper_leg_L
+        weight: 1
+      - path: Armature/torso/upper_leg_L/lower_leg_L
+        weight: 1
+      - path: Armature/torso/upper_leg_R
+        weight: 1
+      - path: Armature/torso/upper_leg_R/lower_leg_R
+        weight: 1
+      - path: Armature/upper_arm_L
+        weight: 1
+      - path: Armature/upper_arm_L/lower_lower_arm_L
+        weight: 1
+      - path: corpo
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: ArmatureAction
+      takeName: ArmatureAction
+      firstFrame: 0
+      lastFrame: 110
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Bone
+        weight: 1
+      - path: Armature/Bone/Bone_001
+        weight: 1
+      - path: Armature/Bone/Bone_001/Bone_002
+        weight: 1
+      - path: Armature/Bone/Bone_001/Bone_002/Bone_003
+        weight: 1
+      - path: Armature/Bone/Bone_001/Bone_002/Bone_003/Bone_004
+        weight: 1
+      - path: Armature/Bone/Bone_001/Bone_002/Bone_003/Bone_004/Bone_005
+        weight: 1
+      - path: Armature/Bone_006
+        weight: 1
+      - path: Armature/Bone_006/Bone_007
+        weight: 1
+      - path: Armature/Bone_006/Bone_007/Bone_008
+        weight: 1
+      - path: Armature/Bone_006/Bone_007/Bone_008/Bone_009
+        weight: 1
+      - path: Armature/hand_control_L
+        weight: 1
+      - path: Armature/hand_control_L/hand_L
+        weight: 1
+      - path: Armature/hand_control_L/hand_L/1finger1_L
+        weight: 1
+      - path: Armature/hand_control_L/hand_L/1finger1_L/1finger2_L
+        weight: 1
+      - path: Armature/hand_control_L/hand_L/1finger1_L/1finger2_L/1finger3_L
+        weight: 1
+      - path: Armature/hand_control_L/hand_L/1finger1_L/1finger2_L/1finger3_L/1finger4_L
+        weight: 1
+      - path: Armature/hand_control_L/hand_L/1finger1_L/1finger2_L/1finger3_L/1finger4_L/1finger5_L
+        weight: 1
+      - path: Armature/hand_control_L/hand_L/1finger1_L/1finger2_L/1finger3_L/1finger4_L/1finger5_L/1finger6_L
+        weight: 1
+      - path: Armature/hand_control_L/hand_L/1finger1_L/1finger2_L/1finger3_L/1finger4_L/1finger5_L/1finger6_L/1finger7_L
+        weight: 1
+      - path: Armature/hand_control_L/hand_L/2finger1_L
+        weight: 1
+      - path: Armature/hand_control_L/hand_L/2finger1_L/2finger2_L
+        weight: 1
+      - path: Armature/hand_control_L/hand_L/2finger1_L/2finger2_L/2finger3_L
+        weight: 1
+      - path: Armature/hand_control_L/hand_L/2finger1_L/2finger2_L/2finger3_L/2finger4_L
+        weight: 1
+      - path: Armature/hand_control_L/hand_L/2finger1_L/2finger2_L/2finger3_L/2finger4_L/2finger5_L
+        weight: 1
+      - path: Armature/hand_control_L/hand_L/2finger1_L/2finger2_L/2finger3_L/2finger4_L/2finger5_L/2finger6_L
+        weight: 1
+      - path: Armature/hand_control_L/hand_L/2finger1_L/2finger2_L/2finger3_L/2finger4_L/2finger5_L/2finger6_L/2finger7_L
+        weight: 1
+      - path: Armature/hand_control_L/hand_L/3finger1_L
+        weight: 1
+      - path: Armature/hand_control_L/hand_L/3finger1_L/3finger2_L
+        weight: 1
+      - path: Armature/hand_control_L/hand_L/3finger1_L/3finger2_L/3finger3_L
+        weight: 1
+      - path: Armature/hand_control_L/hand_L/3finger1_L/3finger2_L/3finger3_L/3finger4_L
+        weight: 1
+      - path: Armature/hand_control_L/hand_L/3finger1_L/3finger2_L/3finger3_L/3finger4_L/3finger5_L
+        weight: 1
+      - path: Armature/hand_control_L/hand_L/3finger1_L/3finger2_L/3finger3_L/3finger4_L/3finger5_L/3finger6_L
+        weight: 1
+      - path: Armature/hand_control_L/hand_L/3finger1_L/3finger2_L/3finger3_L/3finger4_L/3finger5_L/3finger6_L/3finger7_L
+        weight: 1
+      - path: Armature/hand_control_R
+        weight: 1
+      - path: Armature/hand_control_R/hand_R
+        weight: 1
+      - path: Armature/hand_control_R/hand_R/1finger1_R
+        weight: 1
+      - path: Armature/hand_control_R/hand_R/1finger1_R/1finger2_R
+        weight: 1
+      - path: Armature/hand_control_R/hand_R/1finger1_R/1finger2_R/1finger3_R
+        weight: 1
+      - path: Armature/hand_control_R/hand_R/1finger1_R/1finger2_R/1finger3_R/1finger4_R
+        weight: 1
+      - path: Armature/hand_control_R/hand_R/1finger1_R/1finger2_R/1finger3_R/1finger4_R/1finger5_R
+        weight: 1
+      - path: Armature/hand_control_R/hand_R/1finger1_R/1finger2_R/1finger3_R/1finger4_R/1finger5_R/1finger6_R
+        weight: 1
+      - path: Armature/hand_control_R/hand_R/1finger1_R/1finger2_R/1finger3_R/1finger4_R/1finger5_R/1finger6_R/1finger7_R
+        weight: 1
+      - path: Armature/hand_control_R/hand_R/2finger1_R
+        weight: 1
+      - path: Armature/hand_control_R/hand_R/2finger1_R/2finger2_R
+        weight: 1
+      - path: Armature/hand_control_R/hand_R/2finger1_R/2finger2_R/2finger3_R
+        weight: 1
+      - path: Armature/hand_control_R/hand_R/2finger1_R/2finger2_R/2finger3_R/2finger4_R
+        weight: 1
+      - path: Armature/hand_control_R/hand_R/2finger1_R/2finger2_R/2finger3_R/2finger4_R/2finger5_R
+        weight: 1
+      - path: Armature/hand_control_R/hand_R/2finger1_R/2finger2_R/2finger3_R/2finger4_R/2finger5_R/2finger6_R
+        weight: 1
+      - path: Armature/hand_control_R/hand_R/2finger1_R/2finger2_R/2finger3_R/2finger4_R/2finger5_R/2finger6_R/2finger7_R
+        weight: 1
+      - path: Armature/hand_control_R/hand_R/3finger1_R
+        weight: 1
+      - path: Armature/hand_control_R/hand_R/3finger1_R/3finger2_R
+        weight: 1
+      - path: Armature/hand_control_R/hand_R/3finger1_R/3finger2_R/3finger3_R
+        weight: 1
+      - path: Armature/hand_control_R/hand_R/3finger1_R/3finger2_R/3finger3_R/3finger4_R
+        weight: 1
+      - path: Armature/hand_control_R/hand_R/3finger1_R/3finger2_R/3finger3_R/3finger4_R/3finger5_R
+        weight: 1
+      - path: Armature/hand_control_R/hand_R/3finger1_R/3finger2_R/3finger3_R/3finger4_R/3finger5_R/3finger6_R
+        weight: 1
+      - path: Armature/hand_control_R/hand_R/3finger1_R/3finger2_R/3finger3_R/3finger4_R/3finger5_R/3finger6_R/3finger7_R
+        weight: 1
+      - path: Armature/leg_control_bone_L
+        weight: 1
+      - path: Armature/leg_control_bone_L/foot_L
+        weight: 1
+      - path: Armature/leg_control_bone_L/foot_L/toes_L
+        weight: 1
+      - path: Armature/leg_control_bone_R
+        weight: 1
+      - path: Armature/leg_control_bone_R/foot_R
+        weight: 1
+      - path: Armature/leg_control_bone_R/foot_R/toes_R
+        weight: 1
+      - path: Armature/torso
+        weight: 1
+      - path: Armature/torso/chest
+        weight: 1
+      - path: Armature/torso/chest/chest_001
+        weight: 1
+      - path: Armature/torso/chest/head
+        weight: 1
+      - path: Armature/torso/chest/head/Bone_010
+        weight: 1
+      - path: Armature/torso/chest/head/Bone_012
+        weight: 1
+      - path: Armature/torso/chest/head/Bone_012/upper_arm_R
+        weight: 1
+      - path: Armature/torso/chest/head/Bone_012/upper_arm_R/lower_lower_arm_R
+        weight: 1
+      - path: Armature/torso/upper_leg_L
+        weight: 1
+      - path: Armature/torso/upper_leg_L/lower_leg_L
+        weight: 1
+      - path: Armature/torso/upper_leg_R
+        weight: 1
+      - path: Armature/torso/upper_leg_R/lower_leg_R
+        weight: 1
+      - path: Armature/upper_arm_L
+        weight: 1
+      - path: Armature/upper_arm_L/lower_lower_arm_L
+        weight: 1
+      - path: corpo
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []

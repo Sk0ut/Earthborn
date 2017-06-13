@@ -42,6 +42,7 @@ public class AnimateMoveActionSystem : ReactiveSystem<GameEntity>
 
             var animation = _game.CreateEntity();
             animation.AddAnimation(CreateAnimation(tween));
+            animation.AddAnimationTarget(target);
 
             // Handled
             ev.Destroy();
@@ -57,7 +58,6 @@ public class AnimateMoveActionSystem : ReactiveSystem<GameEntity>
         });
         tween.OnComplete(() =>
         {
-            //Debug.LogWarning("IM FUKIN DUNE " + DateTime.Now);
             done = true;
         });
 

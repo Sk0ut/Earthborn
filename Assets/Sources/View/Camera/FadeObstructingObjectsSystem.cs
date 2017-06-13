@@ -79,14 +79,10 @@ public class FadeObstructingObjectsSystem : IInitializeSystem, IExecuteSystem, I
     private IEnumerable<GameEntity> GetVisibleEntities(Camera camera)
     {
         var visible = (from ety in _seethrough.GetEntities()
-            let screenPoint = camera.WorldToViewportPoint(ety.view.gameObject.transform.position)
-            let vis = ety.view.gameObject.activeSelf
-            let onScreen = screenPoint.z > 0 &&
-                           screenPoint.x > 0 &&
-                           screenPoint.x < 1 &&
-                           screenPoint.y > 0 &&
-                           screenPoint.y < 1
-            where vis && onScreen select ety);
+            let go = ety.view.gameObject
+            let vis = go.activeSelf
+            let inView = ViewUtils.IsInViewport(camera, go.transform)
+            where vis && inView select ety);
 
         return visible;
     }
