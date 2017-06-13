@@ -20,7 +20,7 @@ public class LightControllerViewSystem : ReactiveSystem<GameEntity>
 	protected override void Execute (System.Collections.Generic.List<GameEntity> entities)
 	{
 		foreach (var entity in entities) {
-			entity.view.gameObject.GetComponent<Light>().range = entity.lightSource.active ? 10f : 2.5f;
+			entity.view.gameObject.GetComponent<Light>().range = entity.lightSource.active ? 20f : 2.5f;
 		}
 	}
 }

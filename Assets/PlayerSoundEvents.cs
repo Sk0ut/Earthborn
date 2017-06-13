@@ -19,4 +19,11 @@ public class PlayerSoundEvents : MonoBehaviour
 		var evt = _game.CreateEvent(Event.Footstep);
 		evt.AddTarget(entity);
 	}
+	
+	public void EndAttack()
+	{
+		var entity = (GameEntity) gameObject.GetComponentInParent<EntityLink>().entity;
+		var evt = _game.CreateEvent(Event.Footstep);
+		evt.AddTarget(entity);
+	}
 }
