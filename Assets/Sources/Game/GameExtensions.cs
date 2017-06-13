@@ -40,6 +40,7 @@ public static class GameExtensions
 
 		player.AddEasing(0.5f);
 		player.isSeethrough = true;
+		player.AddDamage(context.globals.value.PlayerDamage);
 
 		var inventory = context.CreateEntity();
 		inventory.isInventory = true;
@@ -57,6 +58,8 @@ public static class GameExtensions
 		enemy.AddPosition ((int)position.x, (int)position.y);
 		enemy.AddPointing (Direction.Up);
 		enemy.AddEasing (0.5f);
+		enemy.AddHealth (context.globals.value.EnemyHealth, context.globals.value.EnemyHealth);
+		enemy.AddDamage (context.globals.value.EnemyDamage);
 
 		return enemy;
 	}
@@ -68,6 +71,9 @@ public static class GameExtensions
 		enemy.AddPosition ((int)position.x, (int)position.y);
 		enemy.AddPointing (Direction.Up);
 		enemy.AddEasing (0.5f);
+
+		enemy.AddHealth (context.globals.value.EnemyHealth * context.globals.value.BossMultiplier, context.globals.value.EnemyHealth * context.globals.value.BossMultiplier);
+		enemy.AddDamage (context.globals.value.EnemyDamage * context.globals.value.BossMultiplier);
 
 		return enemy;
 	}

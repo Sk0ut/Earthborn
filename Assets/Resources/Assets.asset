@@ -18,3 +18,5 @@ MonoBehaviour:
   Camera: {fileID: 1309213206600538, guid: ecf91cb8dda8f46a781838b088f3d863, type: 2}
   LightSource: {fileID: 1969580392624494, guid: 212ba5bd2f486a44c8865a58651324f7,
     type: 2}
+  Enemy: {fileID: 1368186724114610, guid: 891fd5cb2d6f1d14d9a131f672ab6f97, type: 2}
+  Boss: {fileID: 1703807159468962, guid: 66468f43bdc7b4841a7e60bdc10a38b0, type: 2}
