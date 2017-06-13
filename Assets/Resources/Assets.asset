@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 703b857d0b66413ab2680e70f31a6ccd, type: 3}
+  m_Name: Assets
+  m_EditorClassIdentifier: 
+  Player: {fileID: 1710821223336542, guid: 0cdf5437ae17d7541ac17a416cf8fc05, type: 2}
+  Pistol: {fileID: 1547033112365544, guid: d14d33a3b45d14b4fbb681ab5f9390b9, type: 2}
+  GroundTile: {fileID: 1406012203088138, guid: f5dce214091c145fea518bfbe39efef8, type: 2}
+  Wall: {fileID: 1990840664028678, guid: 8261556f7b7d9ff4cbd0f88477a892e4, type: 2}
+  Camera: {fileID: 1309213206600538, guid: ecf91cb8dda8f46a781838b088f3d863, type: 2}
+  LightSource: {fileID: 1969580392624494, guid: 212ba5bd2f486a44c8865a58651324f7,
+    type: 2}
+  Enemy: {fileID: 1368186724114610, guid: 891fd5cb2d6f1d14d9a131f672ab6f97, type: 2}
+  Boss: {fileID: 1703807159468962, guid: 66468f43bdc7b4841a7e60bdc10a38b0, type: 2}
+  Stairs: {fileID: 1793108481185956, guid: 904b76364d103a443b745f7e203fe4ab, type: 2}
