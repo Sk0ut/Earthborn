@@ -53,8 +53,10 @@ public class AnimatePlayerAttackSystem : ReactiveSystem<GameEntity>
     IEnumerator CreateAnimation(Animator animator)
     {
         animator.SetTrigger("Melee");
+        var done = false;
+        animator.GetComponent<PlayerSoundEvents>().OnAttackEnd = () => done = true;
         
-        while (!animator.GetCurrentAnimatorStateInfo(0).IsName("Melee Attack"))
+        while (!done)
         {
             yield return null;
         }

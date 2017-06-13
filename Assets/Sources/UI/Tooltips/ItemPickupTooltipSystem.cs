@@ -51,13 +51,15 @@ public class ItemPickupTooltipSystem : IExecuteSystem
             _tooltip.AddUi(Object.Instantiate(prefab));
             _tooltip.ui.value.SetActive(false);
             var r = _tooltip.ui.value.GetComponent<RectTransform>();
-            r.anchoredPosition3D = targetPos;
         }
 
-        if (!_tooltip.ui.value.activeSelf || _exiting)
-            AnimateEntry(_tooltip.ui.value);
-
         var rect = _tooltip.ui.value.GetComponent<RectTransform>();
+        if (!_tooltip.ui.value.activeSelf || _exiting)
+        {
+            rect.anchoredPosition3D = targetPos + Vector3.down * 30f;
+            AnimateEntry(_tooltip.ui.value);
+        }
+        
         rect.anchoredPosition3D = rect.anchoredPosition3D + (targetPos - rect.anchoredPosition3D) / 100;
     }
 

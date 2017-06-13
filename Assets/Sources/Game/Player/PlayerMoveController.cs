@@ -37,7 +37,7 @@ public class PlayerMoveController : ReactiveSystem<InputEntity>
             {
                 action.AddMoveAction(moveInput.move.value);
             }
-            else
+            else if (_game.turnState.value == TurnState.AskAction)
             {
                 player.ReplacePointing(moveInput.move.value);
             }

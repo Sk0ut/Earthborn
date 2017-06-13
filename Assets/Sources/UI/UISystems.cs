@@ -5,7 +5,9 @@ public class UISystems : Feature
         Add(new InitializeCanvasSystem(contexts));
 
         Add(new ItemPickupTooltipSystem(contexts));
+        Add(new ItemPickupNotificationSystem(contexts));
 
         Add(new AddUiElementSystem(contexts));
+        Add(new DestroyUiElementSystem(contexts));
     }
 }

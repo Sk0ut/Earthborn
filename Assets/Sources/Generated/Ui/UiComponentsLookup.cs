@@ -10,19 +10,22 @@ public static class UiComponentsLookup {
 
     public const int Canvas = 0;
     public const int Destroyed = 1;
-    public const int Ui = 2;
+    public const int Notification = 2;
+    public const int Ui = 3;
 
-    public const int TotalComponents = 3;
+    public const int TotalComponents = 4;
 
     public static readonly string[] componentNames = {
         "Canvas",
         "Destroyed",
+        "Notification",
         "Ui"
     };
 
     public static readonly System.Type[] componentTypes = {
         typeof(CanvasComponent),
         typeof(DestroyedComponent),
+        typeof(NotificationComponent),
         typeof(UiComponent)
     };
 }

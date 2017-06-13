@@ -31,7 +31,7 @@ public class FadeObstructingObjectsSystem : IInitializeSystem, IExecuteSystem, I
         if (!_contexts.game.isCamera ||
             !_contexts.game.cameraEntity.hasView) return;
 
-        var camera = _contexts.game.cameraEntity.view.gameObject;
+        var camera = Camera.main;
         var transform = camera.transform;
 
         foreach (var visibleEty in GetVisibleEntities(camera.GetComponent<Camera>()))
@@ -76,16 +76,17 @@ public class FadeObstructingObjectsSystem : IInitializeSystem, IExecuteSystem, I
         _obstructing.Clear();
     }
 
-    private List<GameEntity> GetVisibleEntities(Camera camera)
+    private IEnumerable<GameEntity> GetVisibleEntities(Camera camera)
     {
         var visible = (from ety in _seethrough.GetEntities()
             let screenPoint = camera.WorldToViewportPoint(ety.view.gameObject.transform.position)
+            let vis = ety.view.gameObject.activeSelf
             let onScreen = screenPoint.z > 0 &&
                            screenPoint.x > 0 &&
                            screenPoint.x < 1 &&
                            screenPoint.y > 0 &&
                            screenPoint.y < 1
-            where true select ety).ToList();
+            where vis && onScreen select ety);
 
         return visible;
     }

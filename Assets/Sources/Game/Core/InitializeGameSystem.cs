@@ -30,5 +30,16 @@ public class InitializeGameSystem : IInitializeSystem
         pistol.isGun = true;
         pistol.AddAsset(_context.assets.value.Pistol);
         pistol.AddPosition(6, 9);
+        pistol.isSeethrough = true;
+        
+        var pistol2 = _context.CreateEntity();
+        pistol2.isItem = true;
+        pistol2.AddItemId(ItemId.BasePistol);
+        pistol2.AddItemStats("X375-X", "Most powerful pistol in all of Earth 2", 120);
+        pistol2.isEquipableItem = true;
+        pistol2.isGun = true;
+        pistol2.AddAsset(_context.assets.value.Pistol);
+        pistol2.AddPosition(8, 8);
+        pistol2.isSeethrough = true;
     }
 }

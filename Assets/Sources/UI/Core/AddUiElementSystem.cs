@@ -26,8 +26,9 @@ public class AddUiElementSystem : ReactiveSystem<UiEntity>
         foreach (var entity in entities)
         {
             var canvas = _contexts.ui.canvas.value;
-            canvas.Link(entity, _contexts.ui);
-            entity.ui.value.transform.SetParent(canvas.transform);
+            var go = entity.ui.value;
+            go.Link(entity, _contexts.ui);
+            go.transform.SetParent(canvas.transform, false);
         }
     }
 }

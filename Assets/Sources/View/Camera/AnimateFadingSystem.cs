@@ -43,7 +43,7 @@ public class AnimateFadingSystem : ReactiveSystem<GameEntity>
                     _originalMaterials.Add(e, mat);
                 mr.material = _hiderMaterial;
                 mr.material.DOFade(0.5f, 0.5f)
-                    .SetEase(Ease.InExpo);
+                    .SetEase(Ease.OutExpo);
             }
             else
             {

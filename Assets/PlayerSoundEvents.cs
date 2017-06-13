@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Entitas.Unity;
 using UnityEngine;
@@ -7,6 +8,8 @@ public class PlayerSoundEvents : MonoBehaviour
 {
 
 	private GameContext _game;
+
+	public Action OnAttackEnd;
 
 	private void Start () {
 		var contexts = Contexts.sharedInstance;
@@ -22,8 +25,7 @@ public class PlayerSoundEvents : MonoBehaviour
 	
 	public void EndAttack()
 	{
-		var entity = (GameEntity) gameObject.GetComponentInParent<EntityLink>().entity;
-		var evt = _game.CreateEvent(Event.Footstep);
-		evt.AddTarget(entity);
+		if (OnAttackEnd != null) OnAttackEnd();
+		Debug.Log("Allo");
 	}
 }
