@@ -12,4 +12,5 @@ public class Assets : ScriptableObject
 	public GameObject LightSource;
 	public GameObject Enemy;
 	public GameObject Boss;
+	public GameObject Stairs;
 }

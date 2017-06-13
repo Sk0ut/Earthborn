@@ -13,7 +13,7 @@ public class ActorDeathSystem : ReactiveSystem<GameEntity>
 
 	protected override ICollector<GameEntity> GetTrigger (IContext<GameEntity> context)
 	{
-		return context.CreateCollector (GameMatcher.AllOf (GameMatcher.Actor, GameMatcher.Health));
+		return context.CreateCollector (GameMatcher.AllOf (GameMatcher.Actor, GameMatcher.Health).NoneOf(GameMatcher.Player, GameMatcher.Boss));
 	}
 
 	protected override bool Filter (GameEntity entity)

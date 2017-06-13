@@ -71,6 +71,7 @@ public static class GameExtensions
 		enemy.AddPosition ((int)position.x, (int)position.y);
 		enemy.AddPointing (Direction.Up);
 		enemy.AddEasing (0.5f);
+		enemy.isBoss = true;
 
 		enemy.AddHealth (context.globals.value.EnemyHealth * context.globals.value.BossMultiplier, context.globals.value.EnemyHealth * context.globals.value.BossMultiplier);
 		enemy.AddDamage (context.globals.value.EnemyDamage * context.globals.value.BossMultiplier);

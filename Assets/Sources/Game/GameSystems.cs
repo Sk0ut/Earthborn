@@ -37,6 +37,8 @@
 		Add (new FloorTransitionActionSystem (contexts));
 
 		Add (new ActorDeathSystem (contexts));
+		Add (new PlayerDeathSystem (contexts));
+		Add (new BossDeathSystem (contexts));
         
         // Items
         Add(new CheckStorageCapacitySystem(contexts));

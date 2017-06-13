@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using Entitas;
-using UnityEditorInternal;
 
 public class CheckStorageCapacitySystem : ReactiveSystem<GameEntity>
 {

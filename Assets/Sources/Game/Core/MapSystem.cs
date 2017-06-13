@@ -95,11 +95,13 @@ class MapSystem : ReactiveSystem<GameEntity>, IInitializeSystem
 			var entity = _gameContext.CreateEntity ();
 			entity.AddPosition ((int)floor.start.x, (int)floor.start.y);
 			entity.AddFloorTransition (currentFloor - 1);
+			entity.AddAsset (_gameContext.assets.value.Stairs);
 		}
 		if (currentFloor < Maps.floors.Length - 1) {
 			var entity = _gameContext.CreateEntity ();
 			entity.AddPosition ((int)floor.end.x, (int)floor.end.y);
 			entity.AddFloorTransition (currentFloor + 1);
+			entity.AddAsset (_gameContext.assets.value.Stairs);
 		}
 
 		if (currentFloor == Maps.floors.Length - 1) {
