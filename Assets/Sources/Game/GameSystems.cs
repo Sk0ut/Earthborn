@@ -34,11 +34,11 @@
 		Add(new ToggleLightActionSystem (contexts));
         Add(new PickupItemActionSystem(contexts));
         Add(new AttackActionSystem(contexts));
-		Add (new FloorTransitionActionSystem (contexts));
+		Add(new FloorTransitionActionSystem (contexts));
 
-		Add (new ActorDeathSystem (contexts));
-		Add (new PlayerDeathSystem (contexts));
-		Add (new BossDeathSystem (contexts));
+		Add(new ActorDeathSystem (contexts));
+		Add(new PlayerDeathSystem (contexts));
+		Add(new BossDeathSystem (contexts));
         
         // Items
         Add(new CheckStorageCapacitySystem(contexts));
