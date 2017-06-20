@@ -119,7 +119,6 @@ public class DungeonGenerator : MonoBehaviour
 		{
 			Tile tile = Tile.NON_FLOOR;
 			Vector2 start = Vector2.zero;
-			Vector2 size = sector.size - 2 * new Vector2(divisionMargin, divisionMargin);
 
 			if (rnd.NextDouble () < 1) {
 				start = new Vector2(rnd.Next(0, (int) (size.x - minRoomWidth)), rnd.Next(0, (int)(size.y - minRoomHeight)));
