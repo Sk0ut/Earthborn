@@ -11,3 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Development/Entitas.unity
     guid: 11428cfeb068a4fa39cd69f85bfd03c9
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: c561173f5ffe046b0aaac32fc07b8a16
