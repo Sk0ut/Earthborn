@@ -29,9 +29,11 @@
 
         Add(new AnimateMinionMoveSystem(contexts));
         Add(new AnimateMinionAttackSystem(contexts));
+        Add(new AnimateMinionDeathSystem(contexts));
 
         Add(new AnimateMinionBossMoveSystem(contexts));
         Add(new AnimateMinionBossAttackSystem(contexts));
+        Add(new AnimateMinionBossDeathSystem(contexts));
         
         // Add(new AnimateMoveActionSystem(contexts));
         Add(new AnimateWaitActionSystem(contexts));
