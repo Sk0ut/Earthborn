@@ -24,6 +24,7 @@ public class BossDeathSystem : ReactiveSystem<GameEntity>
 	// @TODO aplicar evento e efetuar melhor terminação / transitar para menu principal
 	protected override void Execute (System.Collections.Generic.List<GameEntity> entities)
 	{
+		Debug.Log ("Boss death");
 		// Only observable if game is built, nothing done on editor testing
 		Application.Quit ();
 	}
