@@ -5,9 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
 {
-    public void PlayGameHandler()
+    public void PlayStoryGameHandler()
     {
         SceneManager.LoadScene("Entitas");
+    }
+    
+    public void PlayRandomGameHandler()
+    {
+        SceneManager.LoadScene("RandomMap");
     }
 
     public void QuitHandler()

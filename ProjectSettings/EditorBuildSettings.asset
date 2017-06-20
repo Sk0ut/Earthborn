@@ -14,3 +14,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: c561173f5ffe046b0aaac32fc07b8a16
+  - enabled: 1
+    path: Assets/Scenes/Development/RandomMap.unity
+    guid: 46044d6e03ae22c48ac4baf4a4563276
