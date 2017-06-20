@@ -9,7 +9,7 @@ public class Globals : ScriptableObject
 	public int PlayerHealth = 100;
 	public int PlayerLightingRadius = 5;
 	public float HealthIncreasePerTurn = 1f;
-	public float HealthDecreasePerTurn = 0.25f;
+	public float HealthDecreasePerTurn = 3f;
 	public int PlayerDamage = 20;
 	public int EnemyDamage = 10;
 	public int EnemyHealth = 60;

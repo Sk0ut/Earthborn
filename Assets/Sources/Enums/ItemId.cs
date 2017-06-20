@@ -1,4 +1,6 @@
 ﻿public enum ItemId
 {
-    BasePistol
+    BasePistol,
+    HealthPotion,
+    OilPotion
 }

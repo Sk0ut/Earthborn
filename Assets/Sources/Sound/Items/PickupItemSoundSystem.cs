@@ -24,7 +24,7 @@ public class PickupItemSoundSystem : ReactiveSystem<GameEntity>
 
     protected override void Execute(List<GameEntity> events)
     {
-        var clip = Resources.Load<AudioClip>("Sounds/item_pickup_1");
+        var clip = Resources.Load<AudioClip>("Sounds/eb_hero_pick");
 
         foreach (var ev in events)
         {

@@ -13,4 +13,6 @@ public class Assets : ScriptableObject
 	public GameObject Enemy;
 	public GameObject Boss;
 	public GameObject Stairs;
+	public GameObject HealthPotion;
+	public GameObject OilPotion;
 }

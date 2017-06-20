@@ -21,3 +21,6 @@ MonoBehaviour:
   Enemy: {fileID: 1368186724114610, guid: 891fd5cb2d6f1d14d9a131f672ab6f97, type: 2}
   Boss: {fileID: 1703807159468962, guid: 66468f43bdc7b4841a7e60bdc10a38b0, type: 2}
   Stairs: {fileID: 1793108481185956, guid: 904b76364d103a443b745f7e203fe4ab, type: 2}
+  HealthPotion: {fileID: 1182114587827758, guid: ed21f424b98186246aab57e13b25b8bc,
+    type: 2}
+  OilPotion: {fileID: 1524596789975162, guid: 1ba10729c0808374aa9cb0ad67a5e126, type: 2}
