@@ -3,6 +3,7 @@ using Entitas;
 using Entitas.Unity;
 using UnityEngine;
 using System.Linq;
+using System.Collections.Generic;
 
 class MapSystem : ReactiveSystem<GameEntity>, IInitializeSystem
 {
@@ -13,6 +14,7 @@ class MapSystem : ReactiveSystem<GameEntity>, IInitializeSystem
 	private readonly IGroup<GameEntity> _blockingEntities;
 	private int lastFloor;
 	private System.Random rnd;
+	protected Floor [] floors;
 
 	public MapSystem(Contexts contexts) : base(contexts.game)
     {
@@ -22,6 +24,7 @@ class MapSystem : ReactiveSystem<GameEntity>, IInitializeSystem
 		_playerGroup = _gameContext.GetGroup (GameMatcher.Player);
 		_groundTiles = _gameContext.GetGroup (GameMatcher.AllOf (GameMatcher.Position, GameMatcher.Tile).NoneOf (GameMatcher.Blocking));
 		_blockingEntities = _gameContext.GetGroup (GameMatcher.AllOf (GameMatcher.Position, GameMatcher.Blocking).NoneOf (GameMatcher.Tile));
+		floors = Maps.floors;
     }
 
 
@@ -53,8 +56,8 @@ class MapSystem : ReactiveSystem<GameEntity>, IInitializeSystem
 
 	#endregion
 
-	private void createFloor(int currentFloor) {
-		Floor floor = Maps.floors [currentFloor];
+	protected virtual void createFloor(int currentFloor) {
+		Floor floor = floors [currentFloor];
 		int[,] map = floor.tiles;
 
 		for (var y = 0; y < map.GetLength(0); ++y)
@@ -91,30 +94,76 @@ class MapSystem : ReactiveSystem<GameEntity>, IInitializeSystem
 			player.ReplaceComponent (GameComponentsLookup.View, player.view);
 		}
 
+		/* Disable transition to lower floors
 		if (currentFloor > 0) {
 			var entity = _gameContext.CreateEntity ();
 			entity.AddPosition ((int)floor.start.x, (int)floor.start.y);
 			entity.AddFloorTransition (currentFloor - 1);
 			entity.AddAsset (_gameContext.assets.value.Stairs);
 		}
-		if (currentFloor < Maps.floors.Length - 1) {
+		*/
+		if (currentFloor < floors.Length - 1) {
 			var entity = _gameContext.CreateEntity ();
 			entity.AddPosition ((int)floor.end.x, (int)floor.end.y);
 			entity.AddFloorTransition (currentFloor + 1);
 			entity.AddAsset (_gameContext.assets.value.Stairs);
 		}
 
-		if (currentFloor == Maps.floors.Length - 1) {
+		if (currentFloor == floors.Length - 1) {
 			_gameContext.CreateBoss (new UnityEngine.Vector2 ((int)floor.end.x, (int)floor.end.y - 1));
 		} else {
+			var pistol = _gameContext.CreateEntity();
+			pistol.isItem = true;
+			pistol.AddItemId(ItemId.BasePistol);
+			pistol.AddItemStats("X375-R", "Most powerful pistol in all of Earth", 100);
+			pistol.isEquipableItem = true;
+			pistol.isGun = true;
+			pistol.AddAsset(_gameContext.assets.value.Pistol);
+			pistol.isSeethrough = true;
+
+			var pistol2 = _gameContext.CreateEntity();
+			pistol2.isItem = true;
+			pistol2.AddItemId(ItemId.BasePistol);
+			pistol2.AddItemStats("X375-X", "Most powerful pistol in all of Earth 2", 120);
+			pistol2.isEquipableItem = true;
+			pistol2.isGun = true;
+			pistol2.AddAsset(_gameContext.assets.value.Pistol);
+			pistol2.isSeethrough = true;
+
+			var hpPot = _gameContext.CreateEntity();
+			hpPot.isItem = true;
+			hpPot.AddItemId(ItemId.HealthPotion);
+			hpPot.AddItemStats("Sanity Potion +25", "Lonely people need lonely solutions", 20);
+			hpPot.isUsableItem = true;
+			hpPot.AddAsset(_gameContext.assets.value.HealthPotion);
+			hpPot.isSeethrough = true;
+
+			var oilPot = _gameContext.CreateEntity();
+			oilPot.isItem = true;
+			oilPot.AddItemId(ItemId.HealthPotion);
+			oilPot.AddItemStats("Oil Potion +25", "Lonely people need lonely solutions", 20);
+			oilPot.isUsableItem = true;
+			oilPot.AddAsset(_gameContext.assets.value.OilPotion);
+			oilPot.isSeethrough = true;
+
+			List < GameEntity> entities = new List<GameEntity> ();
+
 			int numMonsters = currentFloor * 3 + 2;
 			for (int i = 0; i < numMonsters; ++i) {
-				GameEntity freeTile;
-				do {
-					freeTile = _groundTiles.GetEntities()[rnd.Next(_groundTiles.GetEntities().Length)];
-				} while (_blockingEntities.GetEntities().Any((e) => e.position.x == freeTile.position.x && e.position.y == freeTile.position.y));
+				entities.Add(_gameContext.CreateEnemy (Vector2.zero));
+			}
+			entities.Add (pistol);
+			entities.Add (pistol2);
+			entities.Add (oilPot);
+			entities.Add (hpPot);
 
-				_gameContext.CreateEnemy(new Vector2(freeTile.position.x, freeTile.position.y));
+
+			foreach (var entity in entities) {
+				GameEntity emptyTile;
+				do {
+					emptyTile = _groundTiles.GetEntities () [rnd.Next (_groundTiles.GetEntities ().Length)];
+				} while (_blockingEntities.GetEntities ().Any ((e) => e.position.x == emptyTile.position.x && e.position.y == emptyTile.position.y));
+				entity.ReplacePosition(emptyTile.position.x, emptyTile.position.y);
 			}
 		}
 
