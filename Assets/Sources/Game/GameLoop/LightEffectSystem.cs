@@ -1,4 +1,7 @@
-﻿using Entitas;
+﻿using System;
+using System.Linq;
+using Entitas;
+using UnityEngine;
 
 public class LightEffectSystem : ReactiveSystem<GameEntity>
 {
@@ -20,17 +23,18 @@ public class LightEffectSystem : ReactiveSystem<GameEntity>
 
     protected override bool Filter(GameEntity entity)
     {
-        return entity.turnState.value == TurnState.AskAction
-        && _gameContext.GetCurrentActor().isPlayer
-        && _gameContext.GetCurrentActor().hasHealth;
+        return entity.turnState.value == TurnState.AskAction &&
+               _gameContext.GetCurrentActor().isPlayer &&
+               _gameContext.GetCurrentActor().hasHealth &&
+               _gameContext.GetCurrentActor().hasOil;
     }
 
     protected override void Execute(System.Collections.Generic.List<GameEntity> entities)
     {
         var player = _gameContext.GetCurrentActor();
-        player.health.value += iluminated(player) ?
-			_gameContext.globals.value.HealthIncreasePerTurn
-			: -_gameContext.globals.value.HealthDecreasePerTurn;
+        player.health.value += iluminated(player)
+            ? _gameContext.globals.value.HealthIncreasePerTurn
+            : -_gameContext.globals.value.HealthDecreasePerTurn;
         if (player.health.value > player.health.max)
         {
             player.health.value = player.health.max;
@@ -40,6 +44,22 @@ public class LightEffectSystem : ReactiveSystem<GameEntity>
             player.health.value = 0;
         }
         player.ReplaceComponent(GameComponentsLookup.Health, player.health);
+
+        if (iluminated(player))
+        {
+            player.oil.value = Math.Max(0, player.oil.value -= 1);
+            player.ReplaceComponent(GameComponentsLookup.Oil, player.oil);
+
+            var light = _lightSourceGroup.GetEntities().First(e => e.attachedTo.value.Equals(player));
+            if (player.oil.value <= 0 && light.lightSource.active)
+            {
+                light.lightSource.active = false;
+                light.ReplaceComponent(GameComponentsLookup.LightSource, light.lightSource);
+            
+                var evt = _gameContext.CreateEvent(Event.ActorToggleLight);
+                evt.AddTarget(player);
+            }
+        }
     }
 
     private bool iluminated(GameEntity entity)
@@ -56,4 +76,3 @@ public class LightEffectSystem : ReactiveSystem<GameEntity>
 
     #endregion
 }
-

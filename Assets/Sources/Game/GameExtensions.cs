@@ -33,6 +33,7 @@ public static class GameExtensions
 		var player = context.CreateActor (0.5f, 0f);
 		player.isPlayer = true;
 		player.AddHealth(context.globals.value.PlayerHealth, context.globals.value.PlayerHealth);
+		player.AddOil(100, 100);
 		player.AddAsset(context.assets.value.Player);
 		player.isVisible = true;
 		player.AddPosition((int)position.x, (int)position.y);

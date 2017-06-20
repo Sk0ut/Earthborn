@@ -54,29 +54,30 @@ public static class GameComponentsLookup {
     public const int LightSource = 43;
     public const int MoveAction = 44;
     public const int Obstructable = 45;
-    public const int PickupItemAction = 46;
-    public const int PickupItemEvent = 47;
-    public const int Player = 48;
-    public const int Pointing = 49;
-    public const int Position = 50;
-    public const int Seethrough = 51;
-    public const int SoundSource = 52;
-    public const int StorageCapacity = 53;
-    public const int Storage = 54;
-    public const int StorageSource = 55;
-    public const int Target = 56;
-    public const int Tile = 57;
-    public const int TileMap = 58;
-    public const int ToggleLightAction = 59;
-    public const int TurnState = 60;
-    public const int Tweening = 61;
-    public const int UnitType = 62;
-    public const int UsableItem = 63;
-    public const int View = 64;
-    public const int Visible = 65;
-    public const int WaitAction = 66;
+    public const int Oil = 46;
+    public const int PickupItemAction = 47;
+    public const int PickupItemEvent = 48;
+    public const int Player = 49;
+    public const int Pointing = 50;
+    public const int Position = 51;
+    public const int Seethrough = 52;
+    public const int SoundSource = 53;
+    public const int StorageCapacity = 54;
+    public const int Storage = 55;
+    public const int StorageSource = 56;
+    public const int Target = 57;
+    public const int Tile = 58;
+    public const int TileMap = 59;
+    public const int ToggleLightAction = 60;
+    public const int TurnState = 61;
+    public const int Tweening = 62;
+    public const int UnitType = 63;
+    public const int UsableItem = 64;
+    public const int View = 65;
+    public const int Visible = 66;
+    public const int WaitAction = 67;
 
-    public const int TotalComponents = 67;
+    public const int TotalComponents = 68;
 
     public static readonly string[] componentNames = {
         "Action",
@@ -125,6 +126,7 @@ public static class GameComponentsLookup {
         "LightSource",
         "MoveAction",
         "Obstructable",
+        "Oil",
         "PickupItemAction",
         "PickupItemEvent",
         "Player",
@@ -195,6 +197,7 @@ public static class GameComponentsLookup {
         typeof(LightSourceComponent),
         typeof(MoveActionComponent),
         typeof(ObstructableComponent),
+        typeof(OilComponent),
         typeof(PickupItemActionComponent),
         typeof(PickupItemEventComponent),
         typeof(PlayerComponent),

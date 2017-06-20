@@ -25,7 +25,7 @@ public class PlayerLowSanitySoundSystem : ReactiveSystem<GameEntity>
     protected override bool Filter(GameEntity entity)
     {
         return entity.hasHealth &&
-               entity.isPlayer == true;
+               entity.isPlayer;
     }
 
     protected override void Execute(List<GameEntity> entities)

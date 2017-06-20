@@ -25,6 +25,7 @@
         Add(new PlayerAttackController(contexts));
 
         Add(new LightEffectSystem(contexts));
+        
         // Actions
         Add(new ActionManagerSystem(contexts));
         Add(new ActionCleanupSystem(contexts));

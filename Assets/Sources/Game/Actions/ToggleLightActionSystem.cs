@@ -35,6 +35,8 @@ public class ToggleLightActionSystem : ReactiveSystem<GameEntity>
             var currentActor = _gameContext.GetCurrentActor();
             var light = _lightSourceGroup.GetEntities().First(e => e.attachedTo.value.Equals(currentActor));
 
+            if (!light.lightSource.active && currentActor.oil.value <= 0) continue;
+            
             light.lightSource.active = !light.lightSource.active;
             light.ReplaceComponent(GameComponentsLookup.LightSource, light.lightSource);
             currentActor.ReplaceActorEnergy(currentActor.actorEnergy.energy - 1f);
