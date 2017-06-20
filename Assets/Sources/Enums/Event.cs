@@ -4,8 +4,11 @@ public enum Event
     ActorWalked,
     ActorPickedItem,
     ActorAttacked,
+    ActorToggleLight,
+    ActorDied,
     
     // Sound
     Footstep,
-    MeleeAttack
+    MeleeAttack,
+    MeleeAttackHit
 }

@@ -126,7 +126,246 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Default Take
+      takeName: Default Take
+      firstFrame: 0
+      lastFrame: 64
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0.52645504
+        functionName: MeleeHit
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Bone
+        weight: 1
+      - path: Armature/Bone/center
+        weight: 1
+      - path: Armature/Bone/center/chest
+        weight: 1
+      - path: Armature/Bone/center/chest/neck
+        weight: 1
+      - path: Armature/Bone/center/chest/neck/head
+        weight: 1
+      - path: Armature/Bone/center/showlderL
+        weight: 1
+      - path: Armature/Bone/center/showlderL/Upper_arm_L
+        weight: 1
+      - path: Armature/Bone/center/showlderL/Upper_arm_L/Lower_arm_L
+        weight: 1
+      - path: Armature/Bone/center/showlderL/Upper_arm_L/Lower_arm_L/up_anular_L
+        weight: 1
+      - path: Armature/Bone/center/showlderL/Upper_arm_L/Lower_arm_L/up_anular_L/low_anular_L
+        weight: 1
+      - path: Armature/Bone/center/showlderL/Upper_arm_L/Lower_arm_L/up_corazon_L
+        weight: 1
+      - path: Armature/Bone/center/showlderL/Upper_arm_L/Lower_arm_L/up_corazon_L/low_corazon_L
+        weight: 1
+      - path: Armature/Bone/center/showlderL/Upper_arm_L/Lower_arm_L/up_indice_L
+        weight: 1
+      - path: Armature/Bone/center/showlderL/Upper_arm_L/Lower_arm_L/up_indice_L/low_indice_L
+        weight: 1
+      - path: Armature/Bone/center/showlderL/Upper_arm_L/Lower_arm_L/up_me_iqueL
+        weight: 1
+      - path: Armature/Bone/center/showlderL/Upper_arm_L/Lower_arm_L/up_me_iqueL/low_me_ique_L
+        weight: 1
+      - path: Armature/Bone/center/showlderL/Upper_arm_L/Lower_arm_L/up_pulgar_L
+        weight: 1
+      - path: Armature/Bone/center/showlderL/Upper_arm_L/Lower_arm_L/up_pulgar_L/low_pulgar_L
+        weight: 1
+      - path: Armature/Bone/center/showlderL_002
+        weight: 1
+      - path: Armature/Bone/center/showlderL_002/Upper_arm_R
+        weight: 1
+      - path: Armature/Bone/center/showlderL_002/Upper_arm_R/Lower_arm_R
+        weight: 1
+      - path: Armature/Bone/center/showlderL_002/Upper_arm_R/Lower_arm_R/up_anular_R
+        weight: 1
+      - path: Armature/Bone/center/showlderL_002/Upper_arm_R/Lower_arm_R/up_anular_R/low_anular_R
+        weight: 1
+      - path: Armature/Bone/center/showlderL_002/Upper_arm_R/Lower_arm_R/up_corazon_R
+        weight: 1
+      - path: Armature/Bone/center/showlderL_002/Upper_arm_R/Lower_arm_R/up_corazon_R/low_corazon_R
+        weight: 1
+      - path: Armature/Bone/center/showlderL_002/Upper_arm_R/Lower_arm_R/up_indice_R
+        weight: 1
+      - path: Armature/Bone/center/showlderL_002/Upper_arm_R/Lower_arm_R/up_indice_R/low_indice_R
+        weight: 1
+      - path: Armature/Bone/center/showlderL_002/Upper_arm_R/Lower_arm_R/up_me_iqueL_002
+        weight: 1
+      - path: Armature/Bone/center/showlderL_002/Upper_arm_R/Lower_arm_R/up_me_iqueL_002/low_me_ique_R
+        weight: 1
+      - path: Armature/Bone/center/showlderL_002/Upper_arm_R/Lower_arm_R/up_pulgar_R
+        weight: 1
+      - path: Armature/Bone/center/showlderL_002/Upper_arm_R/Lower_arm_R/up_pulgar_R/low_pulgar_R
+        weight: 1
+      - path: Armature/Bone/center/upper_leg_L
+        weight: 1
+      - path: Armature/Bone/center/upper_leg_L/low_leg_L
+        weight: 1
+      - path: Armature/Bone/center/upper_leg_R
+        weight: 1
+      - path: Armature/Bone/center/upper_leg_R/low_leg_R
+        weight: 1
+      - path: Armature/Bone/foot_MG_L
+        weight: 1
+      - path: Armature/Bone/foot_MG_L/foot_L
+        weight: 1
+      - path: Armature/Bone/foot_MG_R
+        weight: 1
+      - path: Armature/Bone/foot_MG_R/foot_R
+        weight: 1
+      - path: Arms_001
+        weight: 1
+      - path: Sphere
+        weight: 1
+      - path: wrench
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: llave-Attack
+      takeName: llave-Attack
+      firstFrame: -1
+      lastFrame: 64
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Bone
+        weight: 1
+      - path: Armature/Bone/center
+        weight: 1
+      - path: Armature/Bone/center/chest
+        weight: 1
+      - path: Armature/Bone/center/chest/neck
+        weight: 1
+      - path: Armature/Bone/center/chest/neck/head
+        weight: 1
+      - path: Armature/Bone/center/showlderL
+        weight: 1
+      - path: Armature/Bone/center/showlderL/Upper_arm_L
+        weight: 1
+      - path: Armature/Bone/center/showlderL/Upper_arm_L/Lower_arm_L
+        weight: 1
+      - path: Armature/Bone/center/showlderL/Upper_arm_L/Lower_arm_L/up_anular_L
+        weight: 1
+      - path: Armature/Bone/center/showlderL/Upper_arm_L/Lower_arm_L/up_anular_L/low_anular_L
+        weight: 1
+      - path: Armature/Bone/center/showlderL/Upper_arm_L/Lower_arm_L/up_corazon_L
+        weight: 1
+      - path: Armature/Bone/center/showlderL/Upper_arm_L/Lower_arm_L/up_corazon_L/low_corazon_L
+        weight: 1
+      - path: Armature/Bone/center/showlderL/Upper_arm_L/Lower_arm_L/up_indice_L
+        weight: 1
+      - path: Armature/Bone/center/showlderL/Upper_arm_L/Lower_arm_L/up_indice_L/low_indice_L
+        weight: 1
+      - path: Armature/Bone/center/showlderL/Upper_arm_L/Lower_arm_L/up_me_iqueL
+        weight: 1
+      - path: Armature/Bone/center/showlderL/Upper_arm_L/Lower_arm_L/up_me_iqueL/low_me_ique_L
+        weight: 1
+      - path: Armature/Bone/center/showlderL/Upper_arm_L/Lower_arm_L/up_pulgar_L
+        weight: 1
+      - path: Armature/Bone/center/showlderL/Upper_arm_L/Lower_arm_L/up_pulgar_L/low_pulgar_L
+        weight: 1
+      - path: Armature/Bone/center/showlderL_002
+        weight: 1
+      - path: Armature/Bone/center/showlderL_002/Upper_arm_R
+        weight: 1
+      - path: Armature/Bone/center/showlderL_002/Upper_arm_R/Lower_arm_R
+        weight: 1
+      - path: Armature/Bone/center/showlderL_002/Upper_arm_R/Lower_arm_R/up_anular_R
+        weight: 1
+      - path: Armature/Bone/center/showlderL_002/Upper_arm_R/Lower_arm_R/up_anular_R/low_anular_R
+        weight: 1
+      - path: Armature/Bone/center/showlderL_002/Upper_arm_R/Lower_arm_R/up_corazon_R
+        weight: 1
+      - path: Armature/Bone/center/showlderL_002/Upper_arm_R/Lower_arm_R/up_corazon_R/low_corazon_R
+        weight: 1
+      - path: Armature/Bone/center/showlderL_002/Upper_arm_R/Lower_arm_R/up_indice_R
+        weight: 1
+      - path: Armature/Bone/center/showlderL_002/Upper_arm_R/Lower_arm_R/up_indice_R/low_indice_R
+        weight: 1
+      - path: Armature/Bone/center/showlderL_002/Upper_arm_R/Lower_arm_R/up_me_iqueL_002
+        weight: 1
+      - path: Armature/Bone/center/showlderL_002/Upper_arm_R/Lower_arm_R/up_me_iqueL_002/low_me_ique_R
+        weight: 1
+      - path: Armature/Bone/center/showlderL_002/Upper_arm_R/Lower_arm_R/up_pulgar_R
+        weight: 1
+      - path: Armature/Bone/center/showlderL_002/Upper_arm_R/Lower_arm_R/up_pulgar_R/low_pulgar_R
+        weight: 1
+      - path: Armature/Bone/center/upper_leg_L
+        weight: 1
+      - path: Armature/Bone/center/upper_leg_L/low_leg_L
+        weight: 1
+      - path: Armature/Bone/center/upper_leg_R
+        weight: 1
+      - path: Armature/Bone/center/upper_leg_R/low_leg_R
+        weight: 1
+      - path: Armature/Bone/foot_MG_L
+        weight: 1
+      - path: Armature/Bone/foot_MG_L/foot_L
+        weight: 1
+      - path: Armature/Bone/foot_MG_R
+        weight: 1
+      - path: Armature/Bone/foot_MG_R/foot_R
+        weight: 1
+      - path: Arms_001
+        weight: 1
+      - path: Sphere
+        weight: 1
+      - path: wrench
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []

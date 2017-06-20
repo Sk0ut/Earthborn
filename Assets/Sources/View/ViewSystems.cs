@@ -24,10 +24,16 @@
         // Animations
         Add(new AnimateFadingSystem(contexts));
         
-        Add(new AnimatePlayerMoveSystem(contexts));
-        Add(new AnimatePlayerAttackSystem(contexts));
+        Add(new AnimateAdventurerMoveSystem(contexts));
+        Add(new AnimateAdventurerAttackSystem(contexts));
+
+        Add(new AnimateMinionMoveSystem(contexts));
+        Add(new AnimateMinionAttackSystem(contexts));
+
+        Add(new AnimateMinionBossMoveSystem(contexts));
+        Add(new AnimateMinionBossAttackSystem(contexts));
         
-        Add(new AnimateMoveActionSystem(contexts));
+        // Add(new AnimateMoveActionSystem(contexts));
         Add(new AnimateWaitActionSystem(contexts));
 
         Add(new AnimateRotationSystem(contexts));

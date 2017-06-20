@@ -41,5 +41,23 @@ public class InitializeGameSystem : IInitializeSystem
         pistol2.AddAsset(_context.assets.value.Pistol);
         pistol2.AddPosition(8, 8);
         pistol2.isSeethrough = true;
+
+        var hpPot = _context.CreateEntity();
+        hpPot.isItem = true;
+        hpPot.AddItemId(ItemId.HealthPotion);
+        hpPot.AddItemStats("Sanity Potion +25", "Lonely people need lonely solutions", 20);
+        hpPot.isUsableItem = true;
+        hpPot.AddAsset(_context.assets.value.HealthPotion);
+        hpPot.AddPosition(6, 5);
+        hpPot.isSeethrough = true;
+
+        var oilPot = _context.CreateEntity();
+        oilPot.isItem = true;
+        oilPot.AddItemId(ItemId.HealthPotion);
+        oilPot.AddItemStats("Oil Potion +25", "Lonely people need lonely solutions", 20);
+        oilPot.isUsableItem = true;
+        oilPot.AddAsset(_context.assets.value.OilPotion);
+        oilPot.AddPosition(6, 7);
+        oilPot.isSeethrough = true;
     }
 }

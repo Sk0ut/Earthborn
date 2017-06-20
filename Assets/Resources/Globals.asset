@@ -14,3 +14,11 @@ MonoBehaviour:
   TileSize: 1
   EnergyThreshold: 1
   PlayerHealth: 100
+  PlayerLightingRadius: 5
+  HealthIncreasePerTurn: 1
+  HealthDecreasePerTurn: 3
+  PlayerDamage: 20
+  EnemyDamage: 10
+  EnemyHealth: 60
+  BossMultiplier: 2
+  EnemyAttackProbability: 0.75

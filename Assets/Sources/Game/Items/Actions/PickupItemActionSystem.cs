@@ -44,8 +44,9 @@ public class PickupItemActionSystem : ReactiveSystem<GameEntity>
 
             if (!action.hasItemTarget)
             {
-                var item = _pickable.GetEntities().First(i => i.position.x == target.position.x &&
-                                                              i.position.y == target.position.y);
+                var item = _pickable.GetEntities()
+                                .FirstOrDefault(i => i.position.x == target.position.x &&
+                                                i.position.y == target.position.y);
 
                 if (item == null) continue;
 

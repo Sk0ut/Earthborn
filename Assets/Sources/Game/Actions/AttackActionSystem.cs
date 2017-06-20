@@ -59,13 +59,13 @@ public class AttackActionSystem : ReactiveSystem<GameEntity>
             var ev = _context.CreateEvent(Event.ActorAttacked);
             ev.AddTarget(target);
             ev.AddPointing(action.attackAction.direction);
-
-
+            ev.AddAttackActionHits(new List<HitData>());
 
 			foreach (var enemy in _attackableEntitiesGroup.GetEntities()) {
 				if (enemy.position.x == x && enemy.position.y == y) {
 					enemy.health.value -= target.damage.value;
-					enemy.ReplaceComponent (GameComponentsLookup.Health, enemy.health);
+					enemy.ReplaceComponent(GameComponentsLookup.Health, enemy.health);
+                    ev.attackActionHits.value.Add(new HitData(target.damage.value, enemy));
 				}
 			}
             

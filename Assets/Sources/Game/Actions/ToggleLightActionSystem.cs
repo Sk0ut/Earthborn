@@ -41,6 +41,9 @@ public class ToggleLightActionSystem : ReactiveSystem<GameEntity>
             _gameContext.ReplaceTurnState(TurnState.EndTurn);
 
             entity.Destroy();
+            
+            var evt = _gameContext.CreateEvent(Event.ActorToggleLight);
+            evt.AddTarget(currentActor);
         }
     }
 
